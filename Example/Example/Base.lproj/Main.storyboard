@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D25a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="3md-ly-arL">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--navigation.title-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Example" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="app.label" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BBe-T0-9G7">
+                                <rect key="frame" x="24" y="80" width="327" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="app.textfield" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HTc-mN-LYL">
+                                <rect key="frame" x="16" y="117" width="343" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p63-5M-lb2">
+                                <rect key="frame" x="16" y="606" width="343" height="45"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="eO6-Rr-kSy"/>
+                                </constraints>
+                                <state key="normal" title="Continue"/>
+                                <connections>
+                                    <segue destination="jds-WP-fKf" kind="show" id="vGa-q7-5Qm"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="HTc-mN-LYL" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="16" id="8rl-SI-bS7"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="p63-5M-lb2" secondAttribute="bottom" constant="16" id="9S3-Za-rbL"/>
+                            <constraint firstAttribute="trailing" secondItem="HTc-mN-LYL" secondAttribute="trailing" constant="16" id="UkC-Gs-LaI"/>
+                            <constraint firstItem="HTc-mN-LYL" firstAttribute="top" secondItem="BBe-T0-9G7" secondAttribute="bottom" constant="16" id="moj-23-sv3"/>
+                            <constraint firstAttribute="trailing" secondItem="p63-5M-lb2" secondAttribute="trailing" constant="16" id="nG1-qm-YdX"/>
+                            <constraint firstItem="p63-5M-lb2" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="16" id="qao-xb-Pm3"/>
+                            <constraint firstItem="BBe-T0-9G7" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="16" id="sG0-Z9-Ojm"/>
+                            <constraint firstItem="BBe-T0-9G7" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="8" id="xjA-Lc-h4j"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="BBe-T0-9G7" secondAttribute="trailing" constant="8" id="zHN-Qm-zVA"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="navigation.title" id="fTq-hX-6gC"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="892" y="-546"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="6bZ-eB-cHT">
+            <objects>
+                <viewController id="jds-WP-fKf" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="oad-br-8fg"/>
+                        <viewControllerLayoutGuide type="bottom" id="UVU-cR-ltl"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Isn-KJ-zvj">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This is a label using class" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OUi-ts-ES0" customClass="LocalizableLabel" customModule="JsonLocalizable">
+                                <rect key="frame" x="16" y="80" width="343" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="localizableKey" value="app.label"/>
+                                </userDefinedRuntimeAttributes>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="OUi-ts-ES0" firstAttribute="leading" secondItem="Isn-KJ-zvj" secondAttribute="leading" constant="16" id="B9B-6E-KXL"/>
+                            <constraint firstItem="OUi-ts-ES0" firstAttribute="top" secondItem="oad-br-8fg" secondAttribute="bottom" constant="16" id="NDp-05-92R"/>
+                            <constraint firstAttribute="trailing" secondItem="OUi-ts-ES0" secondAttribute="trailing" constant="16" id="ZGn-ET-Of6"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5BN-v0-4I9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1722" y="-546"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="xk1-7E-ym5">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="3md-ly-arL" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="gtX-QQ-nV6">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="lhY-QQ-Rb3"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2ut-40-KU3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-87.200000000000003" y="-545.57721139430294"/>
+        </scene>
+    </scenes>
+</document>

@@ -1,0 +1,16 @@
+{
+    "name" : "Hello %",
+    "hello" : {
+        "world" : "Hello world!"
+    },
+    "values" : "Hello everyone my name is % and I'm %, see you soon",
+    "username" : "My username is :username",
+    "level" : {
+        "one" : {
+            "two" : {
+                "three" : "This is a multilevel key"
+            }
+        }
+    },
+    "the.same.lavel" : "This is a localize in the same lavel"
+}
