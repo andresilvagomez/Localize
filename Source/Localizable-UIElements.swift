@@ -9,7 +9,7 @@ import UIKit
 
 public class LocalizableBarButtonItem: UIBarButtonItem {
     
-    // Inspectable element to replace title in UIBarButtonItem.
+    /// Inspectable element to replace title in UIBarButtonItem.
     @IBInspectable public var localizableKey : String? {
         didSet {
             self.title = self.localizableKey!.localize()
@@ -20,7 +20,7 @@ public class LocalizableBarButtonItem: UIBarButtonItem {
 
 public class LocalizableButton: UIButton {
     
-    // Inspectable element to replace title in UIButton.
+    /// Inspectable element to replace title in UIButton.
     @IBInspectable public var localizableKey: String? {
         didSet {
             for state in [UIControlState.normal, .highlighted, .selected, .disabled] {
@@ -33,7 +33,7 @@ public class LocalizableButton: UIButton {
 
 public class LocalizableLabel: UILabel {
     
-    // Inspectable element to replace text in UILabel.
+    /// Inspectable element to replace text in UILabel.
     @IBInspectable public var localizableKey : String? {
         didSet {
             self.text = self.localizableKey!.localize()
@@ -44,14 +44,14 @@ public class LocalizableLabel: UILabel {
 
 public class LocalizableNavigationBarItem: UINavigationItem {
     
-    // Inspectable element to replace title in UINavigationItem.
+    /// Inspectable element to replace title in UINavigationItem.
     @IBInspectable public var localizableKeyTitle: String? {
         didSet {
             self.title = self.localizableKeyTitle!.localize()
         }
     }
     
-    // Inspectable element to replace prompt in UINavigationItem.
+    /// Inspectable element to replace prompt in UINavigationItem.
     @IBInspectable public var localizableKeyPrompt: String? {
         didSet {
             self.prompt = self.localizableKeyPrompt!.localize()
@@ -62,14 +62,14 @@ public class LocalizableNavigationBarItem: UINavigationItem {
 
 public class LocalizableSearchBar: UISearchBar {
     
-    // Inspectable element to replace placeholder in UISearchBar.
+    /// Inspectable element to replace placeholder in UISearchBar.
     @IBInspectable public var localizableKeyPlaceholder: String? {
         didSet {
             self.placeholder = self.localizableKeyPlaceholder!.localize()
         }
     }
     
-    // Inspectable element to replace prompt in UISearchBar.
+    /// Inspectable element to replace prompt in UISearchBar.
     @IBInspectable public var localizableKeyPrompt: String? {
         didSet {
             self.prompt = self.localizableKeyPrompt!.localize()
@@ -80,8 +80,8 @@ public class LocalizableSearchBar: UISearchBar {
 
 public class LocalizableSegmentedControler: UISegmentedControl {
     
-    // Inspectable element to replace titles in UISegmentedControl.
-    // Please separete keys with ,
+    /// Inspectable element to replace titles in UISegmentedControl.
+    /// Please separete keys with ,
     @IBInspectable public var localizableKey : String? {
         didSet {
             for index in 0...(self.numberOfSegments-1) {
@@ -95,7 +95,7 @@ public class LocalizableSegmentedControler: UISegmentedControl {
 
 public class LocalizableBarItem: UITabBarItem {
     
-    // Inspectable element to replace title in UITabBarItem.
+    /// Inspectable element to replace title in UITabBarItem.
     @IBInspectable public var localizableKey : String? {
         didSet {
             self.title = self.localizableKey!.localize()
@@ -105,14 +105,14 @@ public class LocalizableBarItem: UITabBarItem {
 
 public class LocalizableTextField: UITextField {
     
-    // Inspectable element to replace text in UITextField.
+    /// Inspectable element to replace text in UITextField.
     @IBInspectable public var localizableKeyText: String? {
         didSet {
             self.text = self.localizableKeyText!.localize()
         }
     }
     
-    // Inspectable element to replace placeholder in UITextField.
+    /// Inspectable element to replace placeholder in UITextField.
     @IBInspectable public var localizableKeyPlaceholder: String? {
         didSet {
             self.placeholder = self.localizableKeyPlaceholder!.localize()
@@ -124,7 +124,7 @@ public class LocalizableTextField: UITextField {
 
 public class LocalizableTextView: UITextView {
     
-    // Inspectable element to replace text in UITextView.
+    /// Inspectable element to replace text in UITextView.
     @IBInspectable public var localizableKey : String? {
         didSet {
             self.text = self.localizableKey!.localize()

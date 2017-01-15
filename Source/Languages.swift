@@ -7,7 +7,7 @@
 
 import UIKit
 
-// All posible languages.
+/// All posible languages.
 
 public enum Languages: String {
     

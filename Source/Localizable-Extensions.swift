@@ -10,10 +10,9 @@ import UIKit
 
 extension UIBarButtonItem {
     
-    // Override awakeFromNib when is going visible, try search a key in JSON File
-    // If key match replace text, if can't match return the key (original text)
-    // Set title for UIBarButtonItem
-    
+    /// Override awakeFromNib when is going visible, try search a key in JSON File
+    /// If key match replace text, if can't match return the key (original text)
+    /// Set title for UIBarButtonItem
     open override func awakeFromNib() {
         super.awakeFromNib()
         
@@ -30,10 +29,9 @@ extension UIBarButtonItem {
 
 extension UIButton {
     
-    // Override awakeFromNib when is going visible, try search a key in JSON File
-    // If key match replace text, if can't match return the key (original text)
-    // Set title for UIButton in each state
-    
+    /// Override awakeFromNib when is going visible, try search a key in JSON File
+    /// If key match replace text, if can't match return the key (original text)
+    /// Set title for UIButton in each state
     open override func awakeFromNib() {
         super.awakeFromNib()
         
@@ -52,10 +50,9 @@ extension UIButton {
 
 extension UILabel {
     
-    // Override awakeFromNib when is going visible, try search a key in JSON File
-    // If key match replace text, if can't match return the key (original text)
-    // Set title for UILabel
-    
+    /// Override awakeFromNib when is going visible, try search a key in JSON File
+    /// If key match replace text, if can't match return the key (original text)
+    /// Set title for UILabel
     open override func awakeFromNib() {
         super.awakeFromNib()
         
@@ -72,10 +69,9 @@ extension UILabel {
 
 extension UINavigationItem {
     
-    // Override awakeFromNib when is going visible, try search a key in JSON File
-    // If key match replace text, if can't match return the key (original text)
-    // Set title and prompt for UINavigationItem
-    
+    /// Override awakeFromNib when is going visible, try search a key in JSON File
+    /// If key match replace text, if can't match return the key (original text)
+    /// Set title and prompt for UINavigationItem
     open override func awakeFromNib() {
         super.awakeFromNib()
         
@@ -96,10 +92,9 @@ extension UINavigationItem {
 
 extension UISearchBar {
     
-    // Override awakeFromNib when is going visible, try search a key in JSON File
-    // If key match replace text, if can't match return the key (original text)
-    // Set title and prompt for UISearchBar
-    
+    /// Override awakeFromNib when is going visible, try search a key in JSON File
+    /// If key match replace text, if can't match return the key (original text)
+    /// Set title and prompt for UISearchBar
     open override  func awakeFromNib() {
         super.awakeFromNib()
         
@@ -120,10 +115,9 @@ extension UISearchBar {
 
 extension UISegmentedControl {
     
-    // Override awakeFromNib when is going visible, try search a key in JSON File
-    // If key match replace text, if can't match return the key (original text)
-    // Set title for UISegmentedControl in each state
-    
+    /// Override awakeFromNib when is going visible, try search a key in JSON File
+    /// If key match replace text, if can't match return the key (original text)
+    /// Set title for UISegmentedControl in each state
     open override func awakeFromNib() {
         super.awakeFromNib()
         
@@ -142,10 +136,9 @@ extension UISegmentedControl {
 
 extension UITabBarItem {
     
-    // Override awakeFromNib when is going visible, try search a key in JSON File
-    // If key match replace text, if can't match return the key (original text)
-    // Set title for UITabBarItem
-    
+    /// Override awakeFromNib when is going visible, try search a key in JSON File
+    /// If key match replace text, if can't match return the key (original text)
+    /// Set title for UITabBarItem
     open override func awakeFromNib() {
         super.awakeFromNib()
         
@@ -162,10 +155,9 @@ extension UITabBarItem {
 
 extension UITextField {
     
-    // Override awakeFromNib when is going visible, try search a key in JSON File
-    // If key match replace text, if can't match return the key (original text)
-    // Set title and placeholder for UITextField
-    
+    /// Override awakeFromNib when is going visible, try search a key in JSON File
+    /// If key match replace text, if can't match return the key (original text)
+    /// Set title and placeholder for UITextField
     open override func awakeFromNib() {
         super.awakeFromNib()
         
@@ -186,10 +178,9 @@ extension UITextField {
 
 extension UITextView {
     
-    // Override awakeFromNib when is going visible, try search a key in JSON File
-    // If key match replace text, if can't match return the key (original text)
-    // Set title for UITextView
-    
+    /// Override awakeFromNib when is going visible, try search a key in JSON File
+    /// If key match replace text, if can't match return the key (original text)
+    /// Set title for UITextView
     open override func awakeFromNib() {
         super.awakeFromNib()
         

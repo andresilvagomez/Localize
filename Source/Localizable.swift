@@ -15,40 +15,38 @@ public enum LocalizableInterface {
 
 public class Localizable: NSObject {
     
-    // Name of UserDefault key where store user prefered language
+    /// Name of UserDefault key where store user prefered language
     private let storageKey = "localizable.swift.language"
     
-    // Json data storaged in a file
+    /// Json data storaged in a file
     private var json: NSDictionary?
     
-    // Shated instance
+    /// Shated instance
     public static let shared: Localizable = Localizable()
     
-    // Name for storaged Json Files
-    // The rule for name is fileName-LanguageKey.json
+    /// Name for storaged Json Files
+    /// The rule for name is fileName-LanguageKey.json
     public var fileName = "lang"
     
-    // Default language, if this can't find a key in your current language 
-    // Try read key in default language
+    /// Default language, if this can't find a key in your current language
+    /// Try read key in default language
     public var defaultLanguage: Languages = .english
     
-    // Decide if your interface localization is based on LocalizableInterface
+    /// Decide if your interface localization is based on LocalizableInterface
     public var localizableInterface: LocalizableInterface = .boot
     
-    // This override prevent user access to different instances for this class.
-    // Always use shared instance.
-    
+    /// This override prevent user access to different instances for this class.
+    /// Always use shared instance.
     private override init() {
         super.init()
     }
     
     // MARK: Read JSON methods
 
-    // This metod contains a logic to read return JSON data
-    // If JSON not is defined, this try use a default
-    // As long as the default language is the same as the current one.
-    
-    fileprivate func readJSON() -> NSDictionary? {
+    /// This metod contains a logic to read return JSON data
+    /// If JSON not is defined, this try use a default
+    /// As long as the default language is the same as the current one.
+    private func readJSON() -> NSDictionary? {
         if self.json != nil {
             return self.json
         }
@@ -64,11 +62,10 @@ public class Localizable: NSObject {
         return self.json
     }
     
-    // This method has path where file is
-    // If can't find a path return a nil value
-    // If can't serialize data return a nil value
-    
-    fileprivate func readJSON(named name:String) -> NSDictionary? {
+    /// This method has path where file is
+    /// If can't find a path return a nil value
+    /// If can't serialize data return a nil value
+    private func readJSON(named name:String) -> NSDictionary? {
         let path = Bundle.main.path(forResource: name, ofType: "json")
         if path == nil {
             return nil
@@ -86,12 +83,9 @@ public class Localizable: NSObject {
         }
     }
     
-    // MARK: Private methods
-    
-    // Try search key in your dictionary using single level
-    // If it doesn't find the key it will use the multilevel
-    // If the key not exis in your JSON return nil value
-    
+    /// Try search key in your dictionary using single level
+    /// If it doesn't find the key it will use the multilevel
+    /// If the key not exis in your JSON return nil value
     private func localizeFile(key:String, json:NSDictionary) -> String? {
         if let string = json[key] {
             return string as? String
@@ -104,10 +98,9 @@ public class Localizable: NSObject {
         return nil
     }
     
-    // Try search key in your dictionary using multiples levels
-    // It is necessary that the result be a string
-    // Otherwise it returns nil value
-    
+    /// Try search key in your dictionary using multiples levels
+    /// It is necessary that the result be a string
+    /// Otherwise it returns nil value
     private func localizeLevel(key: String, json:AnyObject?) -> String? {
         let values = key.components(separatedBy: ".")
         var jsonCopy = json
@@ -121,14 +114,26 @@ public class Localizable: NSObject {
         return jsonCopy as? String
     }
     
+    // Interator for String Enumerators
+    private func iterateEnum<T: Hashable>(_: T.Type) -> AnyIterator<T> {
+        var i = 0
+        return AnyIterator {
+            let next = withUnsafePointer(to: &i) {
+                $0.withMemoryRebound(to: T.self, capacity: 1) { $0.pointee }
+            }
+            if next.hashValue != i { return nil }
+            i += 1
+            return next
+        }
+    }
     
     // MARK: Public methods
     
-    
-    // Localize a string using your JSON File
-    // If the key is not found return the same key
-    // That prevent replace untagged values
-    
+    /// Localize a string using your JSON File
+    /// If the key is not found return the same key
+    /// That prevent replace untagged values
+    ///
+    /// - returns: localized key or same text
     public func localize(key:String) -> String {
         guard let json = self.readJSON() else {
             return key
@@ -141,9 +146,12 @@ public class Localizable: NSObject {
         return string
     }
     
-    // Localize a string using your JSON File
-    // That replace all % character in your string with replace value.
-    
+    /// Localize a string using your JSON File
+    /// That replace all % character in your string with replace value.
+    ///
+    /// - parameter value: The replacement value
+    ///
+    /// - returns: localized key or same text
     public func localize(key:String, replace:String) -> String {
         let string = self.localize(key: key)
         if string == key {
@@ -152,9 +160,12 @@ public class Localizable: NSObject {
         return string.replacingOccurrences(of: "%", with: replace)
     }
     
-    // Localize a string using your JSON File
-    // That replace each % character in your string with each replace value.
-    
+    /// Localize a string using your JSON File
+    /// That replace each % character in your string with each replace value.
+    ///
+    /// - parameter value: The replacement values
+    ///
+    /// - returns: localized key or same text
     public func localize(key:String, values replace:[Any]) -> String {
         var string = self.localize(key: key)
         if string == key {
@@ -174,10 +185,13 @@ public class Localizable: NSObject {
         return string
     }
     
-    // Localize string with dictionary values
-    // Get properties in your key with rule :property
-    // If property not exist in this string, not is used.
-    
+    /// Localize string with dictionary values
+    /// Get properties in your key with rule :property
+    /// If property not exist in this string, not is used.
+    ///
+    /// - parameter value: The replacement dictionary
+    ///
+    /// - returns: localized key or same text
     public func localize(key:String, dictionary replace:[String:String]) -> String {
         var string = self.localize(key: key)
         for (key, value) in replace {
@@ -185,13 +199,12 @@ public class Localizable: NSObject {
         }
         return string
     }
-    
 
     // MARK: Config methods
     
-    
-    // Return storaged language or default language in device
-    
+    /// Return storaged language or default language in device
+    ///
+    /// - returns: current used language
     public func language() -> String {
         let defaults = UserDefaults.standard
         if let lang = defaults.string(forKey: self.storageKey) {
@@ -200,20 +213,33 @@ public class Localizable: NSObject {
         return Locale.preferredLanguages[0].components(separatedBy: "-")[0]
     }
     
-    // Update default languaje, this store a language key and retrive the next time.
-    
+    /// Update default languaje, this store a language key and retrive the next time.
     public func update(language:Languages) -> Void {
         let defaults = UserDefaults.standard
         defaults.setValue(language.rawValue, forKey: self.storageKey)
         defaults.synchronize()
     }
     
-    // This remove the language key storaged.
-    
+    /// This remove the language key storaged.
     public func resetLanguage() -> Void {
         let defaults = UserDefaults.standard
         defaults.removeObject(forKey: self.storageKey)
         defaults.synchronize()
+    }
+    
+    /// Show all aviable languajes whit criteria name
+    ///
+    /// - returns: list with storaged languages code
+    public func languajes() -> [String] {
+        var languages : [String] = []
+        for language in iterateEnum(Languages.self) {
+            let name = "\(self.fileName)-\(language.rawValue)"
+            let path = Bundle.main.path(forResource: name, ofType: "json")
+            if path != nil {
+                languages.append(language.rawValue)
+            }
+        }
+        return languages
     }
     
 }
