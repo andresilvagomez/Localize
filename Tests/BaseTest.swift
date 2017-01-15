@@ -12,7 +12,6 @@ class BaseTest: XCTestCase {
     
     override func setUp() {
         super.setUp()
-        let localize = Localizable.shared
     }
     
     override func tearDown() {

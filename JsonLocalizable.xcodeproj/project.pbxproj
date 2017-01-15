@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9F050EF81E2B486C009804A5 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9F989F421E2B34E700A19F67 /* Info.plist */; };
+		9F050EF91E2B486C009804A5 /* lang-en.json in Resources */ = {isa = PBXBuildFile; fileRef = 9F989F431E2B34E700A19F67 /* lang-en.json */; };
 		9F93453E1E29192300C400F7 /* Languages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F9345391E29192300C400F7 /* Languages.swift */; };
 		9F93453F1E29192300C400F7 /* Localizable-Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F93453A1E29192300C400F7 /* Localizable-Extensions.swift */; };
 		9F9345401E29192300C400F7 /* Localizable-UIElements.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F93453B1E29192300C400F7 /* Localizable-UIElements.swift */; };
@@ -15,11 +17,8 @@
 		9F93454A1E291A2700C400F7 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9F9345481E291A2700C400F7 /* Info.plist */; };
 		9F93454B1E291AF800C400F7 /* JsonLocalizable.h in Headers */ = {isa = PBXBuildFile; fileRef = 9F9345471E291A2700C400F7 /* JsonLocalizable.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9F9345581E291D4E00C400F7 /* JsonLocalizable.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69F1B5741D955990000A2B87 /* JsonLocalizable.framework */; };
-		9F989F4B1E2B3B7D00A19F67 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9F9345481E291A2700C400F7 /* Info.plist */; };
 		9F989F4C1E2B3B8200A19F67 /* BaseTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F989F411E2B34E700A19F67 /* BaseTest.swift */; };
 		9F989F4D1E2B3B8300A19F67 /* OtherLangTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F989F441E2B34E700A19F67 /* OtherLangTest.swift */; };
-		9F989F4E1E2B3B9600A19F67 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9F989F421E2B34E700A19F67 /* Info.plist */; };
-		9F989F4F1E2B3B9800A19F67 /* lang-en.json in Resources */ = {isa = PBXBuildFile; fileRef = 9F989F431E2B34E700A19F67 /* lang-en.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -229,9 +228,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9F989F4E1E2B3B9600A19F67 /* Info.plist in Resources */,
-				9F989F4B1E2B3B7D00A19F67 /* Info.plist in Resources */,
-				9F989F4F1E2B3B9800A19F67 /* lang-en.json in Resources */,
+				9F050EF81E2B486C009804A5 /* Info.plist in Resources */,
+				9F050EF91E2B486C009804A5 /* lang-en.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -419,7 +417,9 @@
 		9F93455C1E291D4E00C400F7 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				INFOPLIST_FILE = Test/Info.plist;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = Tests/Info.plist;
 				INFOPLIST_PREPROCESS = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -432,7 +432,9 @@
 		9F93455D1E291D4E00C400F7 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				INFOPLIST_FILE = Test/Info.plist;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = Tests/Info.plist;
 				INFOPLIST_PREPROCESS = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
