@@ -7,6 +7,8 @@
 
 import UIKit
 
+// All posible languages.
+
 public enum Languages: String {
     
     case english = "en"
