@@ -17,7 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let localize = Localizable.shared
         // Set your file name
-        localize.fileName = "myFileName"
+        localize.fileName = "lang"
         // Set your default languaje.
         localize.defaultLanguage = .french
         // If you want change a user language, different to default in phone use this method.
@@ -26,6 +26,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         localize.resetLanguage()
         // The used language
         print(localize.language())
+        // List of aviable languajes
+        print(localize.availableLanguages())
         
         return true
     }

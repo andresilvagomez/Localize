@@ -23,7 +23,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="app.label" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BBe-T0-9G7">
-                                <rect key="frame" x="24" y="80" width="327" height="21"/>
+                                <rect key="frame" x="16" y="80" width="343" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -44,25 +44,49 @@
                                     <segue destination="jds-WP-fKf" kind="show" id="vGa-q7-5Qm"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t6w-Gh-I1B">
+                                <rect key="frame" x="16" y="545" width="343" height="45"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="WnF-75-Q25"/>
+                                </constraints>
+                                <state key="normal" title="app.update.language"/>
+                                <connections>
+                                    <action selector="updateLanguage:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5ws-kY-s95"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="app.language" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eRz-bg-Iry">
+                                <rect key="frame" x="16" y="163" width="343" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="HTc-mN-LYL" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="16" id="8rl-SI-bS7"/>
+                            <constraint firstItem="p63-5M-lb2" firstAttribute="top" secondItem="t6w-Gh-I1B" secondAttribute="bottom" constant="16" id="9Re-2H-AWu"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="p63-5M-lb2" secondAttribute="bottom" constant="16" id="9S3-Za-rbL"/>
+                            <constraint firstItem="t6w-Gh-I1B" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="16" id="HU5-Ve-Jwh"/>
                             <constraint firstAttribute="trailing" secondItem="HTc-mN-LYL" secondAttribute="trailing" constant="16" id="UkC-Gs-LaI"/>
+                            <constraint firstItem="eRz-bg-Iry" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="16" id="ebQ-Lb-YlJ"/>
+                            <constraint firstItem="eRz-bg-Iry" firstAttribute="top" secondItem="HTc-mN-LYL" secondAttribute="bottom" constant="16" id="hUa-0v-0D1"/>
+                            <constraint firstAttribute="trailing" secondItem="t6w-Gh-I1B" secondAttribute="trailing" constant="16" id="kKu-IE-Kka"/>
                             <constraint firstItem="HTc-mN-LYL" firstAttribute="top" secondItem="BBe-T0-9G7" secondAttribute="bottom" constant="16" id="moj-23-sv3"/>
                             <constraint firstAttribute="trailing" secondItem="p63-5M-lb2" secondAttribute="trailing" constant="16" id="nG1-qm-YdX"/>
+                            <constraint firstAttribute="trailing" secondItem="eRz-bg-Iry" secondAttribute="trailing" constant="16" id="oDf-EE-l6i"/>
                             <constraint firstItem="p63-5M-lb2" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="16" id="qao-xb-Pm3"/>
+                            <constraint firstAttribute="trailing" secondItem="t6w-Gh-I1B" secondAttribute="trailing" constant="16" id="r8G-Cl-FAh"/>
+                            <constraint firstItem="t6w-Gh-I1B" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="16" id="rgY-2g-w2o"/>
                             <constraint firstItem="BBe-T0-9G7" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="16" id="sG0-Z9-Ojm"/>
-                            <constraint firstItem="BBe-T0-9G7" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="8" id="xjA-Lc-h4j"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="BBe-T0-9G7" secondAttribute="trailing" constant="8" id="zHN-Qm-zVA"/>
+                            <constraint firstItem="BBe-T0-9G7" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="xjA-Lc-h4j"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="BBe-T0-9G7" secondAttribute="trailing" id="zHN-Qm-zVA"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="navigation.title" id="fTq-hX-6gC"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="892" y="-546"/>
+            <point key="canvasLocation" x="842" y="-546"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="6bZ-eB-cHT">

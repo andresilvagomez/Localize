@@ -1,0 +1,28 @@
+{
+    "Continue" : "Continuar",
+    "name" : "Hello %",
+    "hello" : {
+        "world" : "Hello world!"
+    },
+    "values" : "Hello everyone my name is % and I'm %, see you soon",
+    "username" : "My username is :username",
+    "level" : {
+        "one" : {
+            "two" : {
+                "three" : "This is a multilevel key"
+            }
+        }
+    },
+    "the.same.lavel" : "This is a localize in the same lavel",
+    "navigation" : {
+        "title" : "JsonLocalizable"
+    },
+    "app" : {
+        "label" : "En Español, Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium.",
+        "textfield" : "Escribe algo aca.",
+        "language" : "Español",
+        "update" : {
+            "language" : "Actualizar idioma"
+        }
+    }
+}

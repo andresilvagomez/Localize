@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		9F43C6711E2920D900FC7EE5 /* lang-en.json in Resources */ = {isa = PBXBuildFile; fileRef = 9F43C6701E2920D900FC7EE5 /* lang-en.json */; };
-		9F43C6731E29338B00FC7EE5 /* OtherLangTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F43C6721E29338B00FC7EE5 /* OtherLangTest.swift */; };
+		9F050EF81E2B486C009804A5 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9F989F421E2B34E700A19F67 /* Info.plist */; };
+		9F050EF91E2B486C009804A5 /* lang-en.json in Resources */ = {isa = PBXBuildFile; fileRef = 9F989F431E2B34E700A19F67 /* lang-en.json */; };
 		9F93453E1E29192300C400F7 /* Languages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F9345391E29192300C400F7 /* Languages.swift */; };
 		9F93453F1E29192300C400F7 /* Localizable-Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F93453A1E29192300C400F7 /* Localizable-Extensions.swift */; };
 		9F9345401E29192300C400F7 /* Localizable-UIElements.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F93453B1E29192300C400F7 /* Localizable-UIElements.swift */; };
@@ -17,8 +17,8 @@
 		9F93454A1E291A2700C400F7 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9F9345481E291A2700C400F7 /* Info.plist */; };
 		9F93454B1E291AF800C400F7 /* JsonLocalizable.h in Headers */ = {isa = PBXBuildFile; fileRef = 9F9345471E291A2700C400F7 /* JsonLocalizable.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9F9345581E291D4E00C400F7 /* JsonLocalizable.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69F1B5741D955990000A2B87 /* JsonLocalizable.framework */; };
-		9F93455E1E291DB400C400F7 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9F93454D1E291C6F00C400F7 /* Info.plist */; };
-		9F93455F1E291DBE00C400F7 /* BaseTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F9345441E29198600C400F7 /* BaseTest.swift */; };
+		9F989F4C1E2B3B8200A19F67 /* BaseTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F989F411E2B34E700A19F67 /* BaseTest.swift */; };
+		9F989F4D1E2B3B8300A19F67 /* OtherLangTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F989F441E2B34E700A19F67 /* OtherLangTest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,18 +33,18 @@
 
 /* Begin PBXFileReference section */
 		69F1B5741D955990000A2B87 /* JsonLocalizable.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = JsonLocalizable.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		9F43C6701E2920D900FC7EE5 /* lang-en.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "lang-en.json"; sourceTree = "<group>"; };
-		9F43C6721E29338B00FC7EE5 /* OtherLangTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OtherLangTest.swift; sourceTree = "<group>"; };
 		9F9345391E29192300C400F7 /* Languages.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Languages.swift; sourceTree = "<group>"; };
 		9F93453A1E29192300C400F7 /* Localizable-Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Localizable-Extensions.swift"; sourceTree = "<group>"; };
 		9F93453B1E29192300C400F7 /* Localizable-UIElements.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Localizable-UIElements.swift"; sourceTree = "<group>"; };
 		9F93453C1E29192300C400F7 /* Localizable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Localizable.swift; sourceTree = "<group>"; };
 		9F93453D1E29192300C400F7 /* LocalizableString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalizableString.swift; sourceTree = "<group>"; };
-		9F9345441E29198600C400F7 /* BaseTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTest.swift; sourceTree = "<group>"; };
 		9F9345471E291A2700C400F7 /* JsonLocalizable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JsonLocalizable.h; sourceTree = "<group>"; };
 		9F9345481E291A2700C400F7 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		9F93454D1E291C6F00C400F7 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9F9345531E291D4E00C400F7 /* JsonLocalizable Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "JsonLocalizable Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9F989F411E2B34E700A19F67 /* BaseTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTest.swift; sourceTree = "<group>"; };
+		9F989F421E2B34E700A19F67 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9F989F431E2B34E700A19F67 /* lang-en.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "lang-en.json"; sourceTree = "<group>"; };
+		9F989F441E2B34E700A19F67 /* OtherLangTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OtherLangTest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,7 +70,7 @@
 			isa = PBXGroup;
 			children = (
 				9F9345381E29192300C400F7 /* Source */,
-				9F9345431E29192900C400F7 /* Test */,
+				9F989F401E2B34E700A19F67 /* Tests */,
 				69F1B5751D955990000A2B87 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -97,16 +97,6 @@
 			path = Source;
 			sourceTree = "<group>";
 		};
-		9F9345431E29192900C400F7 /* Test */ = {
-			isa = PBXGroup;
-			children = (
-				9F9345441E29198600C400F7 /* BaseTest.swift */,
-				9F43C6721E29338B00FC7EE5 /* OtherLangTest.swift */,
-				9F93454C1E291C5E00C400F7 /* Suporting Files */,
-			);
-			path = Test;
-			sourceTree = "<group>";
-		};
 		9F9345461E291A1800C400F7 /* Suporting Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -116,13 +106,23 @@
 			name = "Suporting Files";
 			sourceTree = "<group>";
 		};
-		9F93454C1E291C5E00C400F7 /* Suporting Files */ = {
+		9F989F401E2B34E700A19F67 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
-				9F93454D1E291C6F00C400F7 /* Info.plist */,
-				9F43C6701E2920D900FC7EE5 /* lang-en.json */,
+				9F989F411E2B34E700A19F67 /* BaseTest.swift */,
+				9F989F441E2B34E700A19F67 /* OtherLangTest.swift */,
+				9F989F4A1E2B3B5600A19F67 /* Supporting Files */,
 			);
-			name = "Suporting Files";
+			path = Tests;
+			sourceTree = "<group>";
+		};
+		9F989F4A1E2B3B5600A19F67 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				9F989F421E2B34E700A19F67 /* Info.plist */,
+				9F989F431E2B34E700A19F67 /* lang-en.json */,
+			);
+			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -221,7 +221,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				9F93454A1E291A2700C400F7 /* Info.plist in Resources */,
-				9F43C6711E2920D900FC7EE5 /* lang-en.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -229,7 +228,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9F93455E1E291DB400C400F7 /* Info.plist in Resources */,
+				9F050EF81E2B486C009804A5 /* Info.plist in Resources */,
+				9F050EF91E2B486C009804A5 /* lang-en.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -252,8 +252,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9F43C6731E29338B00FC7EE5 /* OtherLangTest.swift in Sources */,
-				9F93455F1E291DBE00C400F7 /* BaseTest.swift in Sources */,
+				9F989F4C1E2B3B8200A19F67 /* BaseTest.swift in Sources */,
+				9F989F4D1E2B3B8300A19F67 /* OtherLangTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -417,7 +417,9 @@
 		9F93455C1E291D4E00C400F7 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				INFOPLIST_FILE = Test/Info.plist;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = Tests/Info.plist;
 				INFOPLIST_PREPROCESS = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -430,7 +432,9 @@
 		9F93455D1E291D4E00C400F7 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				INFOPLIST_FILE = Test/Info.plist;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = Tests/Info.plist;
 				INFOPLIST_PREPROCESS = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
