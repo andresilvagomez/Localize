@@ -6,12 +6,12 @@
 //
 
 import UIKit
+import JsonLocalizable
 
 class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
         print("hello.world".localize())
         print("name".localize(value: "Andres"))
         print("values".localize(values: "Andres", "Software Developer"))
@@ -22,9 +22,24 @@ class ViewController: UIViewController {
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 
+    @IBAction func updateLanguage(_ sender: Any) {
+        let actionSheet = UIAlertController(title: nil, message: "app.update.language".localize(), preferredStyle: UIAlertControllerStyle.actionSheet)
+        for language in Localizable.shared.availableLanguages() {
+            let displayName = Localizable.shared.displayNameForLanguage(language)
+            let languageAction = UIAlertAction(title: displayName, style: .default, handler: {
+                (alert: UIAlertAction!) -> Void in
+                Localizable.shared.update(language: language)
+            })
+            actionSheet.addAction(languageAction)
+        }
+        let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.cancel, handler: {
+            (alert: UIAlertAction) -> Void in
+        })
+        actionSheet.addAction(cancelAction)
+        self.present(actionSheet, animated: true, completion: nil)
+    }
 
 }
 

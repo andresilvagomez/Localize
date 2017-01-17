@@ -1,6 +1,9 @@
 # JsonLocalizable
 
-JsonLocalizable is a framework to localize your projects easier, including storyboards and strings.
+JsonLocalizable is a framework writed in swift to localize your projects easier, including storyboards and strings.
+
+![JsonLocalizable Storyboard](https://dl.dropboxusercontent.com/u/72454729/JsonLocalizable/storyboard.png?raw=1)
+___
 
 - [Features](#features)
 - [Requirements](#requirements)
@@ -12,9 +15,11 @@ JsonLocalizable is a framework to localize your projects easier, including story
 
 - [x] Localize your strings
 - [x] Localize your Storyboards without extra files
-- [x] Localize your UIView components without ids
+- [x] Localize your UIView components without xcode UIView ids
 - [x] Localize your UIView components only with keys
 - [x] Localize your UIView components with classes
+- [x] Update your current language and update all view components
+- [x] Update your current language and receive notification
 
 ## Requirements
 
@@ -32,17 +37,17 @@ JsonLocalizable is a framework to localize your projects easier, including story
 $ gem install cocoapods
 ```
 
-> CocoaPods 1.1.0+ is required to build JsonLocalizable 0.5+.
+> CocoaPods 1.1.0+ is required to build JsonLocalizable 1.0+.
 
 To integrate JsonLocalizable into your Xcode project using CocoaPods, specify it in your `Podfile`:
 
 ```ruby
 source 'https://github.com/CocoaPods/Specs.git'
-platform :ios, '10.0'
+platform :ios, '8.0'
 use_frameworks!
 
 target '<Your Target Name>' do
-    pod 'JsonLocalizable'
+    pod 'JsonLocalizable' , '~> 1.1'
 end
 ```
 
@@ -66,10 +71,22 @@ $ brew install carthage
 To integrate JsonLocalizable into your Xcode project using Carthage, specify it in your `Cartfile`:
 
 ```ogdl
-github "CityTaxi/JsonLocalizable"
+github "Kekiiwaa/JsonLocalizable"
 ```
 
 Run `carthage update` to build the framework and drag the built `JsonLocalizable.framework` into your Xcode project.
+
+### Swift Pacakge Manager
+
+The [Swift Pacakage Manager](https://swift.org/package-manager/) is a tool for automating the distribution of Swift code and is integrated into the swift compiler.
+
+Once you have your Swift package set up, adding JsonLocalizable as a dependency is as easy as adding it to the dependencies value of your Package.swift.
+
+```swift
+dependencies: [
+    .Package(url: "https://github.com/Kekiiwaa/JsonLocalizable.git")
+]
+```
 
 ---
 
@@ -98,6 +115,8 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
     print(localize.language())
     // List of storaged languajes
     print(localize.languages())
+    // List of aviable languajes
+    print(localize.availableLanguages())
     
     return true
 }
@@ -249,9 +268,60 @@ You can use this classes
 
 ---
 
+## Updating language
+When you change a language, automatically all views update your content to new language
+
+```swift
+
+let localize = Localize.shared
+localize.update(language: .french)
+
+```
+
+But with strings not is posible, for that your need implement a notification
+
+```swift
+
+override func viewDidLoad() {
+    super.viewDidLoad()
+    NotificationCenter.default.addObserver(self, selector: #selector(localize), name: NSNotification.Name(LanguageChangeNotification), object: nil)   
+}
+
+public func localize() {
+    yourLabel.text = "app.names".localize(values: "mark", "henrry", "peater")
+    otherLabel.text = "app.username".localize(value: "Your username")
+}
+
+```
+
+Implementing internal acction to change a language
+
+```swift
+
+@IBAction func updateLanguage(_ sender: Any) {
+    let actionSheet = UIAlertController(title: nil, message: "app.update.language".localize(), preferredStyle: UIAlertControllerStyle.actionSheet)
+    for language in Localizable.shared.availableLanguages() {
+        let displayName = Localizable.shared.displayNameForLanguage(language)
+        let languageAction = UIAlertAction(title: displayName, style: .default, handler: {
+            (alert: UIAlertAction!) -> Void in
+            Localizable.shared.update(language: language)
+            })
+        actionSheet.addAction(languageAction)
+    }
+    let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.cancel, handler: {
+        (alert: UIAlertAction) -> Void in
+        })
+    actionSheet.addAction(cancelAction)
+    self.present(actionSheet, animated: true, completion: nil)
+}
+
+```
+
+---
+
 ## Credits
 
-[Kekiiwaa Inc] (https://github.com/Kekiiwaa), 
+[Kekiiwaa Inc](https://github.com/Kekiiwaa), 
 [Andres Silva Gomez](https://github.com/andresilvagomez),
 [Andres Felipe Montoya](https://github.com/pipemontoya)
 

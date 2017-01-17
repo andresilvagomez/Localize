@@ -26,8 +26,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         localize.resetLanguage()
         // The used language
         print(localize.language())
-        // List of storaged languajes
-        print(localize.languajes())
+        // List of aviable languajes
+        print(localize.availableLanguages())
         
         return true
     }

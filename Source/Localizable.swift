@@ -7,6 +7,8 @@
 
 import UIKit
 
+public let LanguageChangeNotification = "LanguageChangeNotification"
+
 public enum LocalizableInterface {
     case keyValue
     case classes
@@ -46,8 +48,8 @@ public class Localizable: NSObject {
     /// This metod contains a logic to read return JSON data
     /// If JSON not is defined, this try use a default
     /// As long as the default language is the same as the current one.
-    private func readJSON() -> NSDictionary? {
-        if self.json != nil {
+    private func readJSON(reload:Bool = false) -> NSDictionary? {
+        if self.json != nil && reload == false {
             return self.json
         }
         
@@ -213,11 +215,25 @@ public class Localizable: NSObject {
         return Locale.preferredLanguages[0].components(separatedBy: "-")[0]
     }
     
-    /// Update default languaje, this store a language key and retrive the next time.
+    /// Update default languaje, this store a language key and retrive the next time
     public func update(language:Languages) -> Void {
         let defaults = UserDefaults.standard
         defaults.setValue(language.rawValue, forKey: self.storageKey)
         defaults.synchronize()
+        let _ = self.readJSON(reload: true)
+        NotificationCenter.default.post(name: Notification.Name(rawValue: LanguageChangeNotification), object: nil)
+    }
+    
+    /// Update default languaje, this store a language key and retrive the next time
+    public func update(language string:String) -> Void {
+        guard let language = Languages(rawValue: string) else {
+            return
+        }
+        let defaults = UserDefaults.standard
+        defaults.setValue(language.rawValue, forKey: self.storageKey)
+        defaults.synchronize()
+        let _ = self.readJSON(reload: true)
+        NotificationCenter.default.post(name: Notification.Name(rawValue: LanguageChangeNotification), object: nil)
     }
     
     /// This remove the language key storaged.
@@ -230,7 +246,7 @@ public class Localizable: NSObject {
     /// Show all aviable languajes whit criteria name
     ///
     /// - returns: list with storaged languages code
-    public func languajes() -> [String] {
+    public func availableLanguages() -> [String] {
         var languages : [String] = []
         for language in iterateEnum(Languages.self) {
             let name = "\(self.fileName)-\(language.rawValue)"
@@ -240,6 +256,17 @@ public class Localizable: NSObject {
             }
         }
         return languages
+    }
+    
+    /// Display name for current user language.
+    ///
+    /// - return: String form language code in current user language
+    public func displayNameForLanguage(_ language: String) -> String {
+        let locale : NSLocale = NSLocale(localeIdentifier: self.language())
+        if let name = locale.displayName(forKey: NSLocale.Key.identifier, value: language) {
+            return name
+        }
+        return ""
     }
     
 }
