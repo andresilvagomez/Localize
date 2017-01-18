@@ -2,7 +2,7 @@
 
 JsonLocalizable is a framework writed in swift to localize your projects easier, including storyboards and strings.
 
-![JsonLocalizable Storyboard](https://dl.dropboxusercontent.com/u/72454729/JsonLocalizable/storyboard.png?raw=1)
+![JsonLocalizable Storyboard](https://dl.dropboxusercontent.com/u/72454729/JsonLocalizable/simulator.gif)
 ___
 
 - [Features](#features)
