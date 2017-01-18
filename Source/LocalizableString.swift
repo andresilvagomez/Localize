@@ -17,8 +17,7 @@ public extension String {
     ///
     /// - returns: localized key or same text
     public func localize() -> String {
-        let localize = Localizable.shared
-        return localize.localize(key: self)
+        return Localizable.localize(key: self)
     }
     
     /// Localize a string using your JSON File
@@ -28,8 +27,7 @@ public extension String {
     ///
     /// - returns: localized key or same text
     public func localize(value:String) -> String {
-        let localize = Localizable.shared
-        return localize.localize(key: self, replace: value)
+        return Localizable.localize(key: self, replace: value)
     }
     
     /// Localize a string using your JSON File
@@ -39,8 +37,7 @@ public extension String {
     ///
     /// - returns: localized key or same text
     public func localize(values:Any...) -> String {
-        let localize = Localizable.shared
-        return localize.localize(key: self, values: values)
+        return Localizable.localize(key: self, values: values)
     }
     
     /// Localize string with dictionary values
@@ -51,8 +48,7 @@ public extension String {
     ///
     /// - returns: localized key or same text
     public func localize(dictionary values:[String:String]) -> String {
-        let localize = Localizable.shared
-        return localize.localize(key: self, dictionary: values)
+        return Localizable.localize(key: self, dictionary: values)
     }
     
 }

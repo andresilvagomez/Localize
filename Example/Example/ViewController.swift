@@ -26,11 +26,11 @@ class ViewController: UIViewController {
 
     @IBAction func updateLanguage(_ sender: Any) {
         let actionSheet = UIAlertController(title: nil, message: "app.update.language".localize(), preferredStyle: UIAlertControllerStyle.actionSheet)
-        for language in Localizable.shared.availableLanguages() {
-            let displayName = Localizable.shared.displayNameForLanguage(language)
+        for language in Localizable.availableLanguages() {
+            let displayName = Localizable.displayNameForLanguage(language)
             let languageAction = UIAlertAction(title: displayName, style: .default, handler: {
                 (alert: UIAlertAction!) -> Void in
-                Localizable.shared.update(language: language)
+                Localizable.update(language: language)
             })
             actionSheet.addAction(languageAction)
         }
