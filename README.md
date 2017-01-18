@@ -113,8 +113,6 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
     localize.resetLanguage()
     // The used language that you configured to localize
     print(localize.language())
-    // List of storaged languajes
-    print(localize.languages())
     // List of aviable languajes
     print(localize.availableLanguages())
     
