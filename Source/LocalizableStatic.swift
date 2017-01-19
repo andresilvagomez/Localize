@@ -66,6 +66,16 @@ extension Localizable {
         return Localizable.shared.update(language: string)
     }
     
+    /// Update base file name, searched in path.
+    public static func update(fileName:String) {
+        return Localizable.shared.update(fileName: fileName)
+    }
+    
+    /// Update default language
+    public static func update(defaultLanguage: Languages) {
+        return Localizable.shared.update(defaultLanguage: defaultLanguage)
+    }
+    
     /// This remove the language key storaged.
     public static func resetLanguage() {
         return Localizable.shared.resetLanguage()

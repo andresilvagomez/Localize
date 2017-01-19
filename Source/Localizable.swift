@@ -232,11 +232,17 @@ public class Localizable: NSObject {
         guard let language = Languages(rawValue: string) else {
             return
         }
-        let defaults = UserDefaults.standard
-        defaults.setValue(language.rawValue, forKey: self.storageKey)
-        defaults.synchronize()
-        let _ = self.readJSON(reload: true)
-        NotificationCenter.default.post(name: Notification.Name(rawValue: LanguageChangeNotification), object: nil)
+        return self.update(language: language)
+    }
+    
+    /// Update base file name, searched in path.
+    public func update(fileName:String) {
+        self.fileName = fileName
+    }
+    
+    /// Update default language
+    public func update(defaultLanguage: Languages) {
+        self.defaultLanguage = defaultLanguage
     }
     
     /// This remove the language key storaged.
