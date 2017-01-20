@@ -25,6 +25,9 @@ public class Localizable: NSObject {
     /// Json data storaged in a file
     private var json: NSDictionary?
     
+    /// Use this for testing mode, search resources in different bundles.
+    private var testing: Bool = false
+    
     /// Shated instance
     public static let shared: Localizable = Localizable()
     
@@ -50,8 +53,8 @@ public class Localizable: NSObject {
     /// This metod contains a logic to read return JSON data
     /// If JSON not is defined, this try use a default
     /// As long as the default language is the same as the current one.
-    private func readJSON(reload:Bool = false) -> NSDictionary? {
-        if self.json != nil && reload == false {
+    private func readJSON() -> NSDictionary? {
+        if self.json != nil {
             return self.json
         }
         
@@ -60,22 +63,27 @@ public class Localizable: NSObject {
         self.json = self.readJSON(named: "\(self.fileName)-\(lang)")
         
         if self.json == nil && lang != self.defaultLanguage.rawValue {
-            self.json = self.readJSON(named: "\(self.fileName)-\(self.defaultLanguage.rawValue)")
+            self.json = self.readDefaultJSON()
         }
         
         return self.json
+    }
+    
+    /// Read a JSON with default language value.
+    ///
+    /// - returns: json or nil value.
+    private func readDefaultJSON() -> NSDictionary? {
+        return self.readJSON(named: "\(self.fileName)-\(self.defaultLanguage.rawValue)")
     }
     
     /// This method has path where file is
     /// If can't find a path return a nil value
     /// If can't serialize data return a nil value
     private func readJSON(named name:String) -> NSDictionary? {
-        let bundle = Bundle.main
-        let path = bundle.path(forResource: name, ofType: "json")
-        if path == nil {
+        guard let path = self.path(name: name) else {
             return nil
         }
-        guard let data = try? Data(contentsOf: URL(fileURLWithPath: path!)) else {
+        guard let data = try? Data(contentsOf: URL(fileURLWithPath: path)) else {
             print("JSONLocalizable can't read your file")
             return nil
         }
@@ -132,6 +140,18 @@ public class Localizable: NSObject {
         }
     }
     
+    /// Path for your env
+    /// if testing mode is enable we change the bundle
+    /// in other case use a main bundle.
+    /// 
+    /// - returns: a string url where is your file
+    private func path(name:String) -> String? {
+        if self.testing {
+            return Bundle(for: type(of: self)).path(forResource: name, ofType: "json")
+        }
+        return Bundle.main.path(forResource: name, ofType: "json")
+    }
+    
     // MARK: Public methods
     
     /// Localize a string using your JSON File
@@ -144,11 +164,21 @@ public class Localizable: NSObject {
             return key
         }
         
-        guard let string = self.localizeFile(key: key, json: json) else {
+        let string = self.localizeFile(key: key, json: json)
+        if string != nil {
+            return string!
+        }
+        
+        guard let defaultJSON = self.readDefaultJSON() else {
             return key
         }
         
-        return string
+        let defaultString = self.localizeFile(key: key, json: defaultJSON)
+        if defaultString != nil {
+            return defaultString!
+        }
+        
+        return key
     }
     
     /// Localize a string using your JSON File
@@ -223,7 +253,7 @@ public class Localizable: NSObject {
         let defaults = UserDefaults.standard
         defaults.setValue(language.rawValue, forKey: self.storageKey)
         defaults.synchronize()
-        let _ = self.readJSON(reload: true)
+        self.json = nil
         NotificationCenter.default.post(name: Notification.Name(rawValue: LanguageChangeNotification), object: nil)
     }
     
@@ -238,6 +268,7 @@ public class Localizable: NSObject {
     /// Update base file name, searched in path.
     public func update(fileName:String) {
         self.fileName = fileName
+        self.json = nil
     }
     
     /// Update default language
@@ -259,7 +290,7 @@ public class Localizable: NSObject {
         var languages : [String] = []
         for language in iterateEnum(Languages.self) {
             let name = "\(self.fileName)-\(language.rawValue)"
-            let path = Bundle.main.path(forResource: name, ofType: "json")
+            let path = self.path(name: name)
             if path != nil {
                 languages.append(language.rawValue)
             }
@@ -276,6 +307,12 @@ public class Localizable: NSObject {
             return name.capitalized
         }
         return ""
+    }
+    
+    /// Enable testing mode
+    /// Please not use in your code, is only for test schema.
+    public func testingMode() {
+        self.testing = true
     }
     
 }

@@ -2,7 +2,7 @@
 //  Localizable-Static.swift
 //  JsonLocalizable
 //
-//  Copyright © 2017 Mobility. All rights reserved.
+//  Copyright © 2017 Kekkiwaa Inc. All rights reserved.
 //
 
 import UIKit
@@ -93,6 +93,12 @@ extension Localizable {
     /// - return: String form language code in current user language
     public static func displayNameForLanguage(_ language: String) -> String {
         return Localizable.shared.displayNameForLanguage(language)
+    }
+    
+    /// Enable testing mode
+    /// Please not use in your code, is only for test schema.
+    public static func testingMode() {
+        Localizable.shared.testingMode()
     }
     
 }

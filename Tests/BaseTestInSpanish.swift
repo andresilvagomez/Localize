@@ -8,11 +8,12 @@
 import XCTest
 import JsonLocalizable
 
-class BaseTest: XCTestCase {
+class BaseTestInSpanish: XCTestCase {
     
     override func setUp() {
         super.setUp()
         Localizable.testingMode()
+        Localizable.update(language: .spanish)
     }
     
     override func tearDown() {
@@ -21,32 +22,32 @@ class BaseTest: XCTestCase {
     
     func testLocalizeKey() {
         let localized = "hello.world".localize()
-        XCTAssertTrue(localized == "Hello world!")
+        XCTAssertTrue(localized == "Hola mundo!")
     }
     
     func testLocalizeKeyWithValue() {
         let localized = "name".localize(value: "Andres")
-        XCTAssertTrue(localized == "Hello Andres")
+        XCTAssertTrue(localized == "Hola Andres")
     }
     
     func testLocalizeKeyWithValues() {
         let localized = "values".localize(values: "Andres", "Software Developer")
-        XCTAssertTrue(localized == "Hello everyone my name is Andres and I'm Software Developer , see you soon")
+        XCTAssertTrue(localized == "Hola a todos mi nombre es Andres y soy Software Developer , nos vemos pronto")
     }
     
     func testLocalizeKeyWithDictionary() {
         let localized = "username".localize(dictionary: ["username": "andresilvagomez"])
-        XCTAssertTrue(localized == "My username is andresilvagomez")
+        XCTAssertTrue(localized == "Mi nombre de usuario es andresilvagomez")
     }
     
     func testLocalizeKeyWithManyLevels() {
         let localized = "level.one.two.three".localize()
-        XCTAssertTrue(localized == "This is a multilevel key")
+        XCTAssertTrue(localized == "Esta es una llave multinivel")
     }
     
     func testLocalizeKeyWithSingleLevel() {
         let localized = "the.same.lavel".localize()
-        XCTAssertTrue(localized == "This is a localized in the same level")
+        XCTAssertTrue(localized == "Esto es una internazionalizacion en el mismo nivel")
     }
     
     func testPerformanceExample() {
