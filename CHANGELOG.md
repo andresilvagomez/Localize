@@ -23,7 +23,7 @@ Released on 2017-01-19.
 #### Fixed
 - Geting default language key when in current language key no was available.
   - Added by [Andres Silva](https://github.com/andresilvagomez) in Pull Request
-  [#5](https://github.com/kekiiwaa/Localize/pull/4).
+  [#4](https://github.com/kekiiwaa/Localize/pull/4).
   
 ---
 
