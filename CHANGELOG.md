@@ -6,7 +6,7 @@ All notable changes to this project will be documented in this file.
 Released on 2017-01-19.
 
 #### Added
-- Renamed JsonLocalized to Localize, acconding with the next features.
+- Renamed JsonLocalized to Localize, according with the next features.
 - Static methods.
 - Config methods.
 - Testing mode.
@@ -21,7 +21,7 @@ Released on 2017-01-19.
   [#4](https://github.com/kekiiwaa/Localize/pull/4).
 
 #### Fixed
-- Geting default language key when in current language key no was available.
+- Getting default language key when in current language key no was available.
   - Added by [Andres Silva](https://github.com/andresilvagomez) in Pull Request
   [#4](https://github.com/kekiiwaa/Localize/pull/4).
   
