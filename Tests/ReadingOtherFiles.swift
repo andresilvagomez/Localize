@@ -1,12 +1,12 @@
 //
 //  ReadingOtherFiles.swift
-//  JsonLocalizable
+//  Localize
 //
 //  Copyright © 2017 Kekkiwaa Inc. All rights reserved.
 //
 
 import XCTest
-import JsonLocalizable
+import Localize
 
 class ReadingOtherFiles: XCTestCase {
     
@@ -19,25 +19,25 @@ class ReadingOtherFiles: XCTestCase {
     }
     
     func testOtherEnglish() {
-        Localizable.testingMode()
-        Localizable.update(language: .english)
-        Localizable.update(fileName: "other")
+        Localize.testingMode()
+        Localize.update(language: .english)
+        Localize.update(fileName: "other")
         let result = "hello".localize()
         XCTAssert(result == "Hello world!")
     }
     
     func testSomeItalian() {
-        Localizable.testingMode()
-        Localizable.update(language: .italian)
-        Localizable.update(fileName: "some")
+        Localize.testingMode()
+        Localize.update(language: .italian)
+        Localize.update(fileName: "some")
         let result = "hello".localize()
         XCTAssert(result == "Ciao mondo!")
     }
     
     func testFileGerman() {
-        Localizable.testingMode()
-        Localizable.update(language: .german)
-        Localizable.update(fileName: "file")
+        Localize.testingMode()
+        Localize.update(language: .german)
+        Localize.update(fileName: "file")
         let result = "hello".localize()
         XCTAssert(result == "Hallo Welt!")
     }

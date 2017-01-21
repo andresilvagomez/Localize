@@ -7,38 +7,30 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9F36174D1E33CDA1006E81BC /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9F36174C1E33CDA1006E81BC /* Images.xcassets */; };
 		9F761AE81E3063AB00904B4B /* lang-en.json in Resources */ = {isa = PBXBuildFile; fileRef = 9F761AE51E3063AB00904B4B /* lang-en.json */; };
 		9F761AE91E3063AB00904B4B /* lang-es.json in Resources */ = {isa = PBXBuildFile; fileRef = 9F761AE61E3063AB00904B4B /* lang-es.json */; };
 		9F761AEA1E3063AB00904B4B /* lang-fr.json in Resources */ = {isa = PBXBuildFile; fileRef = 9F761AE71E3063AB00904B4B /* lang-fr.json */; };
 		9F8D41511E29359A00D7CE9A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F8D41501E29359A00D7CE9A /* AppDelegate.swift */; };
 		9F8D41531E29359A00D7CE9A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F8D41521E29359A00D7CE9A /* ViewController.swift */; };
-		9F8D416C1E2935EB00D7CE9A /* JsonLocalizable.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F8D41681E2935AD00D7CE9A /* JsonLocalizable.framework */; };
-		9F8D416D1E2935EB00D7CE9A /* JsonLocalizable.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9F8D41681E2935AD00D7CE9A /* JsonLocalizable.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		9FB68F231E2B5D1400D386CE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9FB68F1F1E2B5D1400D386CE /* LaunchScreen.storyboard */; };
 		9FB68F241E2B5D1400D386CE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9FB68F211E2B5D1400D386CE /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		9F8D41671E2935AD00D7CE9A /* PBXContainerItemProxy */ = {
+		9F3617451E33CB1F006E81BC /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 9F8D41621E2935AD00D7CE9A /* JsonLocalizable.xcodeproj */;
+			containerPortal = 9F3617401E33CB1F006E81BC /* Localize.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 69F1B5741D955990000A2B87;
-			remoteInfo = JsonLocalizable;
+			remoteInfo = Localize;
 		};
-		9F8D41691E2935AD00D7CE9A /* PBXContainerItemProxy */ = {
+		9F3617471E33CB1F006E81BC /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 9F8D41621E2935AD00D7CE9A /* JsonLocalizable.xcodeproj */;
+			containerPortal = 9F3617401E33CB1F006E81BC /* Localize.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 9F9345531E291D4E00C400F7;
-			remoteInfo = "JsonLocalizable Tests";
-		};
-		9F8D416E1E2935EB00D7CE9A /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 9F8D41621E2935AD00D7CE9A /* JsonLocalizable.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 69F1B5731D955990000A2B87;
-			remoteInfo = JsonLocalizable;
+			remoteInfo = LocalizeTests;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -49,7 +41,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				9F8D416D1E2935EB00D7CE9A /* JsonLocalizable.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -57,6 +48,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		9F3617401E33CB1F006E81BC /* Localize.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Localize.xcodeproj; path = ../Localize.xcodeproj; sourceTree = "<group>"; };
+		9F36174C1E33CDA1006E81BC /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		9F761AE51E3063AB00904B4B /* lang-en.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "lang-en.json"; sourceTree = "<group>"; };
 		9F761AE61E3063AB00904B4B /* lang-es.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "lang-es.json"; sourceTree = "<group>"; };
 		9F761AE71E3063AB00904B4B /* lang-fr.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "lang-fr.json"; sourceTree = "<group>"; };
@@ -64,7 +57,6 @@
 		9F8D41501E29359A00D7CE9A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9F8D41521E29359A00D7CE9A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		9F8D415C1E29359A00D7CE9A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		9F8D41621E2935AD00D7CE9A /* JsonLocalizable.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = JsonLocalizable.xcodeproj; path = ../JsonLocalizable.xcodeproj; sourceTree = "<group>"; };
 		9FB68F201E2B5D1400D386CE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9FB68F221E2B5D1400D386CE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -74,13 +66,21 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9F8D416C1E2935EB00D7CE9A /* JsonLocalizable.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9F3617411E33CB1F006E81BC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9F3617461E33CB1F006E81BC /* Localize.framework */,
+				9F3617481E33CB1F006E81BC /* LocalizeTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		9F761AE21E3060B100904B4B /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -97,7 +97,7 @@
 			children = (
 				9F8D414F1E29359A00D7CE9A /* Example */,
 				9F8D414E1E29359A00D7CE9A /* Products */,
-				9F8D41621E2935AD00D7CE9A /* JsonLocalizable.xcodeproj */,
+				9F3617401E33CB1F006E81BC /* Localize.xcodeproj */,
 			);
 			sourceTree = "<group>";
 		};
@@ -116,18 +116,10 @@
 				9F8D41521E29359A00D7CE9A /* ViewController.swift */,
 				9FB68F1F1E2B5D1400D386CE /* LaunchScreen.storyboard */,
 				9FB68F211E2B5D1400D386CE /* Main.storyboard */,
+				9F36174C1E33CDA1006E81BC /* Images.xcassets */,
 				9F761AE21E3060B100904B4B /* Supporting Files */,
 			);
 			path = Example;
-			sourceTree = "<group>";
-		};
-		9F8D41631E2935AD00D7CE9A /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				9F8D41681E2935AD00D7CE9A /* JsonLocalizable.framework */,
-				9F8D416A1E2935AD00D7CE9A /* JsonLocalizable Tests.xctest */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -145,7 +137,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				9F8D416F1E2935EB00D7CE9A /* PBXTargetDependency */,
 			);
 			name = Example;
 			productName = Example;
@@ -182,8 +173,8 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProductGroup = 9F8D41631E2935AD00D7CE9A /* Products */;
-					ProjectRef = 9F8D41621E2935AD00D7CE9A /* JsonLocalizable.xcodeproj */;
+					ProductGroup = 9F3617411E33CB1F006E81BC /* Products */;
+					ProjectRef = 9F3617401E33CB1F006E81BC /* Localize.xcodeproj */;
 				},
 			);
 			projectRoot = "";
@@ -194,18 +185,18 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		9F8D41681E2935AD00D7CE9A /* JsonLocalizable.framework */ = {
+		9F3617461E33CB1F006E81BC /* Localize.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
-			path = JsonLocalizable.framework;
-			remoteRef = 9F8D41671E2935AD00D7CE9A /* PBXContainerItemProxy */;
+			path = Localize.framework;
+			remoteRef = 9F3617451E33CB1F006E81BC /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		9F8D416A1E2935AD00D7CE9A /* JsonLocalizable Tests.xctest */ = {
+		9F3617481E33CB1F006E81BC /* LocalizeTests.xctest */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.cfbundle;
-			path = "JsonLocalizable Tests.xctest";
-			remoteRef = 9F8D41691E2935AD00D7CE9A /* PBXContainerItemProxy */;
+			path = LocalizeTests.xctest;
+			remoteRef = 9F3617471E33CB1F006E81BC /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -218,6 +209,7 @@
 				9FB68F231E2B5D1400D386CE /* LaunchScreen.storyboard in Resources */,
 				9F761AEA1E3063AB00904B4B /* lang-fr.json in Resources */,
 				9FB68F241E2B5D1400D386CE /* Main.storyboard in Resources */,
+				9F36174D1E33CDA1006E81BC /* Images.xcassets in Resources */,
 				9F761AE81E3063AB00904B4B /* lang-en.json in Resources */,
 				9F761AE91E3063AB00904B4B /* lang-es.json in Resources */,
 			);
@@ -236,14 +228,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		9F8D416F1E2935EB00D7CE9A /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = JsonLocalizable;
-			targetProxy = 9F8D416E1E2935EB00D7CE9A /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		9FB68F1F1E2B5D1400D386CE /* LaunchScreen.storyboard */ = {
@@ -364,7 +348,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = Example/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -379,7 +363,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = Example/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;

@@ -20,7 +20,7 @@
 import PackageDescription
 
 let package = Package(
-    name: "JsonLocalizable",
+    name: "Localize",
     dependencies : [],
     exclude: ["Tests"]
 )

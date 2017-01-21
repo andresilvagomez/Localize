@@ -1,19 +1,19 @@
 //
 //  OtherFileTest.swift
-//  JsonLocalizable
+//  Localize
 //
 //  Copyright © 2017 Kekkiwaa Inc. All rights reserved.
 //
 
 import XCTest
-import JsonLocalizable
+import Localize
 
 class OtherLangTest: XCTestCase {
     
     override func setUp() {
         super.setUp()
-        Localizable.testingMode()
-        Localizable.update(language: .italian)
+        Localize.testingMode()
+        Localize.update(language: .italian)
     }
     
     override func tearDown() {

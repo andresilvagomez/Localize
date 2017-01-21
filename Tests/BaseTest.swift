@@ -1,18 +1,18 @@
 //
 //  BaseTest.swift
-//  JsonLocalizable
+//  Localize
 //
 //  Copyright © 2017 Kekkiwaa Inc. All rights reserved.
 //
 
 import XCTest
-import JsonLocalizable
+import Localize
 
 class BaseTest: XCTestCase {
     
     override func setUp() {
         super.setUp()
-        Localizable.testingMode()
+        Localize.testingMode()
     }
     
     override func tearDown() {

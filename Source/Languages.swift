@@ -1,6 +1,6 @@
 //
 //  Languages.swift
-//  JsonLocalizable
+//  Localize
 //
 //  Copyright © 2017 Kekkiwaa Inc. All rights reserved.
 //

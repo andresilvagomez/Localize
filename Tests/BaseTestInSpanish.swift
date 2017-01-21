@@ -1,19 +1,19 @@
 //
-//  BaseTest.swift
-//  JsonLocalizable
+//  BaseTestInSpanish.swift
+//  Localize
 //
 //  Copyright © 2017 Kekkiwaa Inc. All rights reserved.
 //
 
 import XCTest
-import JsonLocalizable
+import Localize
 
 class BaseTestInSpanish: XCTestCase {
     
     override func setUp() {
         super.setUp()
-        Localizable.testingMode()
-        Localizable.update(language: .spanish)
+        Localize.testingMode()
+        Localize.update(language: .spanish)
     }
     
     override func tearDown() {

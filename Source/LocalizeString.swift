@@ -1,0 +1,54 @@
+//
+//  LocalizableString.swift
+//  Localize
+//
+//  Copyright © 2017 Kekkiwaa Inc. All rights reserved.
+//
+
+import UIKit
+
+/// String extension used to localize your keys matched in your JSON File.
+
+public extension String {
+    
+    /// Localize a string using your JSON File
+    /// If the key is not found return the same key
+    /// That prevent replace untagged values
+    ///
+    /// - returns: localized key or same text
+    public func localize() -> String {
+        return Localize.localize(key: self)
+    }
+    
+    /// Localize a string using your JSON File
+    /// That replace all % character in your string with replace value.
+    ///
+    /// - parameter value: The replacement value
+    ///
+    /// - returns: localized key or same text
+    public func localize(value:String) -> String {
+        return Localize.localize(key: self, replace: value)
+    }
+    
+    /// Localize a string using your JSON File
+    /// That replace each % character in your string with each replace value.
+    ///
+    /// - parameter value: The replacement values
+    ///
+    /// - returns: localized key or same text
+    public func localize(values:Any...) -> String {
+        return Localize.localize(key: self, values: values)
+    }
+    
+    /// Localize string with dictionary values
+    /// Get properties in your key with rule :property
+    /// If property not exist in this string, not is used.
+    ///
+    /// - parameter value: The replacement dictionary
+    ///
+    /// - returns: localized key or same text
+    public func localize(dictionary values:[String:String]) -> String {
+        return Localize.localize(key: self, dictionary: values)
+    }
+    
+}
