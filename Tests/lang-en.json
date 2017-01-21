@@ -12,5 +12,6 @@
             }
         }
     },
-    "the.same.lavel" : "This is a localize in the same lavel"
+    "the.same.lavel" : "This is a localized in the same level",
+    "enlish" : "This key only exist in english file."
 }

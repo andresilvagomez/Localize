@@ -1,8 +1,10 @@
-# JsonLocalizable
+# Localize
 
-JsonLocalizable is a framework writed in swift to localize your projects easier, including storyboards and strings.
+[![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage) ![CocoaPods](https://img.shields.io/cocoapods/v/Localize.svg)
 
-![JsonLocalizable Storyboard](https://dl.dropboxusercontent.com/u/72454729/JsonLocalizable/simulator.gif)
+Localize is a framework writed in swift to localize your projects easier, including storyboards and strings.
+
+![Localize Storyboard](https://dl.dropboxusercontent.com/u/72454729/JsonLocalizable/simulator.gif)
 ___
 
 - [Features](#features)
@@ -37,9 +39,9 @@ ___
 $ gem install cocoapods
 ```
 
-> CocoaPods 1.1.0+ is required to build JsonLocalizable 1.0+.
+> CocoaPods 1.1.0+ is required to build Localize 1.0+.
 
-To integrate JsonLocalizable into your Xcode project using CocoaPods, specify it in your `Podfile`:
+To integrate Localize into your Xcode project using CocoaPods, specify it in your `Podfile`:
 
 ```ruby
 source 'https://github.com/CocoaPods/Specs.git'
@@ -47,7 +49,7 @@ platform :ios, '8.0'
 use_frameworks!
 
 target '<Your Target Name>' do
-    pod 'JsonLocalizable' , '~> 1.1'
+    pod 'Localize' , '~> 1.2.0'
 end
 ```
 
@@ -68,23 +70,23 @@ $ brew update
 $ brew install carthage
 ```
 
-To integrate JsonLocalizable into your Xcode project using Carthage, specify it in your `Cartfile`:
+To integrate Localize into your Xcode project using Carthage, specify it in your `Cartfile`:
 
 ```ogdl
-github "Kekiiwaa/JsonLocalizable"
+github "Kekiiwaa/Localize"
 ```
 
-Run `carthage update` to build the framework and drag the built `JsonLocalizable.framework` into your Xcode project.
+Run `carthage update` to build the framework and drag the built `Localize.framework` into your Xcode project.
 
 ### Swift Pacakge Manager
 
 The [Swift Pacakage Manager](https://swift.org/package-manager/) is a tool for automating the distribution of Swift code and is integrated into the swift compiler.
 
-Once you have your Swift package set up, adding JsonLocalizable as a dependency is as easy as adding it to the dependencies value of your Package.swift.
+Once you have your Swift package set up, adding Localize as a dependency is as easy as adding it to the dependencies value of your Package.swift.
 
 ```swift
 dependencies: [
-    .Package(url: "https://github.com/Kekiiwaa/JsonLocalizable.git")
+    .Package(url: "https://github.com/Kekiiwaa/Localize.git")
 ]
 ```
 
@@ -98,11 +100,11 @@ This not is necesary, only if you need diferent results.
 ```swift
 // AppDelegate.swift
 
-import JsonLocalizable
+import Localize
 
 func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
 
-    let localize = Localizable.shared
+    let localize = Localize.shared
     // Set your file name
     localize.fileName = "myFileName"
     // Set your default languaje.
@@ -113,11 +115,15 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
     localize.resetLanguage()
     // The used language that you configured to localize
     print(localize.language())
-    // List of storaged languajes
-    print(localize.languages())
     // List of aviable languajes
     print(localize.availableLanguages())
     
+    // Or you can use static methods for all.
+        
+    Localize.update(fileName: "lang")
+    Localize.update(defaultLanguage: .french)
+    Localize.update(language: .english)
+
     return true
 }
 
@@ -162,7 +168,7 @@ print( "hello.world".localize() )
 ```
 
 ### Localize strings, replacing text
-JsonLocalizable use `%` identifier to replace the text
+Localize use `%` identifier to replace the text
 
 ```swift
 
@@ -173,7 +179,7 @@ print( "hello.name".localize(value: "everyone") )
 ```
 
 ### Localize strings, replacing many texts
-JsonLocalizable use `%` identifier to replace the text
+Localize use `%` identifier to replace the text
 
 ```swift
 
@@ -184,26 +190,26 @@ print( "values".localize(values: "everyone", "Software Developer") )
 ```
 
 ### Localize strings, replacing dictionary values
-JsonLocalizable use `:yourid` to search your id in JSON File
+Localize use `:yourid` to search your id in JSON File
 
 ```swift
 
-print( "username".localize(dictionary: ["username": "JsonLocalizable"]) )
+print( "username".localize(dictionary: ["username": "Localize"]) )
 
-// My username is JsonLocalizable
+// My username is Localize
 
 ```
 
 ---
 
 ### Localize your storyboard with extensions
-You don't need import anything in your code, JsonLocalizable use extensions to localize your UIView components
+You don't need import anything in your code, Localize use extensions to localize your UIView components
 
 ```
 // This is lang-en.json
 {
     "navigation" : {
-        "title" : "JsonLocalizable"
+        "title" : "Localize"
     },
     "app" : {
         "label" : "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium.",
@@ -212,11 +218,11 @@ You don't need import anything in your code, JsonLocalizable use extensions to l
 }
 ```
 
-![JsonLocalizable Storyboard](https://dl.dropboxusercontent.com/u/72454729/JsonLocalizable/storyboard.png?raw=1)
+![Localize Storyboard](https://dl.dropboxusercontent.com/u/72454729/JsonLocalizable/storyboard.png?raw=1)
 
 This is the result in your simulator
 
-![JsonLocalizable Simulator](https://dl.dropboxusercontent.com/u/72454729/JsonLocalizable/simulator.png?raw=1)
+![Localize Simulator](https://dl.dropboxusercontent.com/u/72454729/JsonLocalizable/simulator.png?raw=1)
 
 You can use extensions for 
 
@@ -233,13 +239,13 @@ You can use extensions for
 ---
 
 ### Localize your storyboard with classes
-You don't need import anything in your code, JsonLocalizable use extensions to localize your UIView components
+You don't need import anything in your code, Localize use extensions to localize your UIView components
 
 ```
 // This is lang-en.json
 {
     "navigation" : {
-        "title" : "JsonLocalizable"
+        "title" : "Localize"
     },
     "app" : {
         "label" : "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium.",
@@ -248,23 +254,23 @@ You don't need import anything in your code, JsonLocalizable use extensions to l
 }
 ```
 
-![JsonLocalizable Storyboard](https://dl.dropboxusercontent.com/u/72454729/JsonLocalizable/classes.png?raw=1)
+![Localize Storyboard](https://dl.dropboxusercontent.com/u/72454729/JsonLocalizable/classes.png?raw=1)
 
 This is the result in your simulator
 
-![JsonLocalizable Simulator](https://dl.dropboxusercontent.com/u/72454729/JsonLocalizable/simulator2.png?raw=1)
+![Localize Simulator](https://dl.dropboxusercontent.com/u/72454729/JsonLocalizable/simulator2.png?raw=1)
 
 You can use this classes
 
-- ``` LocalizableBarButtonItem ```
-- ``` LocalizableButton ```
-- ``` LocalizableLabel ```
-- ``` LocalizableNavigationBarItem ```
-- ``` LocalizableSearchBar ```
-- ``` LocalizableSegmentedControler ```
-- ``` LocalizableBarItem ```
-- ``` LocalizableTextField ```
-- ``` LocalizableTextView ```
+- ``` LocalizeBarButtonItem ```
+- ``` LocalizeButton ```
+- ``` LocalizeLabel ```
+- ``` LocalizeNavigationBarItem ```
+- ``` LocalizeSearchBar ```
+- ``` LocalizeSegmentedControler ```
+- ``` LocalizeBarItem ```
+- ``` LocalizeTextField ```
+- ``` LocalizeTextView ```
 
 ---
 
@@ -273,8 +279,7 @@ When you change a language, automatically all views update your content to new l
 
 ```swift
 
-let localize = Localize.shared
-localize.update(language: .french)
+Localize.update(language: .french)
 
 ```
 
@@ -300,11 +305,11 @@ Implementing internal acction to change a language
 
 @IBAction func updateLanguage(_ sender: Any) {
     let actionSheet = UIAlertController(title: nil, message: "app.update.language".localize(), preferredStyle: UIAlertControllerStyle.actionSheet)
-    for language in Localizable.shared.availableLanguages() {
-        let displayName = Localizable.shared.displayNameForLanguage(language)
+    for language in Localize.availableLanguages() {
+        let displayName = Localize.displayNameForLanguage(language)
         let languageAction = UIAlertAction(title: displayName, style: .default, handler: {
             (alert: UIAlertAction!) -> Void in
-            Localizable.shared.update(language: language)
+            Localize.update(language: language)
             })
         actionSheet.addAction(languageAction)
     }
@@ -327,4 +332,4 @@ Implementing internal acction to change a language
 
 ## License
 
-JsonLocalizable is released under the MIT license. See LICENSE for details.
+Localize is released under the MIT license. See LICENSE for details.

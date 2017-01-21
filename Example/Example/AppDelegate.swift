@@ -6,7 +6,7 @@
 //
 
 import UIKit
-import JsonLocalizable
+import Localize
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -15,7 +15,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
-        let localize = Localizable.shared
+        let localize = Localize.shared
         // Set your file name
         localize.fileName = "lang"
         // Set your default languaje.
@@ -28,6 +28,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         print(localize.language())
         // List of aviable languajes
         print(localize.availableLanguages())
+        
+        // Or you can use static methods for all.
+        
+        Localize.update(fileName: "lang")
+        Localize.update(defaultLanguage: .french)
+        Localize.update(language: .english)
         
         return true
     }

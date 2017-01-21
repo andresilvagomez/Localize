@@ -1,33 +1,38 @@
 //
 //  OtherFileTest.swift
-//  JsonLocalizable
+//  Localize
 //
 //  Copyright © 2017 Kekkiwaa Inc. All rights reserved.
 //
 
 import XCTest
-import JsonLocalizable
+import Localize
 
 class OtherLangTest: XCTestCase {
     
     override func setUp() {
         super.setUp()
-        let localize = Localizable.shared
-        localize.defaultLanguage = .italian
+        Localize.testingMode()
+        Localize.update(language: .italian)
     }
     
     override func tearDown() {
         super.tearDown()
     }
     
+    /// Try localize a key unexisting in json file
+    /// return the same key.
     func testLocalizeKey() {
         let localized = "hello".localize()
-        XCTAssertTrue(localized == "hello")
+        XCTAssertTrue(localized == "hello", "The hello key exist in json file")
     }
     
+    /// Try localize a key unexisting in json file
+    /// But is present in your default language
+    /// return a key in your default language.
     func testLocalizeKeyUsingDefaultLang() {
         let localized = "hello.world".localize()
-        XCTAssertTrue(localized == "Hello world!")
+        XCTAssertTrue(localized == "Hello world!", "The hello.world no exist in base json file")
     }
     
     func testPerformanceExample() {
