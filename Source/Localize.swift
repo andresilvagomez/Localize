@@ -7,14 +7,21 @@
 
 import UIKit
 
+/// Name for language change notification
 public let LanguageChangeNotification = "LanguageChangeNotification"
 
+/// Diferent types to localize a storyboard.
 public enum LocalizableInterface {
+    /// Use extensions with components key values.
     case keyValue
+    /// Only use a classes to localize storyboards.
     case classes
+    /// Use boot methods to localize storyboards.
     case boot
 }
 
+/// Is a pricipal class, contents all logic to localize your keys
+/// read json and determinate all configurations.
 public class Localize: NSObject {
     
     // MARK: Properties
@@ -39,7 +46,7 @@ public class Localize: NSObject {
     /// Try read key in default language
     public var defaultLanguage: Languages = .english
     
-    /// Decide if your interface localization is based on LocalizableInterface
+    /// Decide if your interface localization is based on LocalizeInterface
     public var localizableInterface: LocalizableInterface = .boot
     
     /// This override prevent user access to different instances for this class.
