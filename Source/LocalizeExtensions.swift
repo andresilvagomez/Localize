@@ -10,6 +10,7 @@ import UIKit
 private var localizeKey1: UInt8 = 0
 private var localizeKey2: UInt8 = 1
 
+/// Extension for UI element is the easier way to localize your keys.
 extension UIBarButtonItem {
     
     /// Localizable tag storeged property
@@ -50,6 +51,7 @@ extension UIBarButtonItem {
     
 }
 
+/// Extension for UI element is the easier way to localize your keys.
 extension UIButton {
     
     /// Localizable tag storeged property
@@ -97,6 +99,7 @@ extension UIButton {
     
 }
 
+/// Extension for UI element is the easier way to localize your keys.
 extension UILabel {
     
     /// Localizable tag storeged property
@@ -137,6 +140,7 @@ extension UILabel {
     
 }
 
+/// Extension for UI element is the easier way to localize your keys.
 extension UINavigationItem {
     
     /// Localizable tag storeged property
@@ -207,6 +211,7 @@ extension UINavigationItem {
     
 }
 
+/// Extension for UI element is the easier way to localize your keys.
 extension UISearchBar {
     
     /// Localizable tag storeged property
@@ -277,6 +282,7 @@ extension UISearchBar {
     
 }
 
+/// Extension for UI element is the easier way to localize your keys.
 extension UISegmentedControl {
     
     /// Localizable tag storeged property
@@ -312,6 +318,7 @@ extension UISegmentedControl {
     
 }
 
+/// Extension for UI element is the easier way to localize your keys.
 extension UITabBarItem {
     
     /// Localizable tag storeged property
@@ -352,6 +359,7 @@ extension UITabBarItem {
     
 }
 
+/// Extension for UI element is the easier way to localize your keys.
 extension UITextField {
     
     /// Localizable tag storeged property
@@ -422,6 +430,7 @@ extension UITextField {
     
 }
 
+/// Extension for UI element is the easier way to localize your keys.
 extension UITextView {
     
     /// Localizable tag storeged property

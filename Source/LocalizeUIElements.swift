@@ -7,6 +7,8 @@
 
 import UIKit
 
+/// Class to localize your ui elements
+/// use localizableKey matched in your file.
 public class LocalizeBarButtonItem: UIBarButtonItem {
     
     /// Inspectable element to replace title in UIBarButtonItem.
@@ -29,6 +31,8 @@ public class LocalizeBarButtonItem: UIBarButtonItem {
     
 }
 
+/// Class to localize your ui elements
+/// use localizableKey matched in your file.
 public class LocalizeButton: UIButton {
     
     /// Inspectable element to replace title in UIButton.
@@ -53,6 +57,8 @@ public class LocalizeButton: UIButton {
     
 }
 
+/// Class to localize your ui elements
+/// use localizableKey matched in your file.
 public class LocalizeLabel: UILabel {
     
     /// Inspectable element to replace text in UILabel.
@@ -75,6 +81,8 @@ public class LocalizeLabel: UILabel {
     
 }
 
+/// Class to localize your ui elements
+/// use localizableKeyTitle and localizableKeyPrompt matched in your file.
 public class LocalizeNavigationBarItem: UINavigationItem {
     
     /// Inspectable element to replace title in UINavigationItem.
@@ -105,6 +113,8 @@ public class LocalizeNavigationBarItem: UINavigationItem {
     
 }
 
+/// Class to localize your ui elements
+/// use localizableKeyPlaceholder and localizableKeyPrompt matched in your file.
 public class LocalizeSearchBar: UISearchBar {
     
     /// Inspectable element to replace placeholder in UISearchBar.
@@ -135,6 +145,8 @@ public class LocalizeSearchBar: UISearchBar {
     
 }
 
+/// Class to localize your ui elements
+/// use localizableKey matched in your file.
 public class LocalizeSegmentedControler: UISegmentedControl {
     
     /// Inspectable element to replace titles in UISegmentedControl.
@@ -161,6 +173,8 @@ public class LocalizeSegmentedControler: UISegmentedControl {
     
 }
 
+/// Class to localize your ui elements
+/// use localizableKey matched in your file.
 public class LocalizeBarItem: UITabBarItem {
     
     /// Inspectable element to replace title in UITabBarItem.
@@ -183,6 +197,8 @@ public class LocalizeBarItem: UITabBarItem {
     
 }
 
+/// Class to localize your ui elements
+/// use localizableKeyText and localizableKeyPlaceholder matched in your file.
 public class LocalizeTextField: UITextField {
     
     /// Inspectable element to replace text in UITextField.
@@ -213,6 +229,8 @@ public class LocalizeTextField: UITextField {
     
 }
 
+/// Class to localize your ui elements
+/// use localizableKey matched in your file.
 public class LocalizeTextView: UITextView {
     
     /// Inspectable element to replace text in UITextView.
