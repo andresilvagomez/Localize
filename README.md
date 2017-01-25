@@ -1,6 +1,8 @@
 # Localize
 
-[![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage) ![CocoaPods](https://img.shields.io/cocoapods/v/Localize.svg)
+[![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage) 
+[![CocoaPods](https://img.shields.io/cocoapods/v/Localize.svg)](https://cocoapods.org/pods/Localize)
+[![Build Status](https://travis-ci.org/Kekiiwaa/Localize.svg?branch=master)](https://travis-ci.org/Kekiiwaa/Localize)
 
 Localize is a framework writed in swift to localize your projects easier, including storyboards and strings.
 
@@ -145,7 +147,7 @@ For example
 
 Example JSON File
 
-```
+```json
 {
     "hello" : {
         "world" : "Hello world!",
@@ -205,8 +207,9 @@ print( "username".localize(dictionary: ["username": "Localize"]) )
 ### Localize your storyboard with extensions
 You don't need import anything in your code, Localize use extensions to localize your UIView components
 
-```
-// This is lang-en.json
+- lang-en.json
+
+```json
 {
     "navigation" : {
         "title" : "Localize"
@@ -241,8 +244,9 @@ You can use extensions for
 ### Localize your storyboard with classes
 You don't need import anything in your code, Localize use extensions to localize your UIView components
 
-```
-// This is lang-en.json
+- lang-en.json
+
+```json
 {
     "navigation" : {
         "title" : "Localize"
@@ -326,7 +330,7 @@ Implementing internal acction to change a language
 
 ## Credits
 
-[Kekiiwaa Inc](https://github.com/Kekiiwaa), 
+[Kekiiwaa](https://github.com/Kekiiwaa), 
 [Andres Silva Gomez](https://github.com/andresilvagomez),
 [Andres Felipe Montoya](https://github.com/pipemontoya)
 
