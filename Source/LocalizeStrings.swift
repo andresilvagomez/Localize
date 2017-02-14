@@ -23,17 +23,18 @@ class LocalizeStrings:LocalizeCommonProtocol, LocalizeProtocol {
     /// That prevent replace untagged values
     ///
     /// - returns: localized key or same text
-    public override func localize(key:String) -> String {
+    public override func localize(key:String, tableName:String? = nil) -> String {
+        let tableName = tableName ?? self.fileName
         if let path = self.bundle().path(forResource: self.currentLanguage.rawValue, ofType: "lproj") {
             let bundle = Bundle(path: path)!
-            let localized = bundle.localizedString(forKey: key, value: nil, table: self.fileName)
+            let localized = bundle.localizedString(forKey: key, value: nil, table: tableName)
             if localized != key {
                 return localized
             }
         }
         if let path = self.bundle().path(forResource: self.defaultLanguage.rawValue, ofType: "lproj") {
             let bundle = Bundle(path: path)!
-            return bundle.localizedString(forKey: key, value: nil, table: self.fileName)
+            return bundle.localizedString(forKey: key, value: nil, table: tableName)
         }
         return key
     }

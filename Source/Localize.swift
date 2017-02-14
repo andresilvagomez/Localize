@@ -60,8 +60,8 @@ public class Localize: NSObject {
     /// That prevent replace untagged values
     ///
     /// - returns: localized key or same text
-    public func localize(key:String) -> String {
-        return self.provider.localize(key: key)
+    public func localize(key:String, tableName:String? = nil) -> String {
+        return self.provider.localize(key: key, tableName: tableName)
     }
     
     /// Localize a string using your JSON File
@@ -70,8 +70,8 @@ public class Localize: NSObject {
     /// - parameter value: The replacement value
     ///
     /// - returns: localized key or same text
-    public func localize(key:String, replace:String) -> String {
-        return self.provider.localize(key: key, replace: replace)
+    public func localize(key:String, replace:String, tableName:String? = nil) -> String {
+        return self.provider.localize(key: key, replace: replace, tableName:tableName)
     }
     
     /// Localize a string using your JSON File
@@ -80,8 +80,8 @@ public class Localize: NSObject {
     /// - parameter value: The replacement values
     ///
     /// - returns: localized key or same text
-    public func localize(key:String, values:[Any]) -> String {
-        return self.provider.localize(key: key, values: values)
+    public func localize(key:String, values:[Any], tableName:String? = nil) -> String {
+        return self.provider.localize(key: key, values: values, tableName:tableName)
     }
     
     /// Localize string with dictionary values
@@ -91,8 +91,8 @@ public class Localize: NSObject {
     /// - parameter value: The replacement dictionary
     ///
     /// - returns: localized key or same text
-    public func localize(key:String, dictionary:[String:String]) -> String {
-        return self.provider.localize(key: key, dictionary: dictionary)
+    public func localize(key:String, dictionary:[String:String], tableName:String? = nil) -> String {
+        return self.provider.localize(key: key, dictionary: dictionary, tableName:tableName)
     }
 
     

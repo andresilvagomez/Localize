@@ -47,6 +47,11 @@ class BaseTest: XCTestCase {
         XCTAssertTrue(localized == "This is a localized in the same level")
     }
     
+    func testSearchInOtherFile() {
+        let localized = "hello.baby".localize(tableName: "other")
+        XCTAssertTrue(localized == "This is a welcome, new baby is here!")
+    }
+    
     func testListOfAvailableLanguages() {
         let languages = Localize.availableLanguages()
         XCTAssertTrue(languages == ["en", "es"])

@@ -130,7 +130,7 @@ class LocalizeCommonProtocol: NSObject {
     /// That prevent replace untagged values
     ///
     /// - returns: localized key or same text
-    public func localize(key: String) -> String {
+    public func localize(key: String, tableName:String? = nil) -> String {
         return ""
     }
     
@@ -140,8 +140,8 @@ class LocalizeCommonProtocol: NSObject {
     /// - parameter value: The replacement value
     ///
     /// - returns: localized key or same text
-    public func localize(key:String, replace:String) -> String {
-        let string = self.localize(key: key)
+    public func localize(key:String, replace:String, tableName:String? = nil) -> String {
+        let string = self.localize(key: key, tableName:tableName)
         if string == key {
             return key
         }
@@ -154,8 +154,8 @@ class LocalizeCommonProtocol: NSObject {
     /// - parameter value: The replacement values
     ///
     /// - returns: localized key or same text
-    public func localize(key:String, values replace:[Any]) -> String {
-        var string = self.localize(key: key)
+    public func localize(key:String, values replace:[Any], tableName:String? = nil) -> String {
+        var string = self.localize(key: key, tableName:tableName)
         if string == key {
             return key
         }
@@ -180,8 +180,8 @@ class LocalizeCommonProtocol: NSObject {
     /// - parameter value: The replacement dictionary
     ///
     /// - returns: localized key or same text
-    public func localize(key:String, dictionary replace:[String:String]) -> String {
-        var string = self.localize(key: key)
+    public func localize(key:String, dictionary replace:[String:String], tableName:String? = nil) -> String {
+        var string = self.localize(key: key, tableName:tableName)
         for (key, value) in replace {
             string = string.replacingOccurrences(of: ":\(key)", with: value)
         }

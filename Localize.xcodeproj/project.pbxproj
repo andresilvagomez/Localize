@@ -33,6 +33,10 @@
 		9FA3BC4D1E318BDC0054CA92 /* some-it.json in Resources */ = {isa = PBXBuildFile; fileRef = 9FA3BC4C1E318BDC0054CA92 /* some-it.json */; };
 		9FA3BC4F1E318BED0054CA92 /* file-de.json in Resources */ = {isa = PBXBuildFile; fileRef = 9FA3BC4E1E318BED0054CA92 /* file-de.json */; };
 		9FA3BC511E318C080054CA92 /* ReadingOtherFiles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FA3BC501E318C080054CA92 /* ReadingOtherFiles.swift */; };
+		9FCD8EA01E52A9D800B5909C /* Other.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9FCD8EA21E52A9D800B5909C /* Other.strings */; };
+		9FCD8EA51E52AD3E00B5909C /* StringsChanginDefaultFileName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FCD8EA41E52AD3E00B5909C /* StringsChanginDefaultFileName.swift */; };
+		9FCD8EA71E53319900B5909C /* other-es.json in Resources */ = {isa = PBXBuildFile; fileRef = 9FCD8EA61E53319900B5909C /* other-es.json */; };
+		9FCD8EA91E53327D00B5909C /* JsonChanginFileName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FCD8EA81E53327D00B5909C /* JsonChanginFileName.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,6 +78,11 @@
 		9FA3BC4C1E318BDC0054CA92 /* some-it.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "some-it.json"; sourceTree = "<group>"; };
 		9FA3BC4E1E318BED0054CA92 /* file-de.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "file-de.json"; sourceTree = "<group>"; };
 		9FA3BC501E318C080054CA92 /* ReadingOtherFiles.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReadingOtherFiles.swift; sourceTree = "<group>"; };
+		9FCD8EA11E52A9D800B5909C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Other.strings; sourceTree = "<group>"; };
+		9FCD8EA31E52A9D900B5909C /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Other.strings; sourceTree = "<group>"; };
+		9FCD8EA41E52AD3E00B5909C /* StringsChanginDefaultFileName.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringsChanginDefaultFileName.swift; sourceTree = "<group>"; };
+		9FCD8EA61E53319900B5909C /* other-es.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "other-es.json"; sourceTree = "<group>"; };
+		9FCD8EA81E53327D00B5909C /* JsonChanginFileName.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JsonChanginFileName.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,10 +154,12 @@
 			children = (
 				9F989F411E2B34E700A19F67 /* BaseTest.swift */,
 				9FA3BC481E3174980054CA92 /* BaseTestInSpanish.swift */,
+				9FCD8EA81E53327D00B5909C /* JsonChanginFileName.swift */,
 				9F989F441E2B34E700A19F67 /* OtherLangTest.swift */,
 				9FA3BC501E318C080054CA92 /* ReadingOtherFiles.swift */,
 				9F19DFC61E4D2B1D00F953E6 /* StringBaseTest.swift */,
 				9F1678001E51F33E0022F3F8 /* StringBaseTestInSpanish.swift */,
+				9FCD8EA41E52AD3E00B5909C /* StringsChanginDefaultFileName.swift */,
 				9F989F4A1E2B3B5600A19F67 /* Supporting Files */,
 			);
 			path = Tests;
@@ -160,10 +171,12 @@
 				9F761AEB1E3063E400904B4B /* lang-en.json */,
 				9F4570211E3173A4008C37D1 /* lang-es.json */,
 				9FA3BC4A1E318BCB0054CA92 /* other-en.json */,
+				9FCD8EA61E53319900B5909C /* other-es.json */,
 				9FA3BC4C1E318BDC0054CA92 /* some-it.json */,
 				9FA3BC4E1E318BED0054CA92 /* file-de.json */,
 				9F989F421E2B34E700A19F67 /* Info.plist */,
 				9F1677FC1E51DE270022F3F8 /* Strings.strings */,
+				9FCD8EA21E52A9D800B5909C /* Other.strings */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -264,12 +277,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				9FA3BC4F1E318BED0054CA92 /* file-de.json in Resources */,
+				9FCD8EA71E53319900B5909C /* other-es.json in Resources */,
 				9F761AEC1E3063E400904B4B /* lang-en.json in Resources */,
 				9F93454A1E291A2700C400F7 /* Info.plist in Resources */,
 				9F4570221E3173A4008C37D1 /* lang-es.json in Resources */,
 				9F1677FA1E51DE270022F3F8 /* Strings.strings in Resources */,
 				9FA3BC4D1E318BDC0054CA92 /* some-it.json in Resources */,
 				9FA3BC4B1E318BCB0054CA92 /* other-en.json in Resources */,
+				9FCD8EA01E52A9D800B5909C /* Other.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -307,10 +322,12 @@
 			files = (
 				9F1678011E51F33E0022F3F8 /* StringBaseTestInSpanish.swift in Sources */,
 				9F989F4C1E2B3B8200A19F67 /* BaseTest.swift in Sources */,
+				9FCD8EA51E52AD3E00B5909C /* StringsChanginDefaultFileName.swift in Sources */,
 				9F989F4D1E2B3B8300A19F67 /* OtherLangTest.swift in Sources */,
 				9FA3BC511E318C080054CA92 /* ReadingOtherFiles.swift in Sources */,
 				9F19DFC71E4D2B1D00F953E6 /* StringBaseTest.swift in Sources */,
 				9FA3BC491E3174980054CA92 /* BaseTestInSpanish.swift in Sources */,
+				9FCD8EA91E53327D00B5909C /* JsonChanginFileName.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -332,6 +349,15 @@
 				9F1677FD1E51DE320022F3F8 /* es */,
 			);
 			name = Strings.strings;
+			sourceTree = "<group>";
+		};
+		9FCD8EA21E52A9D800B5909C /* Other.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9FCD8EA11E52A9D800B5909C /* en */,
+				9FCD8EA31E52A9D900B5909C /* es */,
+			);
+			name = Other.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

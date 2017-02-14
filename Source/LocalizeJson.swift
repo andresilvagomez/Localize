@@ -20,9 +20,10 @@ class LocalizeJson: LocalizeCommonProtocol, LocalizeProtocol {
     /// This metod contains a logic to read return JSON data
     /// If JSON not is defined, this try use a default
     /// As long as the default language is the same as the current one.
-    private func readJSON() -> NSDictionary? {
+    private func readJSON(tableName:String? = nil) -> NSDictionary? {
+        let tableName = tableName ?? self.fileName
         let lang = self.currentLanguage.rawValue
-        var json = self.readJSON(named: "\(self.fileName)-\(lang)")
+        var json = self.readJSON(named: "\(tableName)-\(lang)")
         
         if json == nil && lang != self.defaultLanguage.rawValue {
             json = self.readDefaultJSON()
@@ -34,8 +35,9 @@ class LocalizeJson: LocalizeCommonProtocol, LocalizeProtocol {
     /// Read a JSON with default language value.
     ///
     /// - returns: json or nil value.
-    private func readDefaultJSON() -> NSDictionary? {
-        return self.readJSON(named: "\(self.fileName)-\(self.defaultLanguage.rawValue)")
+    private func readDefaultJSON(tableName:String? = nil) -> NSDictionary? {
+        let tableName = tableName ?? self.fileName
+        return self.readJSON(named: "\(tableName)-\(self.defaultLanguage.rawValue)")
     }
     
     /// This method has path where file is
@@ -96,8 +98,8 @@ class LocalizeJson: LocalizeCommonProtocol, LocalizeProtocol {
     /// That prevent replace untagged values
     ///
     /// - returns: localized key or same text
-    public override func localize(key:String) -> String {
-        guard let json = self.readJSON() else {
+    public override func localize(key:String, tableName:String? = nil) -> String {
+        guard let json = self.readJSON(tableName: tableName) else {
             return key
         }
         
@@ -106,7 +108,7 @@ class LocalizeJson: LocalizeCommonProtocol, LocalizeProtocol {
             return string!
         }
         
-        guard let defaultJSON = self.readDefaultJSON() else {
+        guard let defaultJSON = self.readDefaultJSON(tableName: tableName) else {
             return key
         }
         

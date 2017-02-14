@@ -42,14 +42,14 @@ class StringBaseTestInSpanish: XCTestCase {
         XCTAssertTrue(localized == "Esta es una llave multinivel")
     }
     
-    func testLocalizeKeyWithSingleLevel() {
-        let localized = "the.same.lavel".localize()
-        XCTAssertTrue(localized == "Esto es una internazionalizacion en el mismo nivel")
-    }
-    
     func testLocalizeKeyAviableInDefaultLanguage() {
         let localized = "enlish".localize()
         XCTAssertTrue(localized == "This key only exist in english file.")
+    }
+    
+    func testLocalizeWithTableName() {
+        let localized = "other.key".localize(tableName: "Other")
+        XCTAssertTrue(localized == "Esta llave existe en otro archivo")
     }
     
     func testListOfAvailableLanguages() {
