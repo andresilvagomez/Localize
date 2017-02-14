@@ -8,7 +8,6 @@
 import UIKit
 
 /// All posible languages.
-
 public enum Languages: String {
     
     /// english with ISO code en

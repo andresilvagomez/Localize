@@ -1,18 +1,18 @@
 //
-//  BaseTest.swift
+//  StringBaseTest.swift
 //  Localize
 //
-//  Copyright © 2017 Kekkiwaa Inc. All rights reserved.
+//  Copyright © 2017 Kekiiwaa. All rights reserved.
 //
 
 import XCTest
 import Localize
 
-class BaseTest: XCTestCase {
+class StringBaseTest: XCTestCase {
     
     override func setUp() {
         super.setUp()
-        Localize.update(provider: .json)
+        Localize.update(provider: .strings)
         Localize.testingMode()
         Localize.update(language: .english)
     }
@@ -35,16 +35,6 @@ class BaseTest: XCTestCase {
     func testLocalizeKeyWithDictionary() {
         let localized = "username".localize(dictionary: ["username": "andresilvagomez"])
         XCTAssertTrue(localized == "My username is andresilvagomez")
-    }
-    
-    func testLocalizeKeyWithManyLevels() {
-        let localized = "level.one.two.three".localize()
-        XCTAssertTrue(localized == "This is a multilevel key")
-    }
-    
-    func testLocalizeKeyWithSingleLevel() {
-        let localized = "the.same.lavel".localize()
-        XCTAssertTrue(localized == "This is a localized in the same level")
     }
     
     func testListOfAvailableLanguages() {

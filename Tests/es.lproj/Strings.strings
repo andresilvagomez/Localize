@@ -1,0 +1,18 @@
+/* 
+  Strings.strings
+  Localize
+
+  Copyright © 2017 Kekiiwaa. All rights reserved.
+*/
+
+"hello.world" = "Hola mundo!";
+
+"name" = "Hola %";
+
+"values" = "Hola a todos mi nombre es % y soy %, nos vemos pronto";
+
+"username" = "Mi nombre de usuario es :username";
+
+"level.one.two.three" = "Esta es una llave multinivel";
+
+"the.same.lavel" = "Esto es una internazionalizacion en el mismo nivel";

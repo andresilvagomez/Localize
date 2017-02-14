@@ -101,4 +101,11 @@ extension Localize {
         Localize.shared.testingMode()
     }
     
+    // MARK: Config providers
+    
+    /// Update provider to localize your app.
+    public static func update(provider: LocalizeType) {
+        Localize.shared.update(provider: provider)
+    }
+    
 }

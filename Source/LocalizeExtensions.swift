@@ -29,12 +29,12 @@ extension UIBarButtonItem {
     open override func awakeFromNib() {
         super.awakeFromNib()
         self.localize()
-        NotificationCenter.default.addObserver(self, selector: #selector(localize), name: NSNotification.Name(LanguageChangeNotification), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(localize), name: NSNotification.Name(LocalizeChangeNotification), object: nil)
     }
     
     /// Here we change text with key replacement
     public func localize() {
-        if Localize.shared.localizableInterface == .classes {
+        if Localize.shared.localizeInterface == .classes {
             return
         }
         if self.localizeTag != nil {
@@ -70,12 +70,12 @@ extension UIButton {
     open override func awakeFromNib() {
         super.awakeFromNib()
         self.localize()
-        NotificationCenter.default.addObserver(self, selector: #selector(localize), name: NSNotification.Name(LanguageChangeNotification), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(localize), name: NSNotification.Name(LocalizeChangeNotification), object: nil)
     }
     
     /// Here we change text with key replacement
     public func localize() {
-        if Localize.shared.localizableInterface == .classes {
+        if Localize.shared.localizeInterface == .classes {
             return
         }
         if self.localizeTag != nil {
@@ -118,12 +118,12 @@ extension UILabel {
     open override func awakeFromNib() {
         super.awakeFromNib()
         self.localize()
-        NotificationCenter.default.addObserver(self, selector: #selector(localize), name: NSNotification.Name(LanguageChangeNotification), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(localize), name: NSNotification.Name(LocalizeChangeNotification), object: nil)
     }
     
     /// Here we change text with key replacement
     public func localize() {
-        if Localize.shared.localizableInterface == .classes {
+        if Localize.shared.localizeInterface == .classes {
             return
         }
         if self.localizeTag != nil {
@@ -169,12 +169,12 @@ extension UINavigationItem {
     open override func awakeFromNib() {
         super.awakeFromNib()
         self.localize()
-        NotificationCenter.default.addObserver(self, selector: #selector(localize), name: NSNotification.Name(LanguageChangeNotification), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(localize), name: NSNotification.Name(LocalizeChangeNotification), object: nil)
     }
     
     /// Here we change text with key replacement
     public func localize() {
-        if Localize.shared.localizableInterface == .classes {
+        if Localize.shared.localizeInterface == .classes {
             return
         }
         self.localizeTitle()
@@ -240,12 +240,12 @@ extension UISearchBar {
     open override  func awakeFromNib() {
         super.awakeFromNib()
         self.localize()
-        NotificationCenter.default.addObserver(self, selector: #selector(localize), name: NSNotification.Name(LanguageChangeNotification), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(localize), name: NSNotification.Name(LocalizeChangeNotification), object: nil)
     }
     
     /// Here we change text with key replacement
     public func localize() {
-        if Localize.shared.localizableInterface == .classes {
+        if Localize.shared.localizeInterface == .classes {
             return
         }
         self.localizePlaceholder()
@@ -301,12 +301,12 @@ extension UISegmentedControl {
     open override func awakeFromNib() {
         super.awakeFromNib()
         self.localize()
-        NotificationCenter.default.addObserver(self, selector: #selector(localize), name: NSNotification.Name(LanguageChangeNotification), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(localize), name: NSNotification.Name(LocalizeChangeNotification), object: nil)
     }
     
     /// Here we change text with key replacement
     public func localize() {
-        if Localize.shared.localizableInterface == .classes {
+        if Localize.shared.localizeInterface == .classes {
             return
         }
         for index in 0...(self.numberOfSegments-1) {
@@ -337,12 +337,12 @@ extension UITabBarItem {
     open override func awakeFromNib() {
         super.awakeFromNib()
         self.localize()
-        NotificationCenter.default.addObserver(self, selector: #selector(localize), name: NSNotification.Name(LanguageChangeNotification), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(localize), name: NSNotification.Name(LocalizeChangeNotification), object: nil)
     }
     
     /// Here we change text with key replacement
     public func localize() {
-        if Localize.shared.localizableInterface == .classes {
+        if Localize.shared.localizeInterface == .classes {
             return
         }
         if self.localizeTag != nil {
@@ -388,12 +388,12 @@ extension UITextField {
     open override func awakeFromNib() {
         super.awakeFromNib()
         self.localize()
-        NotificationCenter.default.addObserver(self, selector: #selector(localize), name: NSNotification.Name(LanguageChangeNotification), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(localize), name: NSNotification.Name(LocalizeChangeNotification), object: nil)
     }
     
     /// Here we change text with key replacement
     public func localize() {
-        if Localize.shared.localizableInterface == .classes {
+        if Localize.shared.localizeInterface == .classes {
             return
         }
         self.localizePlaceholder()
@@ -449,12 +449,12 @@ extension UITextView {
     open override func awakeFromNib() {
         super.awakeFromNib()
         self.localize()
-        NotificationCenter.default.addObserver(self, selector: #selector(localize), name: NSNotification.Name(LanguageChangeNotification), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(localize), name: NSNotification.Name(LocalizeChangeNotification), object: nil)
     }
     
     /// Here we change text with key replacement
     public func localize() {
-        if Localize.shared.localizableInterface == .classes {
+        if Localize.shared.localizeInterface == .classes {
             return
         }
         if self.localizeTag != nil {

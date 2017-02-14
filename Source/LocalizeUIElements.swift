@@ -21,7 +21,7 @@ public class LocalizeBarButtonItem: UIBarButtonItem {
     open override func awakeFromNib() {
         super.awakeFromNib()
         self.localize()
-        NotificationCenter.default.addObserver(self, selector: #selector(localize), name: NSNotification.Name(LanguageChangeNotification), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(localize), name: NSNotification.Name(LocalizeChangeNotification), object: nil)
     }
     
     /// Here we change text with key replacement
@@ -45,7 +45,7 @@ public class LocalizeButton: UIButton {
     open override func awakeFromNib() {
         super.awakeFromNib()
         self.localize()
-        NotificationCenter.default.addObserver(self, selector: #selector(localize), name: NSNotification.Name(LanguageChangeNotification), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(localize), name: NSNotification.Name(LocalizeChangeNotification), object: nil)
     }
     
     /// Here we change text with key replacement
@@ -71,7 +71,7 @@ public class LocalizeLabel: UILabel {
     open override func awakeFromNib() {
         super.awakeFromNib()
         self.localize()
-        NotificationCenter.default.addObserver(self, selector: #selector(localize), name: NSNotification.Name(LanguageChangeNotification), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(localize), name: NSNotification.Name(LocalizeChangeNotification), object: nil)
     }
     
     /// Here we change text with key replacement
@@ -102,7 +102,7 @@ public class LocalizeNavigationBarItem: UINavigationItem {
     open override func awakeFromNib() {
         super.awakeFromNib()
         self.localize()
-        NotificationCenter.default.addObserver(self, selector: #selector(localize), name: NSNotification.Name(LanguageChangeNotification), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(localize), name: NSNotification.Name(LocalizeChangeNotification), object: nil)
     }
     
     /// Here we change text with key replacement
@@ -134,7 +134,7 @@ public class LocalizeSearchBar: UISearchBar {
     open override func awakeFromNib() {
         super.awakeFromNib()
         self.localize()
-        NotificationCenter.default.addObserver(self, selector: #selector(localize), name: NSNotification.Name(LanguageChangeNotification), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(localize), name: NSNotification.Name(LocalizeChangeNotification), object: nil)
     }
     
     /// Here we change text with key replacement
@@ -160,7 +160,7 @@ public class LocalizeSegmentedControler: UISegmentedControl {
     open override func awakeFromNib() {
         super.awakeFromNib()
         self.localize()
-        NotificationCenter.default.addObserver(self, selector: #selector(localize), name: NSNotification.Name(LanguageChangeNotification), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(localize), name: NSNotification.Name(LocalizeChangeNotification), object: nil)
     }
     
     /// Here we change text with key replacement
@@ -187,7 +187,7 @@ public class LocalizeBarItem: UITabBarItem {
     open override func awakeFromNib() {
         super.awakeFromNib()
         self.localize()
-        NotificationCenter.default.addObserver(self, selector: #selector(localize), name: NSNotification.Name(LanguageChangeNotification), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(localize), name: NSNotification.Name(LocalizeChangeNotification), object: nil)
     }
     
     /// Here we change text with key replacement
@@ -218,7 +218,7 @@ public class LocalizeTextField: UITextField {
     open override func awakeFromNib() {
         super.awakeFromNib()
         self.localize()
-        NotificationCenter.default.addObserver(self, selector: #selector(localize), name: NSNotification.Name(LanguageChangeNotification), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(localize), name: NSNotification.Name(LocalizeChangeNotification), object: nil)
     }
     
     // Here we change text with key replacement
@@ -243,7 +243,7 @@ public class LocalizeTextView: UITextView {
     open override func awakeFromNib() {
         super.awakeFromNib()
         self.localize()
-        NotificationCenter.default.addObserver(self, selector: #selector(localize), name: NSNotification.Name(LanguageChangeNotification), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(localize), name: NSNotification.Name(LocalizeChangeNotification), object: nil)
     }
     
     // Here we change text with key replacement
