@@ -21,13 +21,22 @@ public extension String {
     }
     
     /// Localize a string using your JSON File
+    /// If the key is not found return the same key
+    /// that prevent replace untagged values
+    ///
+    /// - returns: localized key or same text
+    public func localize(tableName:String) -> String {
+        return Localize.localize(key: self, tableName: tableName)
+    }
+    
+    /// Localize a string using your JSON File
     /// that replace all % character in your string with replace value.
     ///
     /// - parameter String: The replacement value
     ///
     /// - returns: localized key or same text
-    public func localize(value:String) -> String {
-        return Localize.localize(key: self, replace: value)
+    public func localize(value:String, tableName:String? = nil) -> String {
+        return Localize.localize(key: self, replace: value, tableName: tableName)
     }
     
     /// Localize a string using your JSON File
@@ -36,8 +45,8 @@ public extension String {
     /// - parameter Strings: The replacement values
     ///
     /// - returns: localized key or same text
-    public func localize(values:String...) -> String {
-        return Localize.localize(key: self, values: values)
+    public func localize(values:String..., tableName:String? = nil) -> String {
+        return Localize.localize(key: self, values: values, tableName: tableName)
     }
     
     /// Localize string with dictionary values
@@ -47,8 +56,8 @@ public extension String {
     /// - parameter [String:String]: The replacement dictionary
     ///
     /// - returns: localized key or same text
-    public func localize(dictionary values:[String:String]) -> String {
-        return Localize.localize(key: self, dictionary: values)
+    public func localize(dictionary values:[String:String], tableName:String? = nil) -> String {
+        return Localize.localize(key: self, dictionary: values, tableName: tableName)
     }
     
 }

@@ -12,12 +12,9 @@ class BaseTestInSpanish: XCTestCase {
     
     override func setUp() {
         super.setUp()
+        Localize.update(provider: .json)
         Localize.testingMode()
         Localize.update(language: .spanish)
-    }
-    
-    override func tearDown() {
-        super.tearDown()
     }
     
     func testLocalizeKey() {
@@ -50,11 +47,19 @@ class BaseTestInSpanish: XCTestCase {
         XCTAssertTrue(localized == "Esto es una internazionalizacion en el mismo nivel")
     }
     
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
+    func testDefaultValuesFromOtherLanguage() {
+        let localized = "enlish".localize()
+        XCTAssertTrue(localized == "This key only exist in english file.")
+    }
+    
+    func testListOfAvailableLanguages() {
+        let languages = Localize.availableLanguages()
+        XCTAssertTrue(languages == ["en", "es"])
+    }
+    
+    func testCurrentLanguage() {
+        let language = Localize.language()
+        XCTAssertTrue(language == "es")
     }
     
 }

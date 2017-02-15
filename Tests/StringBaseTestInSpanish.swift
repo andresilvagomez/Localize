@@ -1,55 +1,55 @@
 //
-//  BaseTest.swift
+//  StringBaseTestInSpanish.swift
 //  Localize
 //
-//  Copyright © 2017 Kekkiwaa Inc. All rights reserved.
+//  Copyright © 2017 Kekiiwaa. All rights reserved.
 //
 
 import XCTest
 import Localize
 
-class BaseTest: XCTestCase {
+class StringBaseTestInSpanish: XCTestCase {
     
     override func setUp() {
         super.setUp()
-        Localize.update(provider: .json)
+        Localize.update(provider: .strings)
         Localize.testingMode()
-        Localize.update(language: .english)
+        Localize.update(language: .spanish)
     }
     
     func testLocalizeKey() {
         let localized = "hello.world".localize()
-        XCTAssertTrue(localized == "Hello world!")
+        XCTAssertTrue(localized == "Hola mundo!")
     }
     
     func testLocalizeKeyWithValue() {
         let localized = "name".localize(value: "Andres")
-        XCTAssertTrue(localized == "Hello Andres")
+        XCTAssertTrue(localized == "Hola Andres")
     }
     
     func testLocalizeKeyWithValues() {
         let localized = "values".localize(values: "Andres", "Software Developer")
-        XCTAssertTrue(localized == "Hello everyone my name is Andres and I'm Software Developer , see you soon")
+        XCTAssertTrue(localized == "Hola a todos mi nombre es Andres y soy Software Developer , nos vemos pronto")
     }
     
     func testLocalizeKeyWithDictionary() {
         let localized = "username".localize(dictionary: ["username": "andresilvagomez"])
-        XCTAssertTrue(localized == "My username is andresilvagomez")
+        XCTAssertTrue(localized == "Mi nombre de usuario es andresilvagomez")
     }
     
     func testLocalizeKeyWithManyLevels() {
         let localized = "level.one.two.three".localize()
-        XCTAssertTrue(localized == "This is a multilevel key")
+        XCTAssertTrue(localized == "Esta es una llave multinivel")
     }
     
-    func testLocalizeKeyWithSingleLevel() {
-        let localized = "the.same.lavel".localize()
-        XCTAssertTrue(localized == "This is a localized in the same level")
+    func testLocalizeKeyAviableInDefaultLanguage() {
+        let localized = "enlish".localize()
+        XCTAssertTrue(localized == "This key only exist in english file.")
     }
     
-    func testSearchInOtherFile() {
-        let localized = "hello.baby".localize(tableName: "other")
-        XCTAssertTrue(localized == "This is a welcome, new baby is here!")
+    func testLocalizeWithTableName() {
+        let localized = "other.key".localize(tableName: "Other")
+        XCTAssertTrue(localized == "Esta llave existe en otro archivo")
     }
     
     func testListOfAvailableLanguages() {
@@ -59,7 +59,7 @@ class BaseTest: XCTestCase {
     
     func testCurrentLanguage() {
         let language = Localize.language()
-        XCTAssertTrue(language == "en")
+        XCTAssertTrue(language == "es")
     }
     
 }

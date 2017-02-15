@@ -16,10 +16,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
         let localize = Localize.shared
+        // Set your localize provider.
+        localize.update(provider: .json)
         // Set your file name
-        localize.fileName = "lang"
+        localize.update(fileName: "lang")
         // Set your default languaje.
-        localize.defaultLanguage = .french
+        localize.update(defaultLanguage: .french)
         // If you want change a user language, different to default in phone use this method.
         localize.update(language: .english)
         // If you want remove storaged languaje use

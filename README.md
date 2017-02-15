@@ -4,7 +4,7 @@
 [![CocoaPods](https://img.shields.io/cocoapods/v/Localize.svg)](https://cocoapods.org/pods/Localize)
 [![Build Status](https://travis-ci.org/Kekiiwaa/Localize.svg?branch=master)](https://travis-ci.org/Kekiiwaa/Localize)
 
-Localize is a framework writed in swift to localize your projects easier, including storyboards and strings.
+Localize is a framework writed in swift to localize your projects easier improves i18n, including storyboards and strings.
 
 ![Localize Storyboard](https://dl.dropboxusercontent.com/u/72454729/JsonLocalizable/simulator.gif)
 ___
@@ -17,7 +17,11 @@ ___
 
 ## Features
 
-- [x] Localize your strings
+- [x] Keep the Localizable.strings file your app already uses
+- [x] Support Apple strings
+- [x] Support JSON Files
+- [x] Change your app language without changing device language
+- [x] Localize your strings 
 - [x] Localize your Storyboards without extra files
 - [x] Localize your UIView components without xcode UIView ids
 - [x] Localize your UIView components only with keys
@@ -51,7 +55,7 @@ platform :ios, '8.0'
 use_frameworks!
 
 target '<Your Target Name>' do
-    pod 'Localize' , '~> 1.2.0'
+    pod 'Localize' , '~> 1.3.0'
 end
 ```
 
@@ -74,7 +78,7 @@ $ brew install carthage
 
 To integrate Localize into your Xcode project using Carthage, specify it in your `Cartfile`:
 
-```ogdl
+```
 github "Kekiiwaa/Localize"
 ```
 
@@ -96,42 +100,19 @@ dependencies: [
 
 ## Usage
 
-### Config
-This not is necesary, only if you need diferent results.
+Add ```.localize()``` for any ```String``` if you want localize.
+
+You don't need import anything in your code, Localize use extensions to localize your Strings.
 
 ```swift
-// AppDelegate.swift
 
-import Localize
-
-func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-
-    let localize = Localize.shared
-    // Set your file name
-    localize.fileName = "myFileName"
-    // Set your default languaje.
-    localize.defaultLanguage = .french
-    // If you want change a user language different to default in device, use this method.
-    localize.update(language: .english)
-    // If you want remove storaged languaje, use
-    localize.resetLanguage()
-    // The used language that you configured to localize
-    print(localize.language())
-    // List of aviable languajes
-    print(localize.availableLanguages())
-    
-    // Or you can use static methods for all.
-        
-    Localize.update(fileName: "lang")
-    Localize.update(defaultLanguage: .french)
-    Localize.update(language: .english)
-
-    return true
-}
+textLabel.text = "hello.world".localize()
 
 ```
 
-### Create your json file
+You can decide if you want use JSON or Apple Strings, we support both, if you decide use JSON please following this instructions.
+
+### Create JSON file
 
 Please create a JSON file in your code with this rule: 
 
@@ -158,6 +139,32 @@ Example JSON File
     "navigation.title" : ""
 }
 ```
+
+### Create String file
+
+If you decide use Apple strings, please follow [Apple Localization Guide](https://developer.apple.com/library/content/documentation/MacOSX/Conceptual/BPInternational/LocalizingYourApp/LocalizingYourApp.html) to create strings file.
+
+String file example
+
+```
+
+"hello.world" = "Hello world!";
+
+"name" = "Hello %";
+
+"values" = "Hello everyone my name is % and I'm %, see you soon";
+
+"username" = "My username is :username";
+
+"level.one.two.three" = "This is a multilevel key";
+
+"the.same.lavel" = "This is a localized in the same level";
+
+"enlish" = "This key only exist in english file.";
+
+```
+
+Whatever way you choose to, use that methods.
 
 ### Localize strings
 
@@ -202,10 +209,32 @@ print( "username".localize(dictionary: ["username": "Localize"]) )
 
 ```
 
+### Localize strings, using other files.
+If you decide use different files use methods with ```tableName``` in the end of each method, for example.
+
+
+```swift
+
+print( "hello.world".localize(tableName: "Other") )
+
+print( "hello.name".localize(value: "everyone", tableName: "Errors") )
+
+print( "values".localize(values: "everyone", "Software Developer", tableName: "YourFileName") )
+
+print( "username".localize(dictionary: ["username": "Localize"], tableName: "YourFileName") )
+
+```
 ---
 
-### Localize your storyboard with extensions
+### We are amazing with storyboards.
+
 You don't need import anything in your code, Localize use extensions to localize your UIView components
+
+![Localize Storyboard](https://dl.dropboxusercontent.com/u/72454729/JsonLocalizable/storyboard.png?raw=1)
+
+This is the result in your simulator
+
+![Localize Simulator](https://dl.dropboxusercontent.com/u/72454729/JsonLocalizable/simulator.png?raw=1)
 
 - lang-en.json
 
@@ -220,12 +249,6 @@ You don't need import anything in your code, Localize use extensions to localize
     }
 }
 ```
-
-![Localize Storyboard](https://dl.dropboxusercontent.com/u/72454729/JsonLocalizable/storyboard.png?raw=1)
-
-This is the result in your simulator
-
-![Localize Simulator](https://dl.dropboxusercontent.com/u/72454729/JsonLocalizable/simulator.png?raw=1)
 
 You can use extensions for 
 
@@ -322,6 +345,43 @@ Implementing internal acction to change a language
         })
     actionSheet.addAction(cancelAction)
     self.present(actionSheet, animated: true, completion: nil)
+}
+
+```
+
+### Config
+This not is necesary, only if you need diferent results.
+
+```swift
+// AppDelegate.swift
+
+import Localize
+
+func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+
+    let localize = Localize.shared
+    // Set your localize provider.
+    localize.update(provider: .json)
+    // Set your file name
+    localize.update(fileName: "lang")
+    // Set your default languaje.
+    localize.update(defaultLanguage: .french)
+    // If you want change a user language, different to default in phone use this method.
+    localize.update(language: .english)
+    // If you want remove storaged languaje use
+    localize.resetLanguage()
+    // The used language
+    print(localize.language())
+    // List of aviable languajes
+    print(localize.availableLanguages())
+
+    // Or you can use static methods for all.
+
+    Localize.update(fileName: "lang")
+    Localize.update(defaultLanguage: .french)
+    Localize.update(language: .english)
+
+    return true
 }
 
 ```

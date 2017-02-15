@@ -2,6 +2,26 @@
 All notable changes to this project will be documented in this file.
 `Localize` adheres to [Semantic Versioning](http://semver.org/).
 
+## [1.3.0](https://github.com/kekiiwaa/Localize/releases/tag/1.3.0)
+Released on 2017-02-14.
+
+#### Added
+- Support to Apple Strings.
+- Get your localized string using different table names.
+- JSON Provider and Strings Provider.
+- Testing mode.
+- 100% documented using jazzy.
+  - Added by [Andres Silva](https://github.com/andresilvagomez) in Pull Request
+  [#8](https://github.com/kekiiwaa/Localize/pull/4).
+
+#### Updated
+- Not use vars to config.
+- Delete cache json file.
+  - Added by [Andres Silva](https://github.com/andresilvagomez) in Pull Request
+  [#8](https://github.com/kekiiwaa/Localize/pull/4).
+  
+---
+
 ## [1.2.0](https://github.com/kekiiwaa/Localize/releases/tag/1.2.0)
 Released on 2017-01-19.
 
