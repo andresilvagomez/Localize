@@ -13,6 +13,10 @@ class LocalizeCommonProtocol: NSObject {
     /// The rule for name is fileName-LanguageKey.json
     public var fileName = "lang"
 
+    /// Bundle used to load files from.
+    /// Defaults to the main bundle.
+    public var usedBundle: Bundle = Bundle.main
+
     /// Use this for testing mode, search resources in different bundles.
     var testing: Bool = false
     
@@ -54,7 +58,7 @@ class LocalizeCommonProtocol: NSObject {
         if self.testing {
             return Bundle(for: type(of: self))
         }
-        return Bundle.main
+        return usedBundle
     }
     
     
@@ -122,6 +126,11 @@ class LocalizeCommonProtocol: NSObject {
         self.fileName = fileName
     }
     
+    /// Update the bundle used to load files from.
+    public func update(bundle: Bundle) {
+        self.usedBundle = bundle
+    }
+
     // MARK: Localize methods.
     
     

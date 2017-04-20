@@ -121,6 +121,11 @@ public class Localize: NSObject {
         self.provider.update(fileName: fileName)
     }
     
+    /// Update the bundle used to load files from.
+    public func update(bundle: Bundle) {
+        self.provider.update(bundle: bundle)
+    }
+
     /// Update default language
     public func update(defaultLanguage: Languages) {
         self.provider.update(defaultLanguage: defaultLanguage)

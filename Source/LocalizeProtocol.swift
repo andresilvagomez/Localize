@@ -70,6 +70,9 @@ protocol LocalizeProtocol {
     /// Update base file name, searched in path.
     func update(fileName:String)
     
+    /// Update the bundle used to load files from.
+    func update(bundle: Bundle)
+    
     /// Update default language
     func update(defaultLanguage: Languages)
     
