@@ -71,6 +71,11 @@ extension Localize {
         return Localize.shared.update(fileName: fileName)
     }
     
+    /// Update the bundle used to load files from.
+    public static func update(bundle: Bundle) {
+        return Localize.shared.update(bundle: bundle)
+    }
+
     /// Update default language
     public static func update(defaultLanguage: Languages) {
         return Localize.shared.update(defaultLanguage: defaultLanguage)
