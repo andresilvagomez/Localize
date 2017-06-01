@@ -22,10 +22,10 @@ class LocalizeJson: LocalizeCommonProtocol, LocalizeProtocol {
     /// As long as the default language is the same as the current one.
     private func readJSON(tableName:String? = nil) -> NSDictionary? {
         let tableName = tableName ?? self.fileName
-        let lang = self.currentLanguage.rawValue
+        let lang = self.currentLanguage
         var json = self.readJSON(named: "\(tableName)-\(lang)")
         
-        if json == nil && lang != self.defaultLanguage.rawValue {
+        if json == nil && lang != self.defaultLanguage {
             json = self.readDefaultJSON()
         }
         
@@ -37,7 +37,7 @@ class LocalizeJson: LocalizeCommonProtocol, LocalizeProtocol {
     /// - returns: json or nil value.
     private func readDefaultJSON(tableName:String? = nil) -> NSDictionary? {
         let tableName = tableName ?? self.fileName
-        return self.readJSON(named: "\(tableName)-\(self.defaultLanguage.rawValue)")
+        return self.readJSON(named: "\(tableName)-\(self.defaultLanguage)")
     }
     
     /// This method has path where file is
@@ -124,16 +124,17 @@ class LocalizeJson: LocalizeCommonProtocol, LocalizeProtocol {
     // MARK: Config methods
     
     
-    /// Show all aviable languajes whit criteria name
+    /// Show all aviable languages with criteria name
     ///
     /// - returns: list with storaged languages code
     public func availableLanguages() -> [String] {
         var languages : [String] = []
-        for language in iterateEnum(Languages.self) {
-            let name = "\(self.fileName)-\(language.rawValue)"
+
+        for localeId in NSLocale.availableLocaleIdentifiers {
+            let name = "\(self.fileName)-\(localeId)"
             let path = self.bundle().path(forResource: name, ofType: "json")
             if path != nil {
-                languages.append(language.rawValue)
+                languages.append(localeId)
             }
         }
         return languages

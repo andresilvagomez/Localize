@@ -14,7 +14,7 @@ protocol LocalizeProtocol {
     
     /// Default language, if this can't find a key in your current language
     /// Try read key in default language
-    var defaultLanguage: Languages {get set}
+    var defaultLanguage: String {get set}
     
     
     /// MARK: Localize Methos
@@ -61,11 +61,8 @@ protocol LocalizeProtocol {
     /// - returns: current used language
     func language() -> String
     
-    /// Update default languaje, this store a language key and retrive the next time
-    func update(language:Languages) -> Void
-    
-    /// Update default languaje, this store a language key and retrive the next time
-    func update(language string:String) -> Void
+    /// Update default language, this stores a language key which can be retrieved the next time
+    func update(language: String) -> Void
     
     /// Update base file name, searched in path.
     func update(fileName:String)
@@ -74,7 +71,7 @@ protocol LocalizeProtocol {
     func update(bundle: Bundle)
     
     /// Update default language
-    func update(defaultLanguage: Languages)
+    func update(defaultLanguage: String)
     
     /// This remove the language key storaged.
     func resetLanguage() -> Void

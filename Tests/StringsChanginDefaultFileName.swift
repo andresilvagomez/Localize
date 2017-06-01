@@ -13,7 +13,7 @@ class StringsChanginDefaultFileName: XCTestCase {
     override func setUp() {
         super.setUp()
         Localize.update(provider: .strings)
-        Localize.update(language: .english)
+        Localize.update(language: "en")
         Localize.update(fileName: "Other")
         Localize.testingMode()
     }
