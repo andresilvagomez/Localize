@@ -143,9 +143,7 @@ class LocalizeCommonProtocol: NSObject {
     /// - returns: localized key or same text
     public func localize(key:String, replace:String, tableName:String? = nil) -> String {
         let string = self.localize(key: key, tableName:tableName)
-        if string == key {
-            return key
-        }
+
         return string.replacingOccurrences(of: "%", with: replace)
     }
     
