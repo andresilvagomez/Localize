@@ -106,14 +106,9 @@ public class Localize: NSObject {
         return self.provider.language()
     }
     
-    /// Update default languaje, this store a language key and retrive the next time
-    public func update(language:Languages) -> Void {
+    /// Update default language, this stores a language key which can be retrieved the next time
+    public func update(language: String) -> Void {
         self.provider.update(language: language)
-    }
-    
-    /// Update default languaje, this store a language key and retrive the next time
-    public func update(language string:String) -> Void {
-        self.provider.update(language: string)
     }
     
     /// Update base file name, searched in path.
@@ -127,7 +122,7 @@ public class Localize: NSObject {
     }
 
     /// Update default language
-    public func update(defaultLanguage: Languages) {
+    public func update(defaultLanguage: String) {
         self.provider.update(defaultLanguage: defaultLanguage)
     }
     

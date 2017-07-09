@@ -22,15 +22,15 @@ class LocalizeCommonProtocol: NSObject {
     
     /// Default language, if this can't find a key in your current language
     /// Try read key in default language
-    public var defaultLanguage: Languages = .english
+    public var defaultLanguage: String = "en"
     
     /// Determinate if your interface localization is based on LocalizeInterface
     public var localizableInterface: LocalizeInterface = .boot
     
     /// Storaged language or default language in device
-    public var currentLanguage: Languages {
+    public var currentLanguage: String {
         get {
-            return Languages(rawValue: self.language())!
+            return self.language()
         }
     }
     
@@ -65,24 +65,16 @@ class LocalizeCommonProtocol: NSObject {
     // MARK: Public methods
     
     
-    /// Update default languaje, this store a language key and retrive the next time
-    public func update(language:Languages) -> Void {
+    /// Update default language, this stores a language key which can be retrieved the next time
+    public func update(language: String) -> Void {
         let defaults = UserDefaults.standard
-        defaults.setValue(language.rawValue, forKey: LocalizeStorageKey)
+        defaults.setValue(language, forKey: LocalizeStorageKey)
         defaults.synchronize()
         NotificationCenter.default.post(name: Notification.Name(rawValue: LocalizeChangeNotification), object: nil)
     }
     
-    /// Update default languaje, this store a language key and retrive the next time
-    public func update(language string:String) -> Void {
-        guard let language = Languages(rawValue: string) else {
-            return
-        }
-        return self.update(language: language)
-    }
-    
     /// Update default language
-    public func update(defaultLanguage: Languages) {
+    public func update(defaultLanguage: String) {
         self.defaultLanguage = defaultLanguage
     }
     
@@ -97,7 +89,7 @@ class LocalizeCommonProtocol: NSObject {
     ///
     /// - return: String form language code in current user language
     public func displayNameForLanguage(_ language: String) -> String {
-        let locale : NSLocale = NSLocale(localeIdentifier: self.currentLanguage.rawValue)
+        let locale : NSLocale = NSLocale(localeIdentifier: self.currentLanguage)
         if let name = locale.displayName(forKey: NSLocale.Key.identifier, value: language) {
             return name.capitalized
         }
@@ -118,7 +110,7 @@ class LocalizeCommonProtocol: NSObject {
         if let lang = defaults.string(forKey: LocalizeStorageKey) {
             return lang
         }
-        return Locale.preferredLanguages[0].components(separatedBy: "-")[0]
+        return Locale.preferredLanguages[0]
     }
     
     /// Update base file name, searched in path.
@@ -151,9 +143,7 @@ class LocalizeCommonProtocol: NSObject {
     /// - returns: localized key or same text
     public func localize(key:String, replace:String, tableName:String? = nil) -> String {
         let string = self.localize(key: key, tableName:tableName)
-        if string == key {
-            return key
-        }
+
         return string.replacingOccurrences(of: "%", with: replace)
     }
     

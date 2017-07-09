@@ -14,7 +14,7 @@ class OtherLangTest: XCTestCase {
         super.setUp()
         Localize.update(provider: .json)
         Localize.testingMode()
-        Localize.update(language: .italian)
+        Localize.update(language: "it")
     }
     
     func testLocalizeKey() {

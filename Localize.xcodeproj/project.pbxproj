@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		9F050EF81E2B486C009804A5 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9F989F421E2B34E700A19F67 /* Info.plist */; };
 		9F1677FA1E51DE270022F3F8 /* Strings.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9F1677FC1E51DE270022F3F8 /* Strings.strings */; };
 		9F1678011E51F33E0022F3F8 /* StringBaseTestInSpanish.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F1678001E51F33E0022F3F8 /* StringBaseTestInSpanish.swift */; };
 		9F19DFC71E4D2B1D00F953E6 /* StringBaseTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F19DFC61E4D2B1D00F953E6 /* StringBaseTest.swift */; };
@@ -18,12 +17,10 @@
 		9F4570221E3173A4008C37D1 /* lang-es.json in Resources */ = {isa = PBXBuildFile; fileRef = 9F4570211E3173A4008C37D1 /* lang-es.json */; };
 		9F761AD71E305B9B00904B4B /* LocalizeStatic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F761AD61E305B9B00904B4B /* LocalizeStatic.swift */; };
 		9F761AEC1E3063E400904B4B /* lang-en.json in Resources */ = {isa = PBXBuildFile; fileRef = 9F761AEB1E3063E400904B4B /* lang-en.json */; };
-		9F93453E1E29192300C400F7 /* Languages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F9345391E29192300C400F7 /* Languages.swift */; };
 		9F93453F1E29192300C400F7 /* LocalizeExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F93453A1E29192300C400F7 /* LocalizeExtensions.swift */; };
 		9F9345401E29192300C400F7 /* LocalizeUIElements.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F93453B1E29192300C400F7 /* LocalizeUIElements.swift */; };
 		9F9345411E29192300C400F7 /* Localize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F93453C1E29192300C400F7 /* Localize.swift */; };
 		9F9345421E29192300C400F7 /* LocalizeString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F93453D1E29192300C400F7 /* LocalizeString.swift */; };
-		9F93454A1E291A2700C400F7 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9F9345481E291A2700C400F7 /* Info.plist */; };
 		9F93454B1E291AF800C400F7 /* Localize.h in Headers */ = {isa = PBXBuildFile; fileRef = 9F9345471E291A2700C400F7 /* Localize.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9F9345581E291D4E00C400F7 /* Localize.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69F1B5741D955990000A2B87 /* Localize.framework */; };
 		9F989F4C1E2B3B8200A19F67 /* BaseTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F989F411E2B34E700A19F67 /* BaseTest.swift */; };
@@ -62,7 +59,6 @@
 		9F4570211E3173A4008C37D1 /* lang-es.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "lang-es.json"; sourceTree = "<group>"; };
 		9F761AD61E305B9B00904B4B /* LocalizeStatic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalizeStatic.swift; sourceTree = "<group>"; };
 		9F761AEB1E3063E400904B4B /* lang-en.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "lang-en.json"; sourceTree = "<group>"; };
-		9F9345391E29192300C400F7 /* Languages.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Languages.swift; sourceTree = "<group>"; };
 		9F93453A1E29192300C400F7 /* LocalizeExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalizeExtensions.swift; sourceTree = "<group>"; };
 		9F93453B1E29192300C400F7 /* LocalizeUIElements.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalizeUIElements.swift; sourceTree = "<group>"; };
 		9F93453C1E29192300C400F7 /* Localize.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Localize.swift; sourceTree = "<group>"; };
@@ -125,7 +121,6 @@
 		9F9345381E29192300C400F7 /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				9F9345391E29192300C400F7 /* Languages.swift */,
 				9F93453C1E29192300C400F7 /* Localize.swift */,
 				9F761AD61E305B9B00904B4B /* LocalizeStatic.swift */,
 				9F93453D1E29192300C400F7 /* LocalizeString.swift */,
@@ -238,7 +233,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0820;
-				LastUpgradeCheck = 0820;
+				LastUpgradeCheck = 0830;
 				ORGANIZATIONNAME = Mobility;
 				TargetAttributes = {
 					69F1B5731D955990000A2B87 = {
@@ -279,7 +274,6 @@
 				9FA3BC4F1E318BED0054CA92 /* file-de.json in Resources */,
 				9FCD8EA71E53319900B5909C /* other-es.json in Resources */,
 				9F761AEC1E3063E400904B4B /* lang-en.json in Resources */,
-				9F93454A1E291A2700C400F7 /* Info.plist in Resources */,
 				9F4570221E3173A4008C37D1 /* lang-es.json in Resources */,
 				9F1677FA1E51DE270022F3F8 /* Strings.strings in Resources */,
 				9FA3BC4D1E318BDC0054CA92 /* some-it.json in Resources */,
@@ -292,7 +286,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9F050EF81E2B486C009804A5 /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -311,7 +304,6 @@
 				9F9345411E29192300C400F7 /* Localize.swift in Sources */,
 				9F9345421E29192300C400F7 /* LocalizeString.swift in Sources */,
 				9F761AD71E305B9B00904B4B /* LocalizeStatic.swift in Sources */,
-				9F93453E1E29192300C400F7 /* Languages.swift in Sources */,
 				9F2FC5651E4275A300C15610 /* LocalizeProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -56,14 +56,9 @@ extension Localize {
         return Localize.shared.language()
     }
     
-    /// Update default languaje, this store a language key and retrive the next time
-    public static func update(language:Languages) {
+    /// Update default language, this stores a language key which can be retrieved the next time
+    public static func update(language: String) {
         return Localize.shared.update(language: language)
-    }
-    
-    /// Update default languaje, this store a language key and retrive the next time
-    public static func update(language string:String) {
-        return Localize.shared.update(language: string)
     }
     
     /// Update base file name, searched in path.
@@ -77,7 +72,7 @@ extension Localize {
     }
 
     /// Update default language
-    public static func update(defaultLanguage: Languages) {
+    public static func update(defaultLanguage: String) {
         return Localize.shared.update(defaultLanguage: defaultLanguage)
     }
     

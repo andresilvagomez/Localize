@@ -13,7 +13,7 @@ class JsonChanginFileName: XCTestCase {
     override func setUp() {
         super.setUp()
         Localize.update(provider: .json)
-        Localize.update(language: .spanish)
+        Localize.update(language: "es")
         Localize.update(fileName: "lang")
         Localize.testingMode()
     }

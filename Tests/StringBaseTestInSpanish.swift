@@ -14,7 +14,7 @@ class StringBaseTestInSpanish: XCTestCase {
         super.setUp()
         Localize.update(provider: .strings)
         Localize.testingMode()
-        Localize.update(language: .spanish)
+        Localize.update(language: "es")
     }
     
     func testLocalizeKey() {

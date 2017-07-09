@@ -25,14 +25,14 @@ class LocalizeStrings:LocalizeCommonProtocol, LocalizeProtocol {
     /// - returns: localized key or same text
     public override func localize(key:String, tableName:String? = nil) -> String {
         let tableName = tableName ?? self.fileName
-        if let path = self.bundle().path(forResource: self.currentLanguage.rawValue, ofType: "lproj") {
+        if let path = self.bundle().path(forResource: self.currentLanguage, ofType: "lproj") {
             let bundle = Bundle(path: path)!
             let localized = bundle.localizedString(forKey: key, value: nil, table: tableName)
             if localized != key {
                 return localized
             }
         }
-        if let path = self.bundle().path(forResource: self.defaultLanguage.rawValue, ofType: "lproj") {
+        if let path = self.bundle().path(forResource: self.defaultLanguage, ofType: "lproj") {
             let bundle = Bundle(path: path)!
             return bundle.localizedString(forKey: key, value: nil, table: tableName)
         }
