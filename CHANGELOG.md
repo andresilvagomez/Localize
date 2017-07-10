@@ -2,6 +2,23 @@
 All notable changes to this project will be documented in this file.
 `Localize` adheres to [Semantic Versioning](http://semver.org/).
 
+## [1.4.0](https://github.com/kekiiwaa/Localize/releases/tag/1.3.0)
+Released on 2017-07-10.
+
+#### Added
+- Dynamic bundle.
+- Update bundle.
+  - Added by [Benjamin Erhart](https://github.com/tladesignz) in Pull Request
+  [#12](https://github.com/Kekiiwaa/Localize/pull/13).
+
+#### Updated
+- Remove enums for language.
+- Fixed #localize with placeholder replacement.
+  - Added by [Benjamin Erhart](https://github.com/tladesignz) in Pull Request
+  [#13](https://github.com/kekiiwaa/Localize/pull/13).
+
+---
+
 ## [1.3.0](https://github.com/kekiiwaa/Localize/releases/tag/1.3.0)
 Released on 2017-02-14.
 
@@ -19,7 +36,7 @@ Released on 2017-02-14.
 - Delete cache json file.
   - Added by [Andres Silva](https://github.com/andresilvagomez) in Pull Request
   [#8](https://github.com/kekiiwaa/Localize/pull/4).
-  
+
 ---
 
 ## [1.2.0](https://github.com/kekiiwaa/Localize/releases/tag/1.2.0)
@@ -44,7 +61,7 @@ Released on 2017-01-19.
 - Getting default language key when in current language key no was available.
   - Added by [Andres Silva](https://github.com/andresilvagomez) in Pull Request
   [#4](https://github.com/kekiiwaa/Localize/pull/4).
-  
+
 ---
 
 ## [1.1](https://github.com/kekiiwaa/Localize/releases/tag/1.1)
