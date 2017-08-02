@@ -1,6 +1,6 @@
 # Localize
 
-[![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage) 
+[![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 [![CocoaPods](https://img.shields.io/cocoapods/v/Localize.svg)](https://cocoapods.org/pods/Localize)
 [![Build Status](https://travis-ci.org/Kekiiwaa/Localize.svg?branch=master)](https://travis-ci.org/Kekiiwaa/Localize)
 
@@ -21,7 +21,7 @@ ___
 - [x] Support Apple strings
 - [x] Support JSON Files
 - [x] Change your app language without changing device language
-- [x] Localize your strings 
+- [x] Localize your strings
 - [x] Localize your Storyboards without extra files
 - [x] Localize your UIView components without xcode UIView ids
 - [x] Localize your UIView components only with keys
@@ -31,7 +31,7 @@ ___
 
 ## Requirements
 
-- iOS 8.0+ 
+- iOS 8.0+
 - Xcode 8.0+
 - Swift 3.0+
 
@@ -55,7 +55,7 @@ platform :ios, '8.0'
 use_frameworks!
 
 target '<Your Target Name>' do
-    pod 'Localize' , '~> 1.3.0'
+    pod 'Localize' , '~> 1.4.0'
 end
 ```
 
@@ -114,7 +114,7 @@ You can decide if you want use JSON or Apple Strings, we support both, if you de
 
 ### Create JSON file
 
-Please create a JSON file in your code with this rule: 
+Please create a JSON file in your code with this rule:
 
 ```
 {your file name}-{your lang code}.json
@@ -250,7 +250,7 @@ This is the result in your simulator
 }
 ```
 
-You can use extensions for 
+You can use extensions for
 
 - ``` UIBarButtonItem ```
 - ``` UIButton ```
@@ -306,7 +306,7 @@ When you change a language, automatically all views update your content to new l
 
 ```swift
 
-Localize.update(language: .french)
+Localize.update(language: "fr")
 
 ```
 
@@ -358,29 +358,27 @@ This not is necesary, only if you need diferent results.
 import Localize
 
 func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-
+    
     let localize = Localize.shared
     // Set your localize provider.
     localize.update(provider: .json)
     // Set your file name
     localize.update(fileName: "lang")
     // Set your default languaje.
-    localize.update(defaultLanguage: .french)
-    // If you want change a user language, different to default in phone use this method.
-    localize.update(language: .english)
+    localize.update(defaultLanguage: "fr")
+    // If you want change a user language, different to default in phone use thimethod.
+    localize.update(language: "en")
     // If you want remove storaged languaje use
     localize.resetLanguage()
     // The used language
     print(localize.language())
     // List of aviable languajes
-    print(localize.availableLanguages())
-
-    // Or you can use static methods for all.
+    print(localize.availableLanguages()            
+    // Or you can use static methods for all          
 
     Localize.update(fileName: "lang")
-    Localize.update(defaultLanguage: .french)
-    Localize.update(language: .english)
-
+    Localize.update(defaultLanguage: "fr")
+    Localize.update(language: "en-DE"            
     return true
 }
 
@@ -390,9 +388,8 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 
 ## Credits
 
-[Kekiiwaa](https://github.com/Kekiiwaa), 
+[Kekiiwaa](https://github.com/Kekiiwaa),
 [Andres Silva Gomez](https://github.com/andresilvagomez),
-[Andres Felipe Montoya](https://github.com/pipemontoya)
 
 ## License
 

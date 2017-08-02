@@ -2,7 +2,7 @@
 All notable changes to this project will be documented in this file.
 `Localize` adheres to [Semantic Versioning](http://semver.org/).
 
-## [1.4.0](https://github.com/kekiiwaa/Localize/releases/tag/1.3.0)
+## [1.4.0](https://github.com/kekiiwaa/Localize/releases/tag/1.4.0)
 Released on 2017-07-10.
 
 #### Added
