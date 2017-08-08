@@ -2,14 +2,31 @@
 All notable changes to this project will be documented in this file.
 `Localize` adheres to [Semantic Versioning](http://semver.org/).
 
-## [1.4.0](https://github.com/kekiiwaa/Localize/releases/tag/1.3.0)
+---
+
+## [1.5.0](https://github.com/kekiiwaa/Localize/releases/tag/1.5.0)
+Released on 2017-08-08.
+
+#### Added
+- Localize UI elements with @IBInspectable.
+  - By [Andres Silva](https://github.com/andresilvagomez) in Pull Request
+  [#14](https://github.com/Kekiiwaa/Localize/pull/14).
+
+#### Deleted
+  - Delete custom classes for UI elements in favor to @IBInspectable extensions.
+    - By [Andres Silva](https://github.com/andresilvagomez) in Pull Request
+    [#14](https://github.com/Kekiiwaa/Localize/pull/14).
+
+---
+
+## [1.4.0](https://github.com/kekiiwaa/Localize/releases/tag/1.4.0)
 Released on 2017-07-10.
 
 #### Added
 - Dynamic bundle.
 - Update bundle.
   - Added by [Benjamin Erhart](https://github.com/tladesignz) in Pull Request
-  [#12](https://github.com/Kekiiwaa/Localize/pull/13).
+  [#13](https://github.com/Kekiiwaa/Localize/pull/13).
 
 #### Updated
 - Remove enums for language.
@@ -81,5 +98,3 @@ Released on 2017-01-17.
 - Updated Example.
   - Added by [Andres Silva](https://github.com/andresilvagomez) in Pull Request
   [#2](https://github.com/kekiiwaa/Localize/pull/2).
-
----

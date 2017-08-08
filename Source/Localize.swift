@@ -14,16 +14,6 @@ public let LocalizeChangeNotification = "LocalizeChangeNotification"
 public let LocalizeStorageKey = "LocalizeDefaultLanguage"
 
 
-/// Different types to localize a storyboard.
-public enum LocalizeInterface {
-    /// Use extensions with components key values.
-    case keyValue
-    /// Only use a classes to localize storyboards.
-    case classes
-    /// Use boot methods to localize storyboards.
-    case boot
-}
-
 /// Different types to localize your app, using json files or strings default by Apple.
 public enum LocalizeType {
     /// Custom localize protocol.
@@ -40,9 +30,6 @@ public class Localize: NSObject {
     
     /// Shated instance
     public static let shared: Localize = Localize()
-    
-    /// Decide if your interface localization is based on LocalizeInterface
-    internal var localizeInterface: LocalizeInterface = .boot
     
     /// Provider to localize your app.
     private var provider: LocalizeProtocol = LocalizeStrings()

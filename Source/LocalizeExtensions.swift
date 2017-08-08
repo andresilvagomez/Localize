@@ -14,7 +14,7 @@ private var localizeKey2: UInt8 = 1
 extension UIBarButtonItem {
     
     /// Localizable tag storeged property
-    var localizeTag: String! {
+    @IBInspectable public var localizeKey: String! {
         get {
             return objc_getAssociatedObject(self, &localizeKey1) as? String
         }
@@ -34,17 +34,14 @@ extension UIBarButtonItem {
     
     /// Here we change text with key replacement
     public func localize() {
-        if Localize.shared.localizeInterface == .classes {
-            return
-        }
-        if self.localizeTag != nil {
-            self.title = self.localizeTag?.localize()
+        if self.localizeKey != nil {
+            self.title = self.localizeKey?.localize()
             return
         }
         if let title = self.title, !title.isEmpty {
             self.title = title.localize()
-            if self.localizeTag == nil && self.title != title {
-                self.localizeTag = title
+            if self.localizeKey == nil && self.title != title {
+                self.localizeKey = title
             }
         }
     }
@@ -55,7 +52,7 @@ extension UIBarButtonItem {
 extension UIButton {
     
     /// Localizable tag storeged property
-    var localizeTag: String! {
+    @IBInspectable public var localizeKey: String! {
         get {
             return objc_getAssociatedObject(self, &localizeKey1) as? String
         }
@@ -75,13 +72,10 @@ extension UIButton {
     
     /// Here we change text with key replacement
     public func localize() {
-        if Localize.shared.localizeInterface == .classes {
-            return
-        }
-        if self.localizeTag != nil {
+        if self.localizeKey != nil {
             for state in [UIControlState.normal, .highlighted, .selected, .disabled] {
                 if let title = title(for: state) , !title.isEmpty {
-                    self.setTitle(self.localizeTag?.localize(), for: state)
+                    self.setTitle(self.localizeKey?.localize(), for: state)
                 }
             }
             return
@@ -90,8 +84,8 @@ extension UIButton {
             if let title = title(for: state), !title.isEmpty {
                 let localized = title.localize()
                 self.setTitle(localized, for: state)
-                if self.localizeTag == nil && localized != title {
-                    self.localizeTag = title
+                if self.localizeKey == nil && localized != title {
+                    self.localizeKey = title
                 }
             }
         }
@@ -103,7 +97,7 @@ extension UIButton {
 extension UILabel {
     
     /// Localizable tag storeged property
-    var localizeTag: String! {
+    @IBInspectable public var localizeKey: String? {
         get {
             return objc_getAssociatedObject(self, &localizeKey1) as? String
         }
@@ -123,17 +117,14 @@ extension UILabel {
     
     /// Here we change text with key replacement
     public func localize() {
-        if Localize.shared.localizeInterface == .classes {
-            return
-        }
-        if self.localizeTag != nil {
-            self.text = self.localizeTag?.localize()
+        if self.localizeKey != nil {
+            self.text = self.localizeKey?.localize()
             return
         }
         if let text = text, !text.isEmpty {
             self.text = text.localize()
-            if self.localizeTag == nil && self.text != text {
-                self.localizeTag = text
+            if self.localizeKey == nil && self.text != text {
+                self.localizeKey = text
             }
         }
     }
@@ -144,7 +135,7 @@ extension UILabel {
 extension UINavigationItem {
     
     /// Localizable tag storeged property
-    var localizeTagTitle: String! {
+    @IBInspectable public var localizeTitle: String? {
         get {
             return objc_getAssociatedObject(self, &localizeKey1) as? String
         }
@@ -154,7 +145,7 @@ extension UINavigationItem {
     }
     
     /// Localizable tag storeged property
-    var localizeTagPrompt: String! {
+    @IBInspectable public var localizePrompt: String? {
         get {
             return objc_getAssociatedObject(self, &localizeKey2) as? String
         }
@@ -174,37 +165,34 @@ extension UINavigationItem {
     
     /// Here we change text with key replacement
     public func localize() {
-        if Localize.shared.localizeInterface == .classes {
-            return
-        }
-        self.localizeTitle()
-        self.localizePrompt()
+        self.localizeTitleFN()
+        self.localizePromptFN()
     }
     
     /// Here we change text with key replacement for title
-    func localizeTitle() {
-        if self.localizeTagTitle != nil {
-            self.title = self.localizeTagTitle?.localize()
+    func localizeTitleFN() {
+        if self.localizeTitle != nil {
+            self.title = self.localizeTitle?.localize()
             return
         }
         if let title = self.title, !title.isEmpty {
             self.title = title.localize()
-            if self.localizeTagTitle == nil && self.title != title {
-                self.localizeTagTitle = title
+            if self.localizeTitle == nil && self.title != title {
+                self.localizeTitle = title
             }
         }
     }
     
     /// Here we change text with key replacement for prompt
-    func localizePrompt() {
-        if self.localizeTagPrompt != nil {
-            self.prompt = self.localizeTagPrompt?.localize()
+    func localizePromptFN() {
+        if self.localizePrompt != nil {
+            self.prompt = self.localizePrompt?.localize()
             return
         }
         if let prompt = self.prompt, !prompt.isEmpty {
             self.prompt = prompt.localize()
-            if self.localizeTagPrompt == nil && self.prompt != prompt {
-                self.localizeTagPrompt = prompt
+            if self.localizePrompt == nil && self.prompt != prompt {
+                self.localizePrompt = prompt
             }
         }
     }
@@ -215,7 +203,7 @@ extension UINavigationItem {
 extension UISearchBar {
     
     /// Localizable tag storeged property
-    var localizeTagPlaceholder: String! {
+    @IBInspectable public var localizePlaceholder: String? {
         get {
             return objc_getAssociatedObject(self, &localizeKey1) as? String
         }
@@ -225,7 +213,7 @@ extension UISearchBar {
     }
     
     /// Localizable tag storeged property
-    var localizeTagPrompt: String! {
+    @IBInspectable public var localizePrompt: String? {
         get {
             return objc_getAssociatedObject(self, &localizeKey2) as? String
         }
@@ -245,37 +233,34 @@ extension UISearchBar {
     
     /// Here we change text with key replacement
     public func localize() {
-        if Localize.shared.localizeInterface == .classes {
-            return
-        }
-        self.localizePlaceholder()
-        self.localizePrompt()
+        self.localizePlaceholderFN()
+        self.localizePromptFN()
     }
     
     /// Here we change text with key replacement for placeholder
-    func localizePlaceholder() {
-        if self.localizeTagPlaceholder != nil {
-            self.placeholder = self.localizeTagPlaceholder?.localize()
+    func localizePlaceholderFN() {
+        if self.localizePlaceholder != nil {
+            self.placeholder = self.localizePlaceholder?.localize()
             return
         }
         if let placeholder = self.placeholder, !placeholder.isEmpty {
             self.placeholder = placeholder.localize()
-            if self.localizeTagPlaceholder == nil && self.placeholder != placeholder {
-                self.localizeTagPlaceholder = placeholder
+            if self.localizePlaceholder == nil && self.placeholder != placeholder {
+                self.localizePlaceholder = placeholder
             }
         }
     }
     
     /// Here we change text with key replacement for prompt
-    func localizePrompt() {
-        if self.localizeTagPrompt != nil {
-            self.prompt = self.localizeTagPrompt?.localize()
+    func localizePromptFN() {
+        if self.localizePrompt != nil {
+            self.prompt = self.localizePrompt?.localize()
             return
         }
         if let prompt = self.prompt, !prompt.isEmpty {
             self.prompt = prompt.localize()
-            if self.localizeTagPrompt == nil && self.prompt != prompt {
-                self.localizeTagPrompt = prompt
+            if self.localizePrompt == nil && self.prompt != prompt {
+                self.localizePrompt = prompt
             }
         }
     }
@@ -286,7 +271,7 @@ extension UISearchBar {
 extension UISegmentedControl {
     
     /// Localizable tag storeged property
-    var localizeTag: String! {
+    @IBInspectable public var localizeKey: String? {
         get {
             return objc_getAssociatedObject(self, &localizeKey1) as? String
         }
@@ -306,10 +291,7 @@ extension UISegmentedControl {
     
     /// Here we change text with key replacement
     public func localize() {
-        if Localize.shared.localizeInterface == .classes {
-            return
-        }
-        for index in 0...(self.numberOfSegments-1) {
+        for index in 0...(self.numberOfSegments - 1) {
             if let title = self.titleForSegment(at: index), !title.isEmpty {
                 self.setTitle(title.localize(), forSegmentAt: index)
             }
@@ -322,7 +304,7 @@ extension UISegmentedControl {
 extension UITabBarItem {
     
     /// Localizable tag storeged property
-    var localizeTag: String! {
+    @IBInspectable public var localizeKey: String? {
         get {
             return objc_getAssociatedObject(self, &localizeKey1) as? String
         }
@@ -342,17 +324,14 @@ extension UITabBarItem {
     
     /// Here we change text with key replacement
     public func localize() {
-        if Localize.shared.localizeInterface == .classes {
-            return
-        }
-        if self.localizeTag != nil {
-            self.title = self.localizeTag?.localize()
+        if self.localizeKey != nil {
+            self.title = self.localizeKey?.localize()
             return
         }
         if let title = self.title, !title.isEmpty {
             self.title = title.localize()
-            if self.localizeTag == nil && self.title != title {
-                self.localizeTag = title
+            if self.localizeKey == nil && self.title != title {
+                self.localizeKey = title
             }
         }
     }
@@ -363,7 +342,7 @@ extension UITabBarItem {
 extension UITextField {
     
     /// Localizable tag storeged property
-    var localizeTagText: String! {
+    @IBInspectable public var localizeText: String? {
         get {
             return objc_getAssociatedObject(self, &localizeKey1) as? String
         }
@@ -373,7 +352,7 @@ extension UITextField {
     }
     
     /// Localizable tag storeged property
-    var localizeTagPlaceholder: String! {
+    @IBInspectable public var localizePlaceholder: String? {
         get {
             return objc_getAssociatedObject(self, &localizeKey2) as? String
         }
@@ -393,37 +372,34 @@ extension UITextField {
     
     /// Here we change text with key replacement
     public func localize() {
-        if Localize.shared.localizeInterface == .classes {
-            return
-        }
-        self.localizePlaceholder()
-        self.localizeText()
+        self.localizePlaceholderFN()
+        self.localizeTextFN()
     }
     
     /// Here we change text with key replacement for placeholder
-    func localizePlaceholder() {
-        if self.localizeTagPlaceholder != nil {
-            self.placeholder = self.localizeTagPlaceholder?.localize()
+    func localizePlaceholderFN() {
+        if self.localizePlaceholder != nil {
+            self.placeholder = self.localizePlaceholder?.localize()
             return
         }
         if let placeholder = self.placeholder, !placeholder.isEmpty {
             self.placeholder = placeholder.localize()
-            if self.localizeTagPlaceholder == nil && self.placeholder != placeholder {
-                self.localizeTagPlaceholder = placeholder
+            if self.localizePlaceholder == nil && self.placeholder != placeholder {
+                self.localizePlaceholder = placeholder
             }
         }
     }
     
     /// Here we change text with key replacement for text
-    func localizeText() {
-        if self.localizeTagText != nil {
-            self.text = self.localizeTagText?.localize()
+    func localizeTextFN() {
+        if self.localizeText != nil {
+            self.text = self.localizeText?.localize()
             return
         }
         if let text = self.text, !text.isEmpty {
             self.text = text.localize()
-            if self.localizeTagText == nil && self.text != text {
-                self.localizeTagText = text
+            if self.localizeText == nil && self.text != text {
+                self.localizeText = text
             }
         }
     }
@@ -434,7 +410,7 @@ extension UITextField {
 extension UITextView {
     
     /// Localizable tag storeged property
-    var localizeTag: String! {
+    @IBInspectable public var localizeKey: String? {
         get {
             return objc_getAssociatedObject(self, &localizeKey1) as? String
         }
@@ -454,17 +430,14 @@ extension UITextView {
     
     /// Here we change text with key replacement
     public func localize() {
-        if Localize.shared.localizeInterface == .classes {
-            return
-        }
-        if self.localizeTag != nil {
-            self.text = self.localizeTag?.localize()
+        if self.localizeKey != nil {
+            self.text = self.localizeKey?.localize()
             return
         }
         if let text = self.text, !text.isEmpty {
             self.text = text.localize()
-            if self.localizeTag == nil && self.text != text {
-                self.localizeTag = text
+            if self.localizeKey == nil && self.text != text {
+                self.localizeKey = text
             }
         }
     }

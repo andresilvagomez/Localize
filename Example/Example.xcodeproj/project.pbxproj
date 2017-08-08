@@ -3,10 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 46;
+	objectVersion = 48;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9F176E791F279FF900336124 /* lang-en-DE.json in Resources */ = {isa = PBXBuildFile; fileRef = 9F8ACA6C1F279EC70052380A /* lang-en-DE.json */; };
 		9F36174D1E33CDA1006E81BC /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9F36174C1E33CDA1006E81BC /* Images.xcassets */; };
 		9F761AE81E3063AB00904B4B /* lang-en.json in Resources */ = {isa = PBXBuildFile; fileRef = 9F761AE51E3063AB00904B4B /* lang-en.json */; };
 		9F761AE91E3063AB00904B4B /* lang-es.json in Resources */ = {isa = PBXBuildFile; fileRef = 9F761AE61E3063AB00904B4B /* lang-es.json */; };
@@ -53,6 +54,7 @@
 		9F761AE51E3063AB00904B4B /* lang-en.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "lang-en.json"; sourceTree = "<group>"; };
 		9F761AE61E3063AB00904B4B /* lang-es.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "lang-es.json"; sourceTree = "<group>"; };
 		9F761AE71E3063AB00904B4B /* lang-fr.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "lang-fr.json"; sourceTree = "<group>"; };
+		9F8ACA6C1F279EC70052380A /* lang-en-DE.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "lang-en-DE.json"; sourceTree = "<group>"; };
 		9F8D414D1E29359A00D7CE9A /* Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F8D41501E29359A00D7CE9A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9F8D41521E29359A00D7CE9A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -84,6 +86,7 @@
 		9F761AE21E3060B100904B4B /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				9F8ACA6C1F279EC70052380A /* lang-en-DE.json */,
 				9F761AE51E3063AB00904B4B /* lang-en.json */,
 				9F761AE61E3063AB00904B4B /* lang-es.json */,
 				9F761AE71E3063AB00904B4B /* lang-fr.json */,
@@ -151,16 +154,16 @@
 			attributes = {
 				LastSwiftUpdateCheck = 0820;
 				LastUpgradeCheck = 0820;
-				ORGANIZATIONNAME = "Mobility Solutions SAS";
+				ORGANIZATIONNAME = "Kekiiwaa ";
 				TargetAttributes = {
 					9F8D414C1E29359A00D7CE9A = {
 						CreatedOnToolsVersion = 8.2.1;
-						ProvisioningStyle = Manual;
+						ProvisioningStyle = Automatic;
 					};
 				};
 			};
 			buildConfigurationList = 9F8D41481E29359A00D7CE9A /* Build configuration list for PBXProject "Example" */;
-			compatibilityVersion = "Xcode 3.2";
+			compatibilityVersion = "Xcode 8.0";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -206,6 +209,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9F176E791F279FF900336124 /* lang-en-DE.json in Resources */,
 				9FB68F231E2B5D1400D386CE /* LaunchScreen.storyboard in Resources */,
 				9F761AEA1E3063AB00904B4B /* lang-fr.json in Resources */,
 				9FB68F241E2B5D1400D386CE /* Main.storyboard in Resources */,
@@ -349,12 +353,16 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				DEVELOPMENT_TEAM = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 69RRCEKXZC;
 				INFOPLIST_FILE = Example/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.mobility.Example;
+				PRODUCT_BUNDLE_IDENTIFIER = com.kekiiwaa.localize;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -364,12 +372,15 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				DEVELOPMENT_TEAM = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 69RRCEKXZC;
 				INFOPLIST_FILE = Example/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.mobility.Example;
+				PRODUCT_BUNDLE_IDENTIFIER = com.kekiiwaa.localize;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;

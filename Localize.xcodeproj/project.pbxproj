@@ -18,7 +18,6 @@
 		9F761AD71E305B9B00904B4B /* LocalizeStatic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F761AD61E305B9B00904B4B /* LocalizeStatic.swift */; };
 		9F761AEC1E3063E400904B4B /* lang-en.json in Resources */ = {isa = PBXBuildFile; fileRef = 9F761AEB1E3063E400904B4B /* lang-en.json */; };
 		9F93453F1E29192300C400F7 /* LocalizeExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F93453A1E29192300C400F7 /* LocalizeExtensions.swift */; };
-		9F9345401E29192300C400F7 /* LocalizeUIElements.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F93453B1E29192300C400F7 /* LocalizeUIElements.swift */; };
 		9F9345411E29192300C400F7 /* Localize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F93453C1E29192300C400F7 /* Localize.swift */; };
 		9F9345421E29192300C400F7 /* LocalizeString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F93453D1E29192300C400F7 /* LocalizeString.swift */; };
 		9F93454B1E291AF800C400F7 /* Localize.h in Headers */ = {isa = PBXBuildFile; fileRef = 9F9345471E291A2700C400F7 /* Localize.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -60,7 +59,6 @@
 		9F761AD61E305B9B00904B4B /* LocalizeStatic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalizeStatic.swift; sourceTree = "<group>"; };
 		9F761AEB1E3063E400904B4B /* lang-en.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "lang-en.json"; sourceTree = "<group>"; };
 		9F93453A1E29192300C400F7 /* LocalizeExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalizeExtensions.swift; sourceTree = "<group>"; };
-		9F93453B1E29192300C400F7 /* LocalizeUIElements.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalizeUIElements.swift; sourceTree = "<group>"; };
 		9F93453C1E29192300C400F7 /* Localize.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Localize.swift; sourceTree = "<group>"; };
 		9F93453D1E29192300C400F7 /* LocalizeString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalizeString.swift; sourceTree = "<group>"; };
 		9F9345471E291A2700C400F7 /* Localize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Localize.h; sourceTree = "<group>"; };
@@ -125,7 +123,6 @@
 				9F761AD61E305B9B00904B4B /* LocalizeStatic.swift */,
 				9F93453D1E29192300C400F7 /* LocalizeString.swift */,
 				9F93453A1E29192300C400F7 /* LocalizeExtensions.swift */,
-				9F93453B1E29192300C400F7 /* LocalizeUIElements.swift */,
 				9F2FC5641E4275A300C15610 /* LocalizeProtocol.swift */,
 				9F262D901E525565002DD75A /* LocalizeCommonProtocol.swift */,
 				9F2FC5661E42793B00C15610 /* LocalizeJson.swift */,
@@ -234,7 +231,7 @@
 			attributes = {
 				LastSwiftUpdateCheck = 0820;
 				LastUpgradeCheck = 0830;
-				ORGANIZATIONNAME = Mobility;
+				ORGANIZATIONNAME = Kekiiwaa;
 				TargetAttributes = {
 					69F1B5731D955990000A2B87 = {
 						CreatedOnToolsVersion = 8.0;
@@ -299,7 +296,6 @@
 				9F2FC5691E427AFD00C15610 /* LocalizeStrings.swift in Sources */,
 				9F262D911E525565002DD75A /* LocalizeCommonProtocol.swift in Sources */,
 				9F93453F1E29192300C400F7 /* LocalizeExtensions.swift in Sources */,
-				9F9345401E29192300C400F7 /* LocalizeUIElements.swift in Sources */,
 				9F2FC5671E42793B00C15610 /* LocalizeJson.swift in Sources */,
 				9F9345411E29192300C400F7 /* Localize.swift in Sources */,
 				9F9345421E29192300C400F7 /* LocalizeString.swift in Sources */,

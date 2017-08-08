@@ -1,12 +1,12 @@
 # Localize
 
-[![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage) 
+[![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 [![CocoaPods](https://img.shields.io/cocoapods/v/Localize.svg)](https://cocoapods.org/pods/Localize)
 [![Build Status](https://travis-ci.org/Kekiiwaa/Localize.svg?branch=master)](https://travis-ci.org/Kekiiwaa/Localize)
 
 Localize is a framework writed in swift to localize your projects easier improves i18n, including storyboards and strings.
 
-![Localize Storyboard](https://dl.dropboxusercontent.com/u/72454729/JsonLocalizable/simulator.gif)
+![Localize Storyboard](https://www.dropbox.com/s/t5uij0bg0tgignu/localize.gif?raw=1)
 ___
 
 - [Features](#features)
@@ -18,20 +18,13 @@ ___
 ## Features
 
 - [x] Keep the Localizable.strings file your app already uses
-- [x] Support Apple strings
-- [x] Support JSON Files
+- [x] Support Apple strings and JSON Files
 - [x] Change your app language without changing device language
-- [x] Localize your strings 
-- [x] Localize your Storyboards without extra files
-- [x] Localize your UIView components without xcode UIView ids
-- [x] Localize your UIView components only with keys
-- [x] Localize your UIView components with classes
-- [x] Update your current language and update all view components
-- [x] Update your current language and receive notification
+- [x] Localize your Storyboards without extra files or/and ids
 
 ## Requirements
 
-- iOS 8.0+ 
+- iOS 8.0+
 - Xcode 8.0+
 - Swift 3.0+
 
@@ -45,7 +38,7 @@ ___
 $ gem install cocoapods
 ```
 
-> CocoaPods 1.1.0+ is required to build Localize 1.0+.
+> CocoaPods 1.1.0+ is required to build Localize 1.+.
 
 To integrate Localize into your Xcode project using CocoaPods, specify it in your `Podfile`:
 
@@ -55,7 +48,7 @@ platform :ios, '8.0'
 use_frameworks!
 
 target '<Your Target Name>' do
-    pod 'Localize' , '~> 1.3.0'
+    pod 'Localize' , '~> 1.5.0'
 end
 ```
 
@@ -114,7 +107,7 @@ You can decide if you want use JSON or Apple Strings, we support both, if you de
 
 ### Create JSON file
 
-Please create a JSON file in your code with this rule: 
+Please create a JSON file in your code with this rule:
 
 ```
 {your file name}-{your lang code}.json
@@ -230,11 +223,7 @@ print( "username".localize(dictionary: ["username": "Localize"], tableName: "You
 
 You don't need import anything in your code, Localize use extensions to localize your UIView components
 
-![Localize Storyboard](https://dl.dropboxusercontent.com/u/72454729/JsonLocalizable/storyboard.png?raw=1)
-
-This is the result in your simulator
-
-![Localize Simulator](https://dl.dropboxusercontent.com/u/72454729/JsonLocalizable/simulator.png?raw=1)
+![Localize Storyboard](https://www.dropbox.com/s/d2ydhozqdetd1oo/Screenshot%202017-08-07%2023.12.12.png?raw=1)
 
 - lang-en.json
 
@@ -250,7 +239,7 @@ This is the result in your simulator
 }
 ```
 
-You can use extensions for 
+You can use extensions for
 
 - ``` UIBarButtonItem ```
 - ``` UIButton ```
@@ -264,49 +253,12 @@ You can use extensions for
 
 ---
 
-### Localize your storyboard with classes
-You don't need import anything in your code, Localize use extensions to localize your UIView components
-
-- lang-en.json
-
-```json
-{
-    "navigation" : {
-        "title" : "Localize"
-    },
-    "app" : {
-        "label" : "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium.",
-        "textfield" : "Write some here."
-    }
-}
-```
-
-![Localize Storyboard](https://dl.dropboxusercontent.com/u/72454729/JsonLocalizable/classes.png?raw=1)
-
-This is the result in your simulator
-
-![Localize Simulator](https://dl.dropboxusercontent.com/u/72454729/JsonLocalizable/simulator2.png?raw=1)
-
-You can use this classes
-
-- ``` LocalizeBarButtonItem ```
-- ``` LocalizeButton ```
-- ``` LocalizeLabel ```
-- ``` LocalizeNavigationBarItem ```
-- ``` LocalizeSearchBar ```
-- ``` LocalizeSegmentedControler ```
-- ``` LocalizeBarItem ```
-- ``` LocalizeTextField ```
-- ``` LocalizeTextView ```
-
----
-
 ## Updating language
 When you change a language, automatically all views update your content to new language
 
 ```swift
 
-Localize.update(language: .french)
+Localize.update(language: "fr")
 
 ```
 
@@ -365,9 +317,9 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
     // Set your file name
     localize.update(fileName: "lang")
     // Set your default languaje.
-    localize.update(defaultLanguage: .french)
-    // If you want change a user language, different to default in phone use this method.
-    localize.update(language: .english)
+    localize.update(defaultLanguage: "fr")
+    // If you want change a user language, different to default in phone use thimethod.
+    localize.update(language: "en")
     // If you want remove storaged languaje use
     localize.resetLanguage()
     // The used language
@@ -375,11 +327,10 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
     // List of aviable languajes
     print(localize.availableLanguages())
 
-    // Or you can use static methods for all.
-
+    // Or you can use static methods for all          
     Localize.update(fileName: "lang")
-    Localize.update(defaultLanguage: .french)
-    Localize.update(language: .english)
+    Localize.update(defaultLanguage: "fr")
+    Localize.update(language: "en-DE")
 
     return true
 }
@@ -390,9 +341,10 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 
 ## Credits
 
-[Kekiiwaa](https://github.com/Kekiiwaa), 
-[Andres Silva Gomez](https://github.com/andresilvagomez),
-[Andres Felipe Montoya](https://github.com/pipemontoya)
+[Kekiiwaa](https://github.com/Kekiiwaa),
+[Andres Silva Gomez](https://github.com/andresilvagomez)
+
+Special thanks to [Benjamin Erhart](https://github.com/tladesignz)
 
 ## License
 

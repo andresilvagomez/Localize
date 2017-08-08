@@ -22,7 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         localize.update(fileName: "lang")
         // Set your default languaje.
         localize.update(defaultLanguage: "fr")
-        // If you want change a user language, different to default in phone use this method.
+        // If you want change a user language, different to default in phone use thimethod.
         localize.update(language: "en")
         // If you want remove storaged languaje use
         localize.resetLanguage()
@@ -30,12 +30,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         print(localize.language())
         // List of aviable languajes
         print(localize.availableLanguages())
-        
-        // Or you can use static methods for all.
-        
+            
+        // Or you can use static methods for all
+            
         Localize.update(fileName: "lang")
         Localize.update(defaultLanguage: "fr")
-        Localize.update(language: "en")
+        Localize.update(language: "en-DE")
         
         return true
     }

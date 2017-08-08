@@ -20,10 +20,6 @@ class ViewController: UIViewController {
         print("the.same.lavel".localize())
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-    }
-
     @IBAction func updateLanguage(_ sender: Any) {
         let actionSheet = UIAlertController(title: nil, message: "app.update.language".localize(), preferredStyle: UIAlertControllerStyle.actionSheet)
         for language in Localize.availableLanguages() {
