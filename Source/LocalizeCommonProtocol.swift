@@ -24,9 +24,6 @@ class LocalizeCommonProtocol: NSObject {
     /// Try read key in default language
     public var defaultLanguage: String = "en"
     
-    /// Determinate if your interface localization is based on LocalizeInterface
-    public var localizableInterface: LocalizeInterface = .boot
-    
     /// Storaged language or default language in device
     public var currentLanguage: String {
         get {

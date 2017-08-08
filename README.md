@@ -6,7 +6,7 @@
 
 Localize is a framework writed in swift to localize your projects easier improves i18n, including storyboards and strings.
 
-![Localize Storyboard](https://dl.dropboxusercontent.com/u/72454729/JsonLocalizable/simulator.gif)
+![Localize Storyboard](https://www.dropbox.com/s/t5uij0bg0tgignu/localize.gif?raw=1)
 ___
 
 - [Features](#features)
@@ -18,16 +18,9 @@ ___
 ## Features
 
 - [x] Keep the Localizable.strings file your app already uses
-- [x] Support Apple strings
-- [x] Support JSON Files
+- [x] Support Apple strings and JSON Files
 - [x] Change your app language without changing device language
-- [x] Localize your strings
-- [x] Localize your Storyboards without extra files
-- [x] Localize your UIView components without xcode UIView ids
-- [x] Localize your UIView components only with keys
-- [x] Localize your UIView components with classes
-- [x] Update your current language and update all view components
-- [x] Update your current language and receive notification
+- [x] Localize your Storyboards without extra files or/and ids
 
 ## Requirements
 
@@ -45,7 +38,7 @@ ___
 $ gem install cocoapods
 ```
 
-> CocoaPods 1.1.0+ is required to build Localize 1.0+.
+> CocoaPods 1.1.0+ is required to build Localize 1.+.
 
 To integrate Localize into your Xcode project using CocoaPods, specify it in your `Podfile`:
 
@@ -55,7 +48,7 @@ platform :ios, '8.0'
 use_frameworks!
 
 target '<Your Target Name>' do
-    pod 'Localize' , '~> 1.4.0'
+    pod 'Localize' , '~> 1.5.0'
 end
 ```
 
@@ -230,11 +223,7 @@ print( "username".localize(dictionary: ["username": "Localize"], tableName: "You
 
 You don't need import anything in your code, Localize use extensions to localize your UIView components
 
-![Localize Storyboard](https://dl.dropboxusercontent.com/u/72454729/JsonLocalizable/storyboard.png?raw=1)
-
-This is the result in your simulator
-
-![Localize Simulator](https://dl.dropboxusercontent.com/u/72454729/JsonLocalizable/simulator.png?raw=1)
+![Localize Storyboard](https://www.dropbox.com/s/d2ydhozqdetd1oo/Screenshot%202017-08-07%2023.12.12.png?raw=1)
 
 - lang-en.json
 
@@ -261,43 +250,6 @@ You can use extensions for
 - ``` UITabBarItem ```
 - ``` UITextField ```
 - ``` UITextView ```
-
----
-
-### Localize your storyboard with classes
-You don't need import anything in your code, Localize use extensions to localize your UIView components
-
-- lang-en.json
-
-```json
-{
-    "navigation" : {
-        "title" : "Localize"
-    },
-    "app" : {
-        "label" : "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium.",
-        "textfield" : "Write some here."
-    }
-}
-```
-
-![Localize Storyboard](https://dl.dropboxusercontent.com/u/72454729/JsonLocalizable/classes.png?raw=1)
-
-This is the result in your simulator
-
-![Localize Simulator](https://dl.dropboxusercontent.com/u/72454729/JsonLocalizable/simulator2.png?raw=1)
-
-You can use this classes
-
-- ``` LocalizeBarButtonItem ```
-- ``` LocalizeButton ```
-- ``` LocalizeLabel ```
-- ``` LocalizeNavigationBarItem ```
-- ``` LocalizeSearchBar ```
-- ``` LocalizeSegmentedControler ```
-- ``` LocalizeBarItem ```
-- ``` LocalizeTextField ```
-- ``` LocalizeTextView ```
 
 ---
 
@@ -358,7 +310,7 @@ This not is necesary, only if you need diferent results.
 import Localize
 
 func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-    
+
     let localize = Localize.shared
     // Set your localize provider.
     localize.update(provider: .json)
@@ -373,12 +325,13 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
     // The used language
     print(localize.language())
     // List of aviable languajes
-    print(localize.availableLanguages()            
-    // Or you can use static methods for all          
+    print(localize.availableLanguages())
 
+    // Or you can use static methods for all          
     Localize.update(fileName: "lang")
     Localize.update(defaultLanguage: "fr")
-    Localize.update(language: "en-DE"            
+    Localize.update(language: "en-DE")
+
     return true
 }
 
@@ -389,7 +342,9 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 ## Credits
 
 [Kekiiwaa](https://github.com/Kekiiwaa),
-[Andres Silva Gomez](https://github.com/andresilvagomez),
+[Andres Silva Gomez](https://github.com/andresilvagomez)
+
+Special thanks to [Benjamin Erhart](https://github.com/tladesignz)
 
 ## License
 
