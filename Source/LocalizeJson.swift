@@ -22,8 +22,15 @@ class LocalizeJson: LocalizeCommonProtocol, LocalizeProtocol {
     /// As long as the default language is the same as the current one.
     private func readJSON(tableName:String? = nil) -> NSDictionary? {
         let tableName = tableName ?? self.fileName
-        let lang = self.currentLanguage
+        var lang = self.currentLanguage
         var json = self.readJSON(named: "\(tableName)-\(lang)")
+        
+        if json != nil {
+            return json
+        }
+        
+        lang = lang.components(separatedBy: "-")[0]
+        json = self.readJSON(named: "\(tableName)-\(lang)")
         
         if json == nil && lang != self.defaultLanguage {
             json = self.readDefaultJSON()
