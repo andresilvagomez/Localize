@@ -4,6 +4,16 @@ All notable changes to this project will be documented in this file.
 
 ---
 
+## [1.5.1](https://github.com/kekiiwaa/Localize/releases/tag/1.5.1)
+Released on 2017-08-10.
+
+#### Added
+- Fix with country code.
+  - By [Andres Silva](https://github.com/andresilvagomez) in Pull Request
+  [#14](https://github.com/Kekiiwaa/Localize/pull/17).
+
+---
+
 ## [1.5.0](https://github.com/kekiiwaa/Localize/releases/tag/1.5.0)
 Released on 2017-08-08.
 
