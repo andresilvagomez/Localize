@@ -10,7 +10,7 @@ Released on 2017-09-27.
 #### Added
 - Swift 4.
   - By [Andres Silva](https://github.com/andresilvagomez) in Pull Request
-  [#17](https://github.com/Kekiiwaa/Localize/pull/18).
+  [#18](https://github.com/Kekiiwaa/Localize/pull/18).
 
 ---
 
