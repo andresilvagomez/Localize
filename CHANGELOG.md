@@ -10,7 +10,7 @@ Released on 2017-08-10.
 #### Added
 - Fix with country code.
   - By [Andres Silva](https://github.com/andresilvagomez) in Pull Request
-  [#14](https://github.com/Kekiiwaa/Localize/pull/17).
+  [#17](https://github.com/Kekiiwaa/Localize/pull/17).
 
 ---
 
