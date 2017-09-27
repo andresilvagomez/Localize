@@ -48,7 +48,7 @@ platform :ios, '8.0'
 use_frameworks!
 
 target '<Your Target Name>' do
-    pod 'Localize' , '~> 1.5.1'
+    pod 'Localize' , '~> 1.5.2'
 end
 ```
 

@@ -4,6 +4,16 @@ All notable changes to this project will be documented in this file.
 
 ---
 
+## [1.5.2](https://github.com/kekiiwaa/Localize/releases/tag/1.5.2)
+Released on 2017-09-27.
+
+#### Added
+- Swift 4.
+  - By [Andres Silva](https://github.com/andresilvagomez) in Pull Request
+  [#17](https://github.com/Kekiiwaa/Localize/pull/18).
+
+---
+
 ## [1.5.1](https://github.com/kekiiwaa/Localize/releases/tag/1.5.1)
 Released on 2017-08-10.
 
