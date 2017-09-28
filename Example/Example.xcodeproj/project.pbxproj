@@ -19,16 +19,16 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		9F3617451E33CB1F006E81BC /* PBXContainerItemProxy */ = {
+		9FF5FC531F7C5618001C14D6 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 9F3617401E33CB1F006E81BC /* Localize.xcodeproj */;
+			containerPortal = 9FF5FC4E1F7C5618001C14D6 /* Localize.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 69F1B5741D955990000A2B87;
 			remoteInfo = Localize;
 		};
-		9F3617471E33CB1F006E81BC /* PBXContainerItemProxy */ = {
+		9FF5FC551F7C5618001C14D6 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 9F3617401E33CB1F006E81BC /* Localize.xcodeproj */;
+			containerPortal = 9FF5FC4E1F7C5618001C14D6 /* Localize.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 9F9345531E291D4E00C400F7;
 			remoteInfo = LocalizeTests;
@@ -49,7 +49,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		9F3617401E33CB1F006E81BC /* Localize.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Localize.xcodeproj; path = ../Localize.xcodeproj; sourceTree = "<group>"; };
 		9F36174C1E33CDA1006E81BC /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		9F761AE51E3063AB00904B4B /* lang-en.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "lang-en.json"; sourceTree = "<group>"; };
 		9F761AE61E3063AB00904B4B /* lang-es.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "lang-es.json"; sourceTree = "<group>"; };
@@ -61,6 +60,7 @@
 		9F8D415C1E29359A00D7CE9A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9FB68F201E2B5D1400D386CE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9FB68F221E2B5D1400D386CE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		9FF5FC4E1F7C5618001C14D6 /* Localize.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Localize.xcodeproj; path = ../Localize.xcodeproj; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,15 +74,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		9F3617411E33CB1F006E81BC /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				9F3617461E33CB1F006E81BC /* Localize.framework */,
-				9F3617481E33CB1F006E81BC /* LocalizeTests.xctest */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 		9F761AE21E3060B100904B4B /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -100,7 +91,7 @@
 			children = (
 				9F8D414F1E29359A00D7CE9A /* Example */,
 				9F8D414E1E29359A00D7CE9A /* Products */,
-				9F3617401E33CB1F006E81BC /* Localize.xcodeproj */,
+				9FF5FC4E1F7C5618001C14D6 /* Localize.xcodeproj */,
 			);
 			sourceTree = "<group>";
 		};
@@ -123,6 +114,15 @@
 				9F761AE21E3060B100904B4B /* Supporting Files */,
 			);
 			path = Example;
+			sourceTree = "<group>";
+		};
+		9FF5FC4F1F7C5618001C14D6 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9FF5FC541F7C5618001C14D6 /* Localize.framework */,
+				9FF5FC561F7C5618001C14D6 /* LocalizeTests.xctest */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -153,7 +153,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0820;
-				LastUpgradeCheck = 0820;
+				LastUpgradeCheck = 0900;
 				ORGANIZATIONNAME = "Kekiiwaa ";
 				TargetAttributes = {
 					9F8D414C1E29359A00D7CE9A = {
@@ -176,8 +176,8 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProductGroup = 9F3617411E33CB1F006E81BC /* Products */;
-					ProjectRef = 9F3617401E33CB1F006E81BC /* Localize.xcodeproj */;
+					ProductGroup = 9FF5FC4F1F7C5618001C14D6 /* Products */;
+					ProjectRef = 9FF5FC4E1F7C5618001C14D6 /* Localize.xcodeproj */;
 				},
 			);
 			projectRoot = "";
@@ -188,18 +188,18 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		9F3617461E33CB1F006E81BC /* Localize.framework */ = {
+		9FF5FC541F7C5618001C14D6 /* Localize.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
 			path = Localize.framework;
-			remoteRef = 9F3617451E33CB1F006E81BC /* PBXContainerItemProxy */;
+			remoteRef = 9FF5FC531F7C5618001C14D6 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		9F3617481E33CB1F006E81BC /* LocalizeTests.xctest */ = {
+		9FF5FC561F7C5618001C14D6 /* LocalizeTests.xctest */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.cfbundle;
 			path = LocalizeTests.xctest;
-			remoteRef = 9F3617471E33CB1F006E81BC /* PBXContainerItemProxy */;
+			remoteRef = 9FF5FC551F7C5618001C14D6 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -263,7 +263,9 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -271,7 +273,11 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -314,7 +320,9 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -322,7 +330,11 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -363,7 +375,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
 		};
@@ -381,7 +393,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.kekiiwaa.localize;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
 		};

@@ -1,14 +1,15 @@
 language: objective-c
-osx_image: xcode8
+osx_image: xcode9
 env:
   global:
   - LC_CTYPE=en_US.UTF-8
   - LANG=en_US.UTF-8
   - WORKSPACE=Localize.xcworkspace
   - IOS_FRAMEWORK_SCHEME="LocalizeTests"
-  - IOS_SDK=iphonesimulator10.0
+  - IOS_SDK=iphonesimulator11.0
   - EXAMPLE_SCHEME="Example"
   matrix:
+    - DESTINATION="OS=11.0,name=iPhone 7 Plus"     SCHEME="$IOS_FRAMEWORK_SCHEME"     SDK="$IOS_SDK"     RUN_TESTS="YES" BUILD_EXAMPLE="YES" POD_LINT="YES"
     - DESTINATION="OS=10.0,name=iPhone 7 Plus"     SCHEME="$IOS_FRAMEWORK_SCHEME"     SDK="$IOS_SDK"     RUN_TESTS="YES" BUILD_EXAMPLE="YES" POD_LINT="YES"
     - DESTINATION="OS=9.0,name=iPhone 6"           SCHEME="$IOS_FRAMEWORK_SCHEME"     SDK="$IOS_SDK"     RUN_TESTS="YES" BUILD_EXAMPLE="YES" POD_LINT="NO"
 before_install:
