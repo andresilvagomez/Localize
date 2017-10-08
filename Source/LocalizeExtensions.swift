@@ -33,7 +33,7 @@ extension UIBarButtonItem {
     }
     
     /// Here we change text with key replacement
-    public func localize() {
+    @objc public func localize() {
         if self.localizeKey != nil {
             self.title = self.localizeKey?.localize()
             return
@@ -71,7 +71,7 @@ extension UIButton {
     }
     
     /// Here we change text with key replacement
-    public func localize() {
+    @objc public func localize() {
         if self.localizeKey != nil {
             for state in [UIControlState.normal, .highlighted, .selected, .disabled] {
                 if let title = title(for: state) , !title.isEmpty {
@@ -116,7 +116,7 @@ extension UILabel {
     }
     
     /// Here we change text with key replacement
-    public func localize() {
+    @objc public func localize() {
         if self.localizeKey != nil {
             self.text = self.localizeKey?.localize()
             return
@@ -164,7 +164,7 @@ extension UINavigationItem {
     }
     
     /// Here we change text with key replacement
-    public func localize() {
+    @objc public func localize() {
         self.localizeTitleFN()
         self.localizePromptFN()
     }
@@ -232,7 +232,7 @@ extension UISearchBar {
     }
     
     /// Here we change text with key replacement
-    public func localize() {
+    @objc public func localize() {
         self.localizePlaceholderFN()
         self.localizePromptFN()
     }
@@ -290,7 +290,7 @@ extension UISegmentedControl {
     }
     
     /// Here we change text with key replacement
-    public func localize() {
+    @objc public func localize() {
         for index in 0...(self.numberOfSegments - 1) {
             if let title = self.titleForSegment(at: index), !title.isEmpty {
                 self.setTitle(title.localize(), forSegmentAt: index)
@@ -323,7 +323,7 @@ extension UITabBarItem {
     }
     
     /// Here we change text with key replacement
-    public func localize() {
+    @objc public func localize() {
         if self.localizeKey != nil {
             self.title = self.localizeKey?.localize()
             return
@@ -371,7 +371,7 @@ extension UITextField {
     }
     
     /// Here we change text with key replacement
-    public func localize() {
+    @objc public func localize() {
         self.localizePlaceholderFN()
         self.localizeTextFN()
     }
@@ -429,7 +429,7 @@ extension UITextView {
     }
     
     /// Here we change text with key replacement
-    public func localize() {
+    @objc public func localize() {
         if self.localizeKey != nil {
             self.text = self.localizeKey?.localize()
             return
