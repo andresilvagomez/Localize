@@ -15,10 +15,10 @@ class LocalizeCommonProtocol: NSObject {
 
     /// Bundle used to load files from.
     /// Defaults to the main bundle.
-    private var usedBundle: Bundle = Bundle.main
+    private var usedBundle = Bundle.main
 
     /// Use this for testing mode, search resources in different bundles.
-    var testing: Bool = false
+    public var testing: Bool = false
     
     /// Default language, if this can't find a key in your current language
     /// Try read key in default language
@@ -86,8 +86,8 @@ class LocalizeCommonProtocol: NSObject {
     
     /// Enable testing mode
     /// Please not use in your code, is only for test schema.
-    public func testingMode() {
-        self.testing = true
+    public func enableTestingMode() {
+        testing = true
     }
     
     /// Update base file name, searched in path.
@@ -130,7 +130,7 @@ class LocalizeCommonProtocol: NSObject {
     /// - parameter value: The replacement values
     ///
     /// - returns: localized key or same text
-    public func localize(key: String, values replace:[Any], tableName: String? = nil) -> String {
+    public func localize(key: String, values replace: [Any], tableName: String? = nil) -> String {
         var string = localize(key: key, tableName:tableName)
         if string == key {
             return key

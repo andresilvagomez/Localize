@@ -63,12 +63,12 @@ fileprivate extension JSON {
     }
 }
 
-class LocalizeJson: LocalizeCommonProtocol, LocalizeProtocol {
+class LocalizeJson: LocalizeCommonProtocol, LocalizeProtocol {    
 
     /// Create default lang name
     override init() {
         super.init()
-        self.fileName = "lang"
+        fileName = "lang"
     }
     
     /// Show all aviable languages with criteria name

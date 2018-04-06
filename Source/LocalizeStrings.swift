@@ -12,7 +12,7 @@ class LocalizeStrings: LocalizeCommonProtocol, LocalizeProtocol {
     /// Create default lang name
     override init() {
         super.init()
-        self.fileName = "Strings"
+        fileName = "Strings"
     }
     
     /// Show all aviable languajes whit criteria name

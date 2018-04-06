@@ -97,8 +97,8 @@ extension Localize {
     
     /// Enable testing mode
     /// Please not use in your code, is only for test schema.
-    public static func testingMode() {
-        Localize.shared.testingMode()
+    public static func enableTestingMode() {
+        Localize.shared.enableTestingMode()
     }
     
     // MARK: Config providers

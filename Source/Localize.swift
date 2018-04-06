@@ -48,12 +48,6 @@ public class Localize: NSObject {
         return provider.currentLanguage
     }
     
-    /// This override prevent user access to different instances for this class.
-    /// Always use shared instance.
-    private override init() {
-        super.init()
-    }
-    
     // MARK: Public methods
     
     /// Localize a string using your JSON File
@@ -133,8 +127,8 @@ public class Localize: NSObject {
     
     /// Enable testing mode
     /// Please not use in your code, is only for test schema.
-    public func testingMode() {
-        provider.testingMode()
+    public func enableTestingMode() {
+        provider.enableTestingMode()
     }
     
     // MARK: Config providers

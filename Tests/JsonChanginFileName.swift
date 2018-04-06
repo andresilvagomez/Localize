@@ -15,7 +15,7 @@ class JsonChanginFileName: XCTestCase {
         Localize.update(provider: .json)
         Localize.update(language: "es")
         Localize.update(fileName: "lang")
-        Localize.testingMode()
+        Localize.enableTestingMode()
     }
     
     func testKeyInOtherLanguage() {

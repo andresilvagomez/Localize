@@ -13,7 +13,7 @@ class BaseTest: XCTestCase {
     override func setUp() {
         super.setUp()
         Localize.update(provider: .json)
-        Localize.testingMode()
+        Localize.enableTestingMode()
         Localize.update(language: "en")
     }
     

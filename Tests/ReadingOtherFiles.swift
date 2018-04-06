@@ -16,7 +16,7 @@ class ReadingOtherFiles: XCTestCase {
     }
     
     func testOtherEnglish() {
-        Localize.testingMode()
+        Localize.enableTestingMode()
         Localize.update(language: "en")
         Localize.update(fileName: "other")
         let result = "hello".localize()
@@ -24,7 +24,7 @@ class ReadingOtherFiles: XCTestCase {
     }
     
     func testSomeItalian() {
-        Localize.testingMode()
+        Localize.enableTestingMode()
         Localize.update(language: "it")
         Localize.update(fileName: "some")
         let result = "hello".localize()
@@ -32,7 +32,7 @@ class ReadingOtherFiles: XCTestCase {
     }
     
     func testFileGerman() {
-        Localize.testingMode()
+        Localize.enableTestingMode()
         Localize.update(language: "de")
         Localize.update(fileName: "file")
         let result = "hello".localize()

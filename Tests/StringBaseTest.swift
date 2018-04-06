@@ -13,7 +13,7 @@ class StringBaseTest: XCTestCase {
     override func setUp() {
         super.setUp()
         Localize.update(provider: .strings)
-        Localize.testingMode()
+        Localize.enableTestingMode()
         Localize.update(language: "en")
     }
     

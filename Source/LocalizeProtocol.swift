@@ -87,6 +87,6 @@ protocol LocalizeProtocol {
     
     /// Enable testing mode
     /// Please not use in your code, is only for test schema.
-    func testingMode()
+    func enableTestingMode()
     
 }
