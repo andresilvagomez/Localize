@@ -27,9 +27,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // If you want remove storaged languaje use
         localize.resetLanguage()
         // The used language
-        print(localize.language())
+        print(localize.currentLanguage)
         // List of aviable languajes
-        print(localize.availableLanguages())
+        print(localize.availableLanguages)
             
         // Or you can use static methods for all
             

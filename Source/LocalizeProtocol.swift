@@ -16,8 +16,18 @@ protocol LocalizeProtocol {
     /// Try read key in default language
     var defaultLanguage: String {get set}
     
+    /// Storaged language or default language in device
+    ///
+    /// - returns: storaged language
+    var currentLanguage: String {get}
     
-    /// MARK: Localize Methos
+    /// Show all aviable languajes whit criteria name
+    ///
+    /// - returns: list with storaged languages code
+    var availableLanguages: [String] {get}
+    
+    
+    // MARK: Localize Methos
     
     
     /// Localize a string using your JSON File
@@ -25,7 +35,7 @@ protocol LocalizeProtocol {
     /// That prevent replace untagged values
     ///
     /// - returns: localized key or same text
-    func localize(key:String, tableName:String?) -> String
+    func localize(key: String, tableName: String?) -> String
     
     /// Localize a string using your JSON File
     /// That replace all % character in your string with replace value.
@@ -33,7 +43,7 @@ protocol LocalizeProtocol {
     /// - parameter value: The replacement value
     ///
     /// - returns: localized key or same text
-    func localize(key:String, replace:String, tableName:String?) -> String
+    func localize(key: String, replace: String, tableName: String?) -> String
     
     /// Localize a string using your JSON File
     /// That replace each % character in your string with each replace value.
@@ -41,7 +51,7 @@ protocol LocalizeProtocol {
     /// - parameter value: The replacement values
     ///
     /// - returns: localized key or same text
-    func localize(key:String, values replace:[Any], tableName:String?) -> String
+    func localize(key: String, values replace: [Any], tableName: String?) -> String
     
     /// Localize string with dictionary values
     /// Get properties in your key with rule :property
@@ -50,22 +60,16 @@ protocol LocalizeProtocol {
     /// - parameter value: The replacement dictionary
     ///
     /// - returns: localized key or same text
-    func localize(key:String, dictionary replace:[String:String], tableName:String?) -> String
+    func localize(key: String, dictionary replace: [String: String], tableName: String?) -> String
     
     
     // MARK: Config methods
-    
-    
-    /// Return storaged language or default language in device
-    ///
-    /// - returns: current used language
-    func language() -> String
     
     /// Update default language, this stores a language key which can be retrieved the next time
     func update(language: String) -> Void
     
     /// Update base file name, searched in path.
-    func update(fileName:String)
+    func update(fileName: String)
     
     /// Update the bundle used to load files from.
     func update(bundle: Bundle)
@@ -75,11 +79,6 @@ protocol LocalizeProtocol {
     
     /// This remove the language key storaged.
     func resetLanguage() -> Void
-    
-    /// Show all aviable languajes whit criteria name
-    ///
-    /// - returns: list with storaged languages code
-    func availableLanguages() -> [String]
     
     /// Display name for current user language.
     ///

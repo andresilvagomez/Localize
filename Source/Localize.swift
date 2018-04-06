@@ -34,6 +34,20 @@ public class Localize: NSObject {
     /// Provider to localize your app.
     private var provider: LocalizeProtocol = LocalizeStrings()
     
+    /// Show all aviable languajes whit criteria name
+    ///
+    /// - returns: list with storaged languages code
+    public var availableLanguages: [String] {
+        return provider.availableLanguages
+    }
+    
+    /// Return storaged language or default language in device
+    ///
+    /// - returns: current used language
+    public var currentLanguage: String {
+        return provider.currentLanguage
+    }
+    
     /// This override prevent user access to different instances for this class.
     /// Always use shared instance.
     private override init() {
@@ -85,14 +99,6 @@ public class Localize: NSObject {
     
     // MARK: Config methods
     
-    
-    /// Return storaged language or default language in device
-    ///
-    /// - returns: current used language
-    public func language() -> String {
-        return provider.language()
-    }
-    
     /// Update default language, this stores a language key which can be retrieved the next time
     public func update(language: String) -> Void {
         provider.update(language: language)
@@ -116,13 +122,6 @@ public class Localize: NSObject {
     /// This remove the language key storaged.
     public func resetLanguage() -> Void {
         provider.resetLanguage()
-    }
-    
-    /// Show all aviable languajes whit criteria name
-    ///
-    /// - returns: list with storaged languages code
-    public func availableLanguages() -> [String] {
-        return provider.availableLanguages()
     }
     
     /// Display name for current user language.

@@ -9,6 +9,20 @@ import UIKit
 
 extension Localize {
     
+    /// Show all aviable languajes whit criteria name
+    ///
+    /// - returns: list with storaged languages code
+    public static var availableLanguages: [String] {
+        return Localize.shared.availableLanguages
+    }
+    
+    /// Return storaged language or default language in device
+    ///
+    /// - returns: current used language
+    public static var currentLanguage: String {
+        return Localize.shared.currentLanguage
+    }
+    
     /// Localize a string using your JSON File
     /// If the key is not found return the same key
     /// That prevent replace untagged values
@@ -49,13 +63,6 @@ extension Localize {
         return Localize.shared.localize(key: key, dictionary: replace, tableName: tableName)
     }
     
-    /// Return storaged language or default language in device
-    ///
-    /// - returns: current used language
-    public static func language() -> String {
-        return Localize.shared.language()
-    }
-    
     /// Update default language, this stores a language key which can be retrieved the next time
     public static func update(language: String) {
         return Localize.shared.update(language: language)
@@ -79,13 +86,6 @@ extension Localize {
     /// This remove the language key storaged.
     public static func resetLanguage() {
         return Localize.shared.resetLanguage()
-    }
-    
-    /// Show all aviable languajes whit criteria name
-    ///
-    /// - returns: list with storaged languages code
-    public static func availableLanguages() -> [String] {
-        return Localize.shared.availableLanguages()
     }
     
     /// Display name for current user language.

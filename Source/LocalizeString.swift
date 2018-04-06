@@ -16,6 +16,15 @@ public extension String {
     /// that prevent replace untagged values
     ///
     /// - returns: localized key or same text
+    public var localized: String {
+        return Localize.localize(key: self)
+    }
+    
+    /// Localize a string using your JSON File
+    /// If the key is not found return the same key
+    /// that prevent replace untagged values
+    ///
+    /// - returns: localized key or same text
     public func localize() -> String {
         return Localize.localize(key: self)
     }
@@ -25,7 +34,7 @@ public extension String {
     /// that prevent replace untagged values
     ///
     /// - returns: localized key or same text
-    public func localize(tableName:String) -> String {
+    public func localize(tableName: String) -> String {
         return Localize.localize(key: self, tableName: tableName)
     }
     
@@ -35,7 +44,7 @@ public extension String {
     /// - parameter String: The replacement value
     ///
     /// - returns: localized key or same text
-    public func localize(value:String, tableName:String? = nil) -> String {
+    public func localize(value: String, tableName: String? = nil) -> String {
         return Localize.localize(key: self, replace: value, tableName: tableName)
     }
     
@@ -45,7 +54,7 @@ public extension String {
     /// - parameter Strings: The replacement values
     ///
     /// - returns: localized key or same text
-    public func localize(values:String..., tableName:String? = nil) -> String {
+    public func localize(values: String..., tableName: String? = nil) -> String {
         return Localize.localize(key: self, values: values, tableName: tableName)
     }
     
@@ -56,7 +65,7 @@ public extension String {
     /// - parameter [String:String]: The replacement dictionary
     ///
     /// - returns: localized key or same text
-    public func localize(dictionary values:[String:String], tableName:String? = nil) -> String {
+    public func localize(dictionary values: [String: String], tableName: String? = nil) -> String {
         return Localize.localize(key: self, dictionary: values, tableName: tableName)
     }
     
