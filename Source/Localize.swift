@@ -48,7 +48,7 @@ public class Localize: NSObject {
     ///
     /// - returns: localized key or same text
     public func localize(key:String, tableName:String? = nil) -> String {
-        return self.provider.localize(key: key, tableName: tableName)
+        return provider.localize(key: key, tableName: tableName)
     }
     
     /// Localize a string using your JSON File
@@ -58,7 +58,7 @@ public class Localize: NSObject {
     ///
     /// - returns: localized key or same text
     public func localize(key:String, replace:String, tableName:String? = nil) -> String {
-        return self.provider.localize(key: key, replace: replace, tableName:tableName)
+        return provider.localize(key: key, replace: replace, tableName:tableName)
     }
     
     /// Localize a string using your JSON File
@@ -68,7 +68,7 @@ public class Localize: NSObject {
     ///
     /// - returns: localized key or same text
     public func localize(key:String, values:[Any], tableName:String? = nil) -> String {
-        return self.provider.localize(key: key, values: values, tableName:tableName)
+        return provider.localize(key: key, values: values, tableName:tableName)
     }
     
     /// Localize string with dictionary values
@@ -79,7 +79,7 @@ public class Localize: NSObject {
     ///
     /// - returns: localized key or same text
     public func localize(key:String, dictionary:[String:String], tableName:String? = nil) -> String {
-        return self.provider.localize(key: key, dictionary: dictionary, tableName:tableName)
+        return provider.localize(key: key, dictionary: dictionary, tableName:tableName)
     }
 
     
@@ -90,52 +90,52 @@ public class Localize: NSObject {
     ///
     /// - returns: current used language
     public func language() -> String {
-        return self.provider.language()
+        return provider.language()
     }
     
     /// Update default language, this stores a language key which can be retrieved the next time
     public func update(language: String) -> Void {
-        self.provider.update(language: language)
+        provider.update(language: language)
     }
     
     /// Update base file name, searched in path.
     public func update(fileName:String) {
-        self.provider.update(fileName: fileName)
+        provider.update(fileName: fileName)
     }
     
     /// Update the bundle used to load files from.
     public func update(bundle: Bundle) {
-        self.provider.update(bundle: bundle)
+        provider.update(bundle: bundle)
     }
 
     /// Update default language
     public func update(defaultLanguage: String) {
-        self.provider.update(defaultLanguage: defaultLanguage)
+        provider.update(defaultLanguage: defaultLanguage)
     }
     
     /// This remove the language key storaged.
     public func resetLanguage() -> Void {
-        self.provider.resetLanguage()
+        provider.resetLanguage()
     }
     
     /// Show all aviable languajes whit criteria name
     ///
     /// - returns: list with storaged languages code
     public func availableLanguages() -> [String] {
-        return self.provider.availableLanguages()
+        return provider.availableLanguages()
     }
     
     /// Display name for current user language.
     ///
     /// - return: String form language code in current user language
     public func displayNameForLanguage(_ language: String) -> String {
-        return self.provider.displayNameForLanguage(language)
+        return provider.displayNameForLanguage(language)
     }
     
     /// Enable testing mode
     /// Please not use in your code, is only for test schema.
     public func testingMode() {
-        self.provider.testingMode()
+        provider.testingMode()
     }
     
     // MARK: Config providers

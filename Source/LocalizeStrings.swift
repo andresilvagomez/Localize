@@ -7,7 +7,7 @@
 
 import UIKit
 
-class LocalizeStrings:LocalizeCommonProtocol, LocalizeProtocol {
+class LocalizeStrings: LocalizeCommonProtocol, LocalizeProtocol {
     
     /// Create default lang name
     override init() {

@@ -52,7 +52,7 @@ class LocalizeCommonProtocol: NSObject {
     ///
     /// - returns: a string url where is your file
     internal func bundle() -> Bundle {
-        if self.testing {
+        if testing {
             return Bundle(for: type(of: self))
         }
         return usedBundle
@@ -86,7 +86,7 @@ class LocalizeCommonProtocol: NSObject {
     ///
     /// - return: String form language code in current user language
     public func displayNameForLanguage(_ language: String) -> String {
-        let locale : NSLocale = NSLocale(localeIdentifier: self.currentLanguage)
+        let locale : NSLocale = NSLocale(localeIdentifier: currentLanguage)
         if let name = locale.displayName(forKey: NSLocale.Key.identifier, value: language) {
             return name.capitalized
         }
@@ -139,7 +139,7 @@ class LocalizeCommonProtocol: NSObject {
     ///
     /// - returns: localized key or same text
     public func localize(key:String, replace:String, tableName:String? = nil) -> String {
-        let string = self.localize(key: key, tableName:tableName)
+        let string = localize(key: key, tableName:tableName)
 
         return string.replacingOccurrences(of: "%", with: replace)
     }
@@ -151,7 +151,7 @@ class LocalizeCommonProtocol: NSObject {
     ///
     /// - returns: localized key or same text
     public func localize(key:String, values replace:[Any], tableName:String? = nil) -> String {
-        var string = self.localize(key: key, tableName:tableName)
+        var string = localize(key: key, tableName:tableName)
         if string == key {
             return key
         }
@@ -177,7 +177,7 @@ class LocalizeCommonProtocol: NSObject {
     ///
     /// - returns: localized key or same text
     public func localize(key:String, dictionary replace:[String:String], tableName:String? = nil) -> String {
-        var string = self.localize(key: key, tableName:tableName)
+        var string = localize(key: key, tableName:tableName)
         for (key, value) in replace {
             string = string.replacingOccurrences(of: ":\(key)", with: value)
         }

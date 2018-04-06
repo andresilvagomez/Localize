@@ -21,19 +21,19 @@ class LocalizeJson: LocalizeCommonProtocol, LocalizeProtocol {
     /// If JSON not is defined, this try use a default
     /// As long as the default language is the same as the current one.
     private func readJSON(tableName:String? = nil) -> NSDictionary? {
-        let tableName = tableName ?? self.fileName
-        var lang = self.currentLanguage
-        var json = self.readJSON(named: "\(tableName)-\(lang)")
+        let tableName = tableName ?? fileName
+        var lang = currentLanguage
+        var json = readJSON(named: "\(tableName)-\(lang)")
         
         if json != nil {
             return json
         }
         
         lang = lang.components(separatedBy: "-")[0]
-        json = self.readJSON(named: "\(tableName)-\(lang)")
+        json = readJSON(named: "\(tableName)-\(lang)")
         
-        if json == nil && lang != self.defaultLanguage {
-            json = self.readDefaultJSON()
+        if json == nil && lang != defaultLanguage {
+            json = readDefaultJSON()
         }
         
         return json
@@ -43,15 +43,15 @@ class LocalizeJson: LocalizeCommonProtocol, LocalizeProtocol {
     ///
     /// - returns: json or nil value.
     private func readDefaultJSON(tableName:String? = nil) -> NSDictionary? {
-        let tableName = tableName ?? self.fileName
-        return self.readJSON(named: "\(tableName)-\(self.defaultLanguage)")
+        let tableName = tableName ?? fileName
+        return readJSON(named: "\(tableName)-\(defaultLanguage)")
     }
     
     /// This method has path where file is
     /// If can't find a path return a nil value
     /// If can't serialize data return a nil value
     private func readJSON(named name:String) -> NSDictionary? {
-        guard let path = self.bundle().path(forResource: name, ofType: "json") else {
+        guard let path = bundle().path(forResource: name, ofType: "json") else {
             return nil
         }
         guard let data = try? Data(contentsOf: URL(fileURLWithPath: path)) else {
@@ -70,12 +70,12 @@ class LocalizeJson: LocalizeCommonProtocol, LocalizeProtocol {
     /// Try search key in your dictionary using single level
     /// If it doesn't find the key it will use the multilevel
     /// If the key not exis in your JSON return nil value
-    private func localizeFile(key:String, json:NSDictionary) -> String? {
+    private func localizeFile(key: String, json: NSDictionary) -> String? {
         if let string = json[key] {
             return string as? String
         }
         
-        if let string = self.localizeLevel(key: key, json: json) {
+        if let string = localizeLevel(key: key, json: json) {
             return string
         }
         
@@ -105,21 +105,21 @@ class LocalizeJson: LocalizeCommonProtocol, LocalizeProtocol {
     /// That prevent replace untagged values
     ///
     /// - returns: localized key or same text
-    public override func localize(key:String, tableName:String? = nil) -> String {
-        guard let json = self.readJSON(tableName: tableName) else {
+    public override func localize(key: String, tableName: String? = nil) -> String {
+        guard let json = readJSON(tableName: tableName) else {
             return key
         }
         
-        let string = self.localizeFile(key: key, json: json)
+        let string = localizeFile(key: key, json: json)
         if string != nil {
             return string!
         }
         
-        guard let defaultJSON = self.readDefaultJSON(tableName: tableName) else {
+        guard let defaultJSON = readDefaultJSON(tableName: tableName) else {
             return key
         }
         
-        let defaultString = self.localizeFile(key: key, json: defaultJSON)
+        let defaultString = localizeFile(key: key, json: defaultJSON)
         if defaultString != nil {
             return defaultString!
         }
@@ -138,8 +138,8 @@ class LocalizeJson: LocalizeCommonProtocol, LocalizeProtocol {
         var languages : [String] = []
 
         for localeId in NSLocale.availableLocaleIdentifiers {
-            let name = "\(self.fileName)-\(localeId)"
-            let path = self.bundle().path(forResource: name, ofType: "json")
+            let name = "\(fileName)-\(localeId)"
+            let path = bundle().path(forResource: name, ofType: "json")
             if path != nil {
                 languages.append(localeId)
             }
