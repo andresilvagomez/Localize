@@ -24,7 +24,21 @@ class LocalizeUI: NSObject {
     }
     
     static func keyFor(index: Int, localizeKey: String?) -> String? {
-        let keys = localizeKey?.components(separatedBy: ", ")
-        return keys?.count ?? 0 > index ? keys?[index] : nil
+        var localizeKey = localizeKey?.replacingOccurrences(of: " ", with: "")
+        let root = localizeKey?.components(separatedBy: ":")
+        var rootKey: String? = nil
+        
+        if root?.count == 2 {
+            rootKey = root?.first
+            localizeKey = root?.last
+        }
+        
+        let keys = localizeKey?.components(separatedBy: ",")
+        let key = keys?.count ?? 0 > index ? keys?[index] : nil
+        
+        if key == nil || key?.isEmpty ?? true { return nil }
+        if rootKey == nil { return key }
+        
+        return "\(rootKey ?? "").\(key ?? "")"
     }
 }
