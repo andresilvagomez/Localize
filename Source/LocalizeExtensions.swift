@@ -10,11 +10,14 @@ import UIKit
 private var localizeKey1: UInt8 = 0
 private var localizeKey2: UInt8 = 1
 
+/// Extension for NSCoding, easy way to storage IBInspectable properties.
 extension NSCoding {
+    /// Get associated property by IBInspectable var.
     fileprivate func localizedValue(key: UnsafeMutablePointer<UInt8>) -> String? {
         return objc_getAssociatedObject(self, key) as? String
     }
     
+    /// Set associated property by IBInspectable var.
     fileprivate func setLocalizedValue(_ value: String?, key: UnsafeMutablePointer<UInt8>) {
         guard let value = value else { return }
         let policy = objc_AssociationPolicy.OBJC_ASSOCIATION_RETAIN
