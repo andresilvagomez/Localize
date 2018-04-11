@@ -28,7 +28,7 @@ extension Localize {
     /// That prevent replace untagged values
     ///
     /// - returns: localized key or same text
-    public static func localize(key:String, tableName:String? = nil) -> String {
+    public static func localize(key: String, tableName: String? = nil) -> String {
         return Localize.shared.localize(key: key, tableName: tableName)
     }
     
@@ -38,7 +38,7 @@ extension Localize {
     /// - parameter value: The replacement value
     ///
     /// - returns: localized key or same text
-    public static func localize(key:String, replace:String, tableName:String? = nil) -> String {
+    public static func localize(key: String, replace: String, tableName: String? = nil) -> String {
         return Localize.shared.localize(key: key, replace: replace, tableName: tableName)
     }
     
@@ -48,7 +48,7 @@ extension Localize {
     /// - parameter value: The replacement values
     ///
     /// - returns: localized key or same text
-    public static func localize(key:String, values replace:[Any], tableName:String? = nil) -> String {
+    public static func localize(key: String, values replace: [Any], tableName: String? = nil) -> String {
         return Localize.shared.localize(key: key, values: replace, tableName: tableName)
     }
     
@@ -59,7 +59,7 @@ extension Localize {
     /// - parameter value: The replacement dictionary
     ///
     /// - returns: localized key or same text
-    public static func localize(key:String, dictionary replace:[String:String], tableName:String? = nil) -> String {
+    public static func localize(key: String, dictionary replace: [String:String], tableName: String? = nil) -> String {
         return Localize.shared.localize(key: key, dictionary: replace, tableName: tableName)
     }
     
@@ -69,7 +69,7 @@ extension Localize {
     }
     
     /// Update base file name, searched in path.
-    public static func update(fileName:String) {
+    public static func update(fileName: String) {
         return Localize.shared.update(fileName: fileName)
     }
     

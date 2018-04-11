@@ -24,5 +24,7 @@
         "update" : {
             "language" : "Langue de mise à jour"
         }
-    }
+    },
+    "one": "Premier",
+    "two": "Deuxième"
 }

@@ -20,6 +20,20 @@
                ReferencedContainer = "container:Localize.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "9F9345521E291D4E00C400F7"
+               BuildableName = "LocalizeTests.xctest"
+               BlueprintName = "LocalizeTests"
+               ReferencedContainer = "container:Localize.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
       </BuildActionEntries>
    </BuildAction>
    <TestAction

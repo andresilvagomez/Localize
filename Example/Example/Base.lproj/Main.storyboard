@@ -148,11 +148,11 @@
                     <navigationItem key="navigationItem" id="KpE-oJ-hOB">
                         <nil key="title"/>
                         <segmentedControl key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="jG6-iV-0U4">
-                            <rect key="frame" x="127" y="7.5" width="121" height="29"/>
+                            <rect key="frame" x="127" y="7" width="121" height="30"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <segments>
-                                <segment title="First"/>
-                                <segment title="Second"/>
+                                <segment title="one"/>
+                                <segment title="two"/>
                             </segments>
                         </segmentedControl>
                     </navigationItem>

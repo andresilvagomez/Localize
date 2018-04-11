@@ -10,16 +10,21 @@ import UIKit
 
 class LocalizeUI: NSObject {
     @discardableResult
-    static func localize(key: inout String?, value: inout String?) -> String {
+    static func localize(key: inout String?, value: inout String?, updateKey: Bool = true) -> String {
         if let localized = key?.localize() {
             value = localized
             return localized
         }
         if let localized = value?.localize() {
-            key = value
+            if updateKey { key = value }
             value = localized
             return localized
         }
         return value ?? ""
+    }
+    
+    static func keyFor(index: Int, localizeKey: String?) -> String? {
+        let keys = localizeKey?.components(separatedBy: ", ")
+        return keys?.count ?? 0 > index ? keys?[index] : nil
     }
 }

@@ -188,8 +188,9 @@ extension UISegmentedControl {
     /// Here we change text with key replacement
     @objc public func localize() {
         for index in 0...(numberOfSegments - 1) {
+            var key = LocalizeUI.keyFor(index: index, localizeKey: localizeKey)
             var title = titleForSegment(at: index)
-            title = LocalizeUI.localize(key: &localizeKey, value: &title)
+            title = LocalizeUI.localize(key: &key, value: &title, updateKey: false)
             setTitle(title, forSegmentAt: index)
         }
     }
