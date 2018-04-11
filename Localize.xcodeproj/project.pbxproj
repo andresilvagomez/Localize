@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2B717465207D9AFE0070DC5F /* LocalizeUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B717464207D9AFE0070DC5F /* LocalizeUI.swift */; };
 		9F1677FA1E51DE270022F3F8 /* Strings.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9F1677FC1E51DE270022F3F8 /* Strings.strings */; };
 		9F1678011E51F33E0022F3F8 /* StringBaseTestInSpanish.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F1678001E51F33E0022F3F8 /* StringBaseTestInSpanish.swift */; };
 		9F19DFC71E4D2B1D00F953E6 /* StringBaseTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F19DFC61E4D2B1D00F953E6 /* StringBaseTest.swift */; };
@@ -46,6 +47,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2B717464207D9AFE0070DC5F /* LocalizeUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizeUI.swift; sourceTree = "<group>"; };
 		69F1B5741D955990000A2B87 /* Localize.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Localize.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F1677FB1E51DE270022F3F8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Strings.strings; sourceTree = "<group>"; };
 		9F1677FD1E51DE320022F3F8 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Strings.strings; sourceTree = "<group>"; };
@@ -120,13 +122,14 @@
 			isa = PBXGroup;
 			children = (
 				9F93453C1E29192300C400F7 /* Localize.swift */,
+				9F262D901E525565002DD75A /* LocalizeCommonProtocol.swift */,
+				9F93453A1E29192300C400F7 /* LocalizeExtensions.swift */,
+				9F2FC5661E42793B00C15610 /* LocalizeJson.swift */,
+				9F2FC5641E4275A300C15610 /* LocalizeProtocol.swift */,
 				9F761AD61E305B9B00904B4B /* LocalizeStatic.swift */,
 				9F93453D1E29192300C400F7 /* LocalizeString.swift */,
-				9F93453A1E29192300C400F7 /* LocalizeExtensions.swift */,
-				9F2FC5641E4275A300C15610 /* LocalizeProtocol.swift */,
-				9F262D901E525565002DD75A /* LocalizeCommonProtocol.swift */,
-				9F2FC5661E42793B00C15610 /* LocalizeJson.swift */,
 				9F2FC5681E427AFD00C15610 /* LocalizeStrings.swift */,
+				2B717464207D9AFE0070DC5F /* LocalizeUI.swift */,
 				9F9345461E291A1800C400F7 /* Suporting Files */,
 			);
 			path = Source;
@@ -302,6 +305,7 @@
 				9F9345421E29192300C400F7 /* LocalizeString.swift in Sources */,
 				9F761AD71E305B9B00904B4B /* LocalizeStatic.swift in Sources */,
 				9F2FC5651E4275A300C15610 /* LocalizeProtocol.swift in Sources */,
+				2B717465207D9AFE0070DC5F /* LocalizeUI.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

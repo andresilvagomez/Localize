@@ -11,20 +11,20 @@ private var localizeKey1: UInt8 = 0
 private var localizeKey2: UInt8 = 1
 
 extension NSCoding {
-    fileprivate func localizedValue(forObject object: Any, key: UnsafeMutablePointer<UInt8>) -> String? {
-        return objc_getAssociatedObject(object, key) as? String
+    fileprivate func localizedValue(key: UnsafeMutablePointer<UInt8>) -> String? {
+        return objc_getAssociatedObject(self, key) as? String
     }
     
-    fileprivate func setLocalizedValue(_ value: String?, forObject object: Any, key: UnsafeMutablePointer<UInt8>) {
-        guard let value = value else {
-            return
-        }
-        
-        objc_setAssociatedObject(self, key, value, objc_AssociationPolicy.OBJC_ASSOCIATION_RETAIN)
+    fileprivate func setLocalizedValue(_ value: String?, key: UnsafeMutablePointer<UInt8>) {
+        guard let value = value else { return }
+        let policy = objc_AssociationPolicy.OBJC_ASSOCIATION_RETAIN
+        objc_setAssociatedObject(self, key, value, policy)
     }
 }
 
+/// Extension for NotificationCenter to call easy the localize notification observer.
 extension NotificationCenter {
+    /// Custom function to add observers.
     fileprivate static func localize(observer: Any, selector: Selector) {
         NotificationCenter.default.addObserver(
             observer,
@@ -37,11 +37,10 @@ extension NotificationCenter {
 
 /// Extension for UI element is the easier way to localize your keys.
 extension UIBarButtonItem {
-    
     /// Localizable tag storeged property
     @IBInspectable public var localizeKey: String? {
-        get { return localizedValue(forObject: self, key: &localizeKey1) }
-        set { setLocalizedValue(newValue, forObject: self, key: &localizeKey1) }
+        get { return localizedValue(key: &localizeKey1) }
+        set { setLocalizedValue(newValue, key: &localizeKey1) }
     }
     
     /// Override awakeFromNib when is going visible, try search a key in JSON File
@@ -55,17 +54,16 @@ extension UIBarButtonItem {
     
     /// Here we change text with key replacement
     @objc public func localize() {
-        title = localizeKey?.localize() ?? title?.localize() ?? title
+        LocalizeUI.localize(key: &localizeKey, value: &title)
     }
 }
 
 /// Extension for UI element is the easier way to localize your keys.
 extension UIButton {
-    
     /// Localizable tag storeged property
     @IBInspectable public var localizeKey: String? {
-        get { return localizedValue(forObject: self, key: &localizeKey1) }
-        set { setLocalizedValue(newValue, forObject: self, key: &localizeKey1) }
+        get { return localizedValue(key: &localizeKey1) }
+        set { setLocalizedValue(newValue, key: &localizeKey1) }
     }
     
     /// Override awakeFromNib when is going visible, try search a key in JSON File
@@ -81,7 +79,7 @@ extension UIButton {
     @objc public func localize() {
         for state in [UIControlState.normal, .highlighted, .selected, .disabled] {
             var title = self.title(for: state)
-            title = localizeKey?.localize() ?? title?.localize() ?? title
+            title = LocalizeUI.localize(key: &localizeKey, value: &title)
             setTitle(title, for: state)
         }
     }
@@ -89,11 +87,10 @@ extension UIButton {
 
 /// Extension for UI element is the easier way to localize your keys.
 extension UILabel {
-    
     /// Localizable tag storeged property
     @IBInspectable public var localizeKey: String? {
-        get { return localizedValue(forObject: self, key: &localizeKey1) }
-        set { setLocalizedValue(newValue, forObject: self, key: &localizeKey1) }
+        get { return localizedValue(key: &localizeKey1) }
+        set { setLocalizedValue(newValue, key: &localizeKey1) }
     }
     
     /// Override awakeFromNib when is going visible, try search a key in JSON File
@@ -107,23 +104,22 @@ extension UILabel {
     
     /// Here we change text with key replacement
     @objc public func localize() {
-        text = localizeKey?.localize() ?? text?.localize() ?? text
+        LocalizeUI.localize(key: &localizeKey, value: &text)
     }
 }
 
 /// Extension for UI element is the easier way to localize your keys.
 extension UINavigationItem {
-    
     /// Localizable tag storeged property
     @IBInspectable public var localizeTitle: String? {
-        get { return localizedValue(forObject: self, key: &localizeKey1) }
-        set { setLocalizedValue(newValue, forObject: self, key: &localizeKey1) }
+        get { return localizedValue(key: &localizeKey1) }
+        set { setLocalizedValue(newValue, key: &localizeKey1) }
     }
     
     /// Localizable tag storeged property
     @IBInspectable public var localizePrompt: String? {
-        get { return localizedValue(forObject: self, key: &localizeKey2) }
-        set { setLocalizedValue(newValue, forObject: self, key: &localizeKey2) }
+        get { return localizedValue(key: &localizeKey2) }
+        set { setLocalizedValue(newValue, key: &localizeKey2) }
     }
     
     /// Override awakeFromNib when is going visible, try search a key in JSON File
@@ -137,24 +133,23 @@ extension UINavigationItem {
     
     /// Here we change text with key replacement
     @objc public func localize() {
-        title = localizeTitle?.localize() ?? title?.localize() ?? title
-        prompt = localizePrompt?.localize() ?? prompt?.localize() ?? prompt
+        LocalizeUI.localize(key: &localizeTitle, value: &title)
+        LocalizeUI.localize(key: &localizePrompt, value: &prompt)
     }
 }
 
 /// Extension for UI element is the easier way to localize your keys.
 extension UISearchBar {
-    
     /// Localizable tag storeged property
     @IBInspectable public var localizePlaceholder: String? {
-        get { return localizedValue(forObject: self, key: &localizeKey1) }
-        set { setLocalizedValue(newValue, forObject: self, key: &localizeKey1) }
+        get { return localizedValue(key: &localizeKey1) }
+        set { setLocalizedValue(newValue, key: &localizeKey1) }
     }
     
     /// Localizable tag storeged property
     @IBInspectable public var localizePrompt: String? {
-        get { return localizedValue(forObject: self, key: &localizeKey2) }
-        set { setLocalizedValue(newValue, forObject: self, key: &localizeKey2) }
+        get { return localizedValue(key: &localizeKey2) }
+        set { setLocalizedValue(newValue, key: &localizeKey2) }
     }
     
     /// Override awakeFromNib when is going visible, try search a key in JSON File
@@ -168,18 +163,17 @@ extension UISearchBar {
     
     /// Here we change text with key replacement
     @objc public func localize() {
-        placeholder = localizePlaceholder?.localize() ?? placeholder?.localize() ?? placeholder
-        prompt = localizePrompt?.localize() ?? prompt?.localize() ?? prompt
+        LocalizeUI.localize(key: &localizePlaceholder, value: &placeholder)
+        LocalizeUI.localize(key: &localizePrompt, value: &prompt)
     }
 }
 
 /// Extension for UI element is the easier way to localize your keys.
 extension UISegmentedControl {
-    
     /// Localizable tag storeged property
     @IBInspectable public var localizeKey: String? {
-        get { return localizedValue(forObject: self, key: &localizeKey1) }
-        set { setLocalizedValue(newValue, forObject: self, key: &localizeKey1) }
+        get { return localizedValue(key: &localizeKey1) }
+        set { setLocalizedValue(newValue, key: &localizeKey1) }
     }
     
     /// Override awakeFromNib when is going visible, try search a key in JSON File
@@ -195,18 +189,18 @@ extension UISegmentedControl {
     @objc public func localize() {
         for index in 0...(numberOfSegments - 1) {
             var title = titleForSegment(at: index)
-            title = localizeKey?.localize() ?? title?.localize() ?? title
+            title = LocalizeUI.localize(key: &localizeKey, value: &title)
+            setTitle(title, forSegmentAt: index)
         }
     }
 }
 
 /// Extension for UI element is the easier way to localize your keys.
 extension UITabBarItem {
-    
     /// Localizable tag storeged property
     @IBInspectable public var localizeKey: String? {
-        get { return localizedValue(forObject: self, key: &localizeKey1) }
-        set { setLocalizedValue(newValue, forObject: self, key: &localizeKey1) }
+        get { return localizedValue(key: &localizeKey1) }
+        set { setLocalizedValue(newValue, key: &localizeKey1) }
     }
     
     /// Override awakeFromNib when is going visible, try search a key in JSON File
@@ -220,23 +214,22 @@ extension UITabBarItem {
     
     /// Here we change text with key replacement
     @objc public func localize() {
-        title = localizeKey?.localize() ?? title?.localize() ?? title
+        LocalizeUI.localize(key: &localizeKey, value: &title)
     }
 }
 
 /// Extension for UI element is the easier way to localize your keys.
 extension UITextField {
-    
     /// Localizable tag storeged property
     @IBInspectable public var localizeText: String? {
-        get { return localizedValue(forObject: self, key: &localizeKey1) }
-        set { setLocalizedValue(newValue, forObject: self, key: &localizeKey1) }
+        get { return localizedValue(key: &localizeKey1) }
+        set { setLocalizedValue(newValue, key: &localizeKey1) }
     }
     
     /// Localizable tag storeged property
     @IBInspectable public var localizePlaceholder: String? {
-        get { return localizedValue(forObject: self, key: &localizeKey2) }
-        set { setLocalizedValue(newValue, forObject: self, key: &localizeKey2) }
+        get { return localizedValue(key: &localizeKey2) }
+        set { setLocalizedValue(newValue, key: &localizeKey2) }
     }
     
     /// Override awakeFromNib when is going visible, try search a key in JSON File
@@ -250,18 +243,17 @@ extension UITextField {
     
     /// Here we change text with key replacement
     @objc public func localize() {
-        placeholder = localizePlaceholder?.localize() ?? placeholder?.localize() ?? placeholder
-        text = localizeText?.localize() ?? text?.localize() ?? text
+        LocalizeUI.localize(key: &localizeText, value: &text)
+        LocalizeUI.localize(key: &localizePlaceholder, value: &placeholder)
     }
 }
 
 /// Extension for UI element is the easier way to localize your keys.
 extension UITextView {
-    
     /// Localizable tag storeged property
     @IBInspectable public var localizeKey: String? {
-        get { return localizedValue(forObject: self, key: &localizeKey1) }
-        set { setLocalizedValue(newValue, forObject: self, key: &localizeKey1) }
+        get { return localizedValue(key: &localizeKey1) }
+        set { setLocalizedValue(newValue, key: &localizeKey1) }
     }
     
     /// Override awakeFromNib when is going visible, try search a key in JSON File
@@ -275,6 +267,8 @@ extension UITextView {
     
     /// Here we change text with key replacement
     @objc public func localize() {
-        text = localizeKey?.localize() ?? text?.localize() ?? text
+        var localize = text
+        localize = LocalizeUI.localize(key: &localizeKey, value: &localize)
+        text = localize
     }
 }
