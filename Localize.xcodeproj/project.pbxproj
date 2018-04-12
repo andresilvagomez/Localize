@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		2B717465207D9AFE0070DC5F /* LocalizeUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B717464207D9AFE0070DC5F /* LocalizeUI.swift */; };
+		2B717469207DC6E00070DC5F /* UIViewComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B717468207DC6E00070DC5F /* UIViewComponents.swift */; };
+		2BAA7AA4207FC9F6008E4E3A /* UIViewComponentsES.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BAA7AA3207FC9F6008E4E3A /* UIViewComponentsES.swift */; };
+		2BAA7AA6207FCA8B008E4E3A /* UIViewComponentsWithString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BAA7AA5207FCA8B008E4E3A /* UIViewComponentsWithString.swift */; };
 		9F1677FA1E51DE270022F3F8 /* Strings.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9F1677FC1E51DE270022F3F8 /* Strings.strings */; };
 		9F1678011E51F33E0022F3F8 /* StringBaseTestInSpanish.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F1678001E51F33E0022F3F8 /* StringBaseTestInSpanish.swift */; };
 		9F19DFC71E4D2B1D00F953E6 /* StringBaseTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F19DFC61E4D2B1D00F953E6 /* StringBaseTest.swift */; };
@@ -48,6 +51,9 @@
 
 /* Begin PBXFileReference section */
 		2B717464207D9AFE0070DC5F /* LocalizeUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizeUI.swift; sourceTree = "<group>"; };
+		2B717468207DC6E00070DC5F /* UIViewComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewComponents.swift; sourceTree = "<group>"; };
+		2BAA7AA3207FC9F6008E4E3A /* UIViewComponentsES.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewComponentsES.swift; sourceTree = "<group>"; };
+		2BAA7AA5207FCA8B008E4E3A /* UIViewComponentsWithString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewComponentsWithString.swift; sourceTree = "<group>"; };
 		69F1B5741D955990000A2B87 /* Localize.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Localize.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F1677FB1E51DE270022F3F8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Strings.strings; sourceTree = "<group>"; };
 		9F1677FD1E51DE320022F3F8 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Strings.strings; sourceTree = "<group>"; };
@@ -155,6 +161,9 @@
 				9F19DFC61E4D2B1D00F953E6 /* StringBaseTest.swift */,
 				9F1678001E51F33E0022F3F8 /* StringBaseTestInSpanish.swift */,
 				9FCD8EA41E52AD3E00B5909C /* StringsChanginDefaultFileName.swift */,
+				2B717468207DC6E00070DC5F /* UIViewComponents.swift */,
+				2BAA7AA3207FC9F6008E4E3A /* UIViewComponentsES.swift */,
+				2BAA7AA5207FCA8B008E4E3A /* UIViewComponentsWithString.swift */,
 				9F989F4A1E2B3B5600A19F67 /* Supporting Files */,
 			);
 			path = Tests;
@@ -313,11 +322,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2B717469207DC6E00070DC5F /* UIViewComponents.swift in Sources */,
 				9F1678011E51F33E0022F3F8 /* StringBaseTestInSpanish.swift in Sources */,
 				9F989F4C1E2B3B8200A19F67 /* BaseTest.swift in Sources */,
 				9FCD8EA51E52AD3E00B5909C /* StringsChanginDefaultFileName.swift in Sources */,
 				9F989F4D1E2B3B8300A19F67 /* OtherLangTest.swift in Sources */,
 				9FA3BC511E318C080054CA92 /* ReadingOtherFiles.swift in Sources */,
+				2BAA7AA6207FCA8B008E4E3A /* UIViewComponentsWithString.swift in Sources */,
+				2BAA7AA4207FC9F6008E4E3A /* UIViewComponentsES.swift in Sources */,
 				9F19DFC71E4D2B1D00F953E6 /* StringBaseTest.swift in Sources */,
 				9FA3BC491E3174980054CA92 /* BaseTestInSpanish.swift in Sources */,
 				9FCD8EA91E53327D00B5909C /* JsonChanginFileName.swift in Sources */,

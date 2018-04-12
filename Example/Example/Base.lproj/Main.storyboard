@@ -151,13 +151,18 @@
                             <rect key="frame" x="127" y="7" width="121" height="30"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <segments>
-                                <segment title="one"/>
-                                <segment title="two"/>
+                                <segment title=""/>
+                                <segment title=""/>
                             </segments>
                             <userDefinedRuntimeAttributes>
-                                <userDefinedRuntimeAttribute type="string" keyPath="localizeKey" value="navigation.segment: "/>
+                                <userDefinedRuntimeAttribute type="string" keyPath="localizeKey" value="navigation.segment: one, two, tree"/>
                             </userDefinedRuntimeAttributes>
                         </segmentedControl>
+                        <barButtonItem key="rightBarButtonItem" title="Item" id="Zu7-yN-4eL">
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="string" keyPath="localizeKey" value="one"/>
+                            </userDefinedRuntimeAttributes>
+                        </barButtonItem>
                     </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Gkz-PL-c8H" userLabel="First Responder" sceneMemberID="firstResponder"/>

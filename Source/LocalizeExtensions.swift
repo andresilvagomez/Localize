@@ -57,7 +57,7 @@ extension UIBarButtonItem {
     
     /// Here we change text with key replacement
     @objc public func localize() {
-        LocalizeUI.localize(key: &localizeKey, value: &title)
+        title = LocalizeUI.localize(key: &localizeKey, value: &title)
     }
 }
 
@@ -80,6 +80,8 @@ extension UIButton {
     
     /// Here we change text with key replacement
     @objc public func localize() {
+        var title = titleLabel?.text
+        titleLabel?.text = LocalizeUI.localize(key: &localizeKey, value: &title)
         for state in [UIControlState.normal, .highlighted, .selected, .disabled] {
             var title = self.title(for: state)
             title = LocalizeUI.localize(key: &localizeKey, value: &title)
