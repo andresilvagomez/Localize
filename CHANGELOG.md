@@ -2,6 +2,20 @@
 All notable changes to this project will be documented in this file.
 `Localize` adheres to [Semantic Versioning](http://semver.org/).
 
+## [2.0.0](https://github.com/kekiiwaa/Localize/releases/tag/2.0.0)
+Released on 2018-04-12.
+
+#### Added
+- Transfer ownership to [andresilvagomez](https://github.com/andresilvagomez/Localize)
+- Swift 4.1 Support.
+- Faster.
+- Localize.currentLanguage.
+- Localize.availableLanguages.
+- Segment controls localize key using "," and base.
+- UIView components tested.
+  - By [Andres Silva](https://github.com/andresilvagomez) in Pull Request
+  [#22](https://github.com/Kekiiwaa/Localize/pull/22).
+
 ---
 
 ## [1.5.2](https://github.com/kekiiwaa/Localize/releases/tag/1.5.2)

@@ -42,3 +42,5 @@ script:
   - if [ $POD_LINT == "YES" ]; then
       pod lib lint;
     fi
+after_success:
+  - bash <(curl -s https://codecov.io/bash) -t ce05bbd9-41a7-4d70-96c5-b31cad55e791
