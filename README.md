@@ -3,6 +3,8 @@
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 [![CocoaPods](https://img.shields.io/cocoapods/v/Localize.svg)](https://cocoapods.org/pods/Localize)
 [![Build Status](https://travis-ci.org/Kekiiwaa/Localize.svg?branch=master)](https://travis-ci.org/Kekiiwaa/Localize)
+[![Language](https://img.shields.io/badge/language-Swift%204.1-orange.svg)](https://swift.org)
+[![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/Kekiiwaa/Localize/master/LICENSE)
 
 Localize is a framework writed in swift to localize your projects easier improves i18n, including storyboards and strings.
 
@@ -17,14 +19,15 @@ ___
 
 ## Features
 
-- [x] Keep the Localizable.strings file your app already uses
+- [x] Storyboard with IBInspectable
+- [x] Keep the File.strings files your app already uses
 - [x] Support Apple strings and JSON Files
 - [x] Change your app language without changing device language
 - [x] Localize your Storyboards without extra files or/and ids
 
 ## Requirements
 
-- iOS 8.0+
+- iOS 9.0+
 - Xcode 8.0+
 - Swift 3.0+
 
@@ -48,7 +51,7 @@ platform :ios, '8.0'
 use_frameworks!
 
 target '<Your Target Name>' do
-    pod 'Localize' , '~> 1.5.2'
+    pod 'Localize' , '~> 2.0.0'
 end
 ```
 
@@ -100,6 +103,8 @@ You don't need import anything in your code, Localize use extensions to localize
 ```swift
 
 textLabel.text = "hello.world".localize()
+// Or
+textLabel.text = "hello.world".localized
 
 ```
 
@@ -166,6 +171,10 @@ Whatever way you choose to, use that methods.
 print( "hello.world".localize() )
 
 // Hello world!
+
+// Also you can use
+
+print( "hello.world".localized )
 
 ```
 
@@ -284,7 +293,7 @@ Implementing internal acction to change a language
 
 @IBAction func updateLanguage(_ sender: Any) {
     let actionSheet = UIAlertController(title: nil, message: "app.update.language".localize(), preferredStyle: UIAlertControllerStyle.actionSheet)
-    for language in Localize.availableLanguages() {
+    for language in Localize.availableLanguages {
         let displayName = Localize.displayNameForLanguage(language)
         let languageAction = UIAlertAction(title: displayName, style: .default, handler: {
             (alert: UIAlertAction!) -> Void in
@@ -323,9 +332,9 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
     // If you want remove storaged languaje use
     localize.resetLanguage()
     // The used language
-    print(localize.language())
+    print(localize.currentLanguage)
     // List of aviable languajes
-    print(localize.availableLanguages())
+    print(localize.availableLanguages)
 
     // Or you can use static methods for all          
     Localize.update(fileName: "lang")

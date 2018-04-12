@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2B717465207D9AFE0070DC5F /* LocalizeUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B717464207D9AFE0070DC5F /* LocalizeUI.swift */; };
+		2B717469207DC6E00070DC5F /* UIViewComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B717468207DC6E00070DC5F /* UIViewComponents.swift */; };
+		2BAA7AA4207FC9F6008E4E3A /* UIViewComponentsES.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BAA7AA3207FC9F6008E4E3A /* UIViewComponentsES.swift */; };
+		2BAA7AA6207FCA8B008E4E3A /* UIViewComponentsWithString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BAA7AA5207FCA8B008E4E3A /* UIViewComponentsWithString.swift */; };
 		9F1677FA1E51DE270022F3F8 /* Strings.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9F1677FC1E51DE270022F3F8 /* Strings.strings */; };
 		9F1678011E51F33E0022F3F8 /* StringBaseTestInSpanish.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F1678001E51F33E0022F3F8 /* StringBaseTestInSpanish.swift */; };
 		9F19DFC71E4D2B1D00F953E6 /* StringBaseTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F19DFC61E4D2B1D00F953E6 /* StringBaseTest.swift */; };
@@ -46,6 +50,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2B717464207D9AFE0070DC5F /* LocalizeUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizeUI.swift; sourceTree = "<group>"; };
+		2B717468207DC6E00070DC5F /* UIViewComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewComponents.swift; sourceTree = "<group>"; };
+		2BAA7AA3207FC9F6008E4E3A /* UIViewComponentsES.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewComponentsES.swift; sourceTree = "<group>"; };
+		2BAA7AA5207FCA8B008E4E3A /* UIViewComponentsWithString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewComponentsWithString.swift; sourceTree = "<group>"; };
 		69F1B5741D955990000A2B87 /* Localize.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Localize.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F1677FB1E51DE270022F3F8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Strings.strings; sourceTree = "<group>"; };
 		9F1677FD1E51DE320022F3F8 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Strings.strings; sourceTree = "<group>"; };
@@ -120,13 +128,14 @@
 			isa = PBXGroup;
 			children = (
 				9F93453C1E29192300C400F7 /* Localize.swift */,
+				9F262D901E525565002DD75A /* LocalizeCommonProtocol.swift */,
+				9F93453A1E29192300C400F7 /* LocalizeExtensions.swift */,
+				9F2FC5661E42793B00C15610 /* LocalizeJson.swift */,
+				9F2FC5641E4275A300C15610 /* LocalizeProtocol.swift */,
 				9F761AD61E305B9B00904B4B /* LocalizeStatic.swift */,
 				9F93453D1E29192300C400F7 /* LocalizeString.swift */,
-				9F93453A1E29192300C400F7 /* LocalizeExtensions.swift */,
-				9F2FC5641E4275A300C15610 /* LocalizeProtocol.swift */,
-				9F262D901E525565002DD75A /* LocalizeCommonProtocol.swift */,
-				9F2FC5661E42793B00C15610 /* LocalizeJson.swift */,
 				9F2FC5681E427AFD00C15610 /* LocalizeStrings.swift */,
+				2B717464207D9AFE0070DC5F /* LocalizeUI.swift */,
 				9F9345461E291A1800C400F7 /* Suporting Files */,
 			);
 			path = Source;
@@ -152,6 +161,9 @@
 				9F19DFC61E4D2B1D00F953E6 /* StringBaseTest.swift */,
 				9F1678001E51F33E0022F3F8 /* StringBaseTestInSpanish.swift */,
 				9FCD8EA41E52AD3E00B5909C /* StringsChanginDefaultFileName.swift */,
+				2B717468207DC6E00070DC5F /* UIViewComponents.swift */,
+				2BAA7AA3207FC9F6008E4E3A /* UIViewComponentsES.swift */,
+				2BAA7AA5207FCA8B008E4E3A /* UIViewComponentsWithString.swift */,
 				9F989F4A1E2B3B5600A19F67 /* Supporting Files */,
 			);
 			path = Tests;
@@ -230,7 +242,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0820;
-				LastUpgradeCheck = 0900;
+				LastUpgradeCheck = 0930;
 				ORGANIZATIONNAME = Kekiiwaa;
 				TargetAttributes = {
 					69F1B5731D955990000A2B87 = {
@@ -302,6 +314,7 @@
 				9F9345421E29192300C400F7 /* LocalizeString.swift in Sources */,
 				9F761AD71E305B9B00904B4B /* LocalizeStatic.swift in Sources */,
 				9F2FC5651E4275A300C15610 /* LocalizeProtocol.swift in Sources */,
+				2B717465207D9AFE0070DC5F /* LocalizeUI.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -309,11 +322,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2B717469207DC6E00070DC5F /* UIViewComponents.swift in Sources */,
 				9F1678011E51F33E0022F3F8 /* StringBaseTestInSpanish.swift in Sources */,
 				9F989F4C1E2B3B8200A19F67 /* BaseTest.swift in Sources */,
 				9FCD8EA51E52AD3E00B5909C /* StringsChanginDefaultFileName.swift in Sources */,
 				9F989F4D1E2B3B8300A19F67 /* OtherLangTest.swift in Sources */,
 				9FA3BC511E318C080054CA92 /* ReadingOtherFiles.swift in Sources */,
+				2BAA7AA6207FCA8B008E4E3A /* UIViewComponentsWithString.swift in Sources */,
+				2BAA7AA4207FC9F6008E4E3A /* UIViewComponentsES.swift in Sources */,
 				9F19DFC71E4D2B1D00F953E6 /* StringBaseTest.swift in Sources */,
 				9FA3BC491E3174980054CA92 /* BaseTestInSpanish.swift in Sources */,
 				9FCD8EA91E53327D00B5909C /* JsonChanginFileName.swift in Sources */,
@@ -366,6 +382,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -373,6 +390,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -427,6 +445,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -434,6 +453,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -525,7 +545,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.kekiiwaa.localize-test";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
@@ -541,7 +561,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.kekiiwaa.localize-test";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 4.0;
 			};
 			name = Release;

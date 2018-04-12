@@ -12,5 +12,13 @@
             }
         }
     },
-    "the.same.lavel" : "Esto es una internazionalizacion en el mismo nivel"
+    "the.same.lavel" : "Esto es una internazionalizacion en el mismo nivel",
+    "segment": {
+        "base": {
+            "one": "Primero",
+            "two": "Segundo"
+        }
+    },
+    "one": "Primero",
+    "two": "Segundo"
 }

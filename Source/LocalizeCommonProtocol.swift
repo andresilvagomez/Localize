@@ -15,10 +15,10 @@ class LocalizeCommonProtocol: NSObject {
 
     /// Bundle used to load files from.
     /// Defaults to the main bundle.
-    public var usedBundle: Bundle = Bundle.main
+    private var usedBundle = Bundle.main
 
     /// Use this for testing mode, search resources in different bundles.
-    var testing: Bool = false
+    public var testing: Bool = false
     
     /// Default language, if this can't find a key in your current language
     /// Try read key in default language
@@ -27,22 +27,11 @@ class LocalizeCommonProtocol: NSObject {
     /// Storaged language or default language in device
     public var currentLanguage: String {
         get {
-            return self.language()
-        }
-    }
-    
-    // MARK: Internal methods.
-    
-    // Interator for String Enumerators
-    internal func iterateEnum<T: Hashable>(_: T.Type) -> AnyIterator<T> {
-        var i = 0
-        return AnyIterator {
-            let next = withUnsafePointer(to: &i) {
-                $0.withMemoryRebound(to: T.self, capacity: 1) { $0.pointee }
+            let defaults = UserDefaults.standard
+            if let lang = defaults.string(forKey: LocalizeStorageKey) {
+                return lang
             }
-            if next.hashValue != i { return nil }
-            i += 1
-            return next
+            return Locale.preferredLanguages[0]
         }
     }
     
@@ -51,12 +40,14 @@ class LocalizeCommonProtocol: NSObject {
     /// in other case use a main bundle.
     ///
     /// - returns: a string url where is your file
-    internal func bundle() -> Bundle {
-        if self.testing {
+    internal var bundle: Bundle {
+        if testing {
             return Bundle(for: type(of: self))
         }
         return usedBundle
     }
+    
+    // MARK: Internal methods.
     
     
     // MARK: Public methods
@@ -86,7 +77,7 @@ class LocalizeCommonProtocol: NSObject {
     ///
     /// - return: String form language code in current user language
     public func displayNameForLanguage(_ language: String) -> String {
-        let locale : NSLocale = NSLocale(localeIdentifier: self.currentLanguage)
+        let locale : NSLocale = NSLocale(localeIdentifier: currentLanguage)
         if let name = locale.displayName(forKey: NSLocale.Key.identifier, value: language) {
             return name.capitalized
         }
@@ -95,23 +86,12 @@ class LocalizeCommonProtocol: NSObject {
     
     /// Enable testing mode
     /// Please not use in your code, is only for test schema.
-    public func testingMode() {
-        self.testing = true
-    }
-    
-    /// Return storaged language or default language in device
-    ///
-    /// - returns: current used language
-    public func language() -> String {
-        let defaults = UserDefaults.standard
-        if let lang = defaults.string(forKey: LocalizeStorageKey) {
-            return lang
-        }
-        return Locale.preferredLanguages[0]
+    public func enableTestingMode() {
+        testing = true
     }
     
     /// Update base file name, searched in path.
-    public func update(fileName:String) {
+    public func update(fileName: String) {
         self.fileName = fileName
     }
     
@@ -138,8 +118,8 @@ class LocalizeCommonProtocol: NSObject {
     /// - parameter value: The replacement value
     ///
     /// - returns: localized key or same text
-    public func localize(key:String, replace:String, tableName:String? = nil) -> String {
-        let string = self.localize(key: key, tableName:tableName)
+    public func localize(key: String, replace: String, tableName: String? = nil) -> String {
+        let string = localize(key: key, tableName:tableName)
 
         return string.replacingOccurrences(of: "%", with: replace)
     }
@@ -150,8 +130,8 @@ class LocalizeCommonProtocol: NSObject {
     /// - parameter value: The replacement values
     ///
     /// - returns: localized key or same text
-    public func localize(key:String, values replace:[Any], tableName:String? = nil) -> String {
-        var string = self.localize(key: key, tableName:tableName)
+    public func localize(key: String, values replace: [Any], tableName: String? = nil) -> String {
+        var string = localize(key: key, tableName:tableName)
         if string == key {
             return key
         }
@@ -176,8 +156,8 @@ class LocalizeCommonProtocol: NSObject {
     /// - parameter value: The replacement dictionary
     ///
     /// - returns: localized key or same text
-    public func localize(key:String, dictionary replace:[String:String], tableName:String? = nil) -> String {
-        var string = self.localize(key: key, tableName:tableName)
+    public func localize(key: String, dictionary replace: [String: String], tableName: String? = nil) -> String {
+        var string = localize(key: key, tableName:tableName)
         for (key, value) in replace {
             string = string.replacingOccurrences(of: ":\(key)", with: value)
         }

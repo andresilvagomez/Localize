@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="3md-ly-arL">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="3md-ly-arL">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -23,7 +23,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Some text here" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BBe-T0-9G7">
-                                <rect key="frame" x="16" y="80" width="343" height="21"/>
+                                <rect key="frame" x="16" y="80" width="343" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -32,7 +32,7 @@
                                 </userDefinedRuntimeAttributes>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Search" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HTc-mN-LYL">
-                                <rect key="frame" x="16" y="117" width="343" height="30"/>
+                                <rect key="frame" x="16" y="116.5" width="343" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -46,6 +46,12 @@
                                     <constraint firstAttribute="height" constant="45" id="eO6-Rr-kSy"/>
                                 </constraints>
                                 <state key="normal" title="Continue"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="localizeKey" value="Continue"/>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <segue destination="QHj-YI-Ix7" kind="show" id="HBm-eo-j6C"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t6w-Gh-I1B">
                                 <rect key="frame" x="16" y="545" width="343" height="45"/>
@@ -61,7 +67,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Language" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eRz-bg-Iry">
-                                <rect key="frame" x="16" y="163" width="343" height="21"/>
+                                <rect key="frame" x="16" y="162.5" width="343" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -101,13 +107,75 @@
             </objects>
             <point key="canvasLocation" x="842" y="-546"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="NVm-i4-pSf">
+            <objects>
+                <viewController id="QHj-YI-Ix7" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="hJI-XG-4ql"/>
+                        <viewControllerLayoutGuide type="bottom" id="bLK-bW-LRg"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="uK2-dp-OwS">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="app.label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qqs-QI-Vck">
+                                <rect key="frame" x="32" y="96" width="311" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="app.label" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="0HU-Y9-uB5">
+                                <rect key="frame" x="32" y="148.5" width="311" height="128"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="128" id="oec-cu-UBT"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Qqs-QI-Vck" firstAttribute="leading" secondItem="uK2-dp-OwS" secondAttribute="leading" constant="32" id="L6v-ZM-qM4"/>
+                            <constraint firstItem="Qqs-QI-Vck" firstAttribute="top" secondItem="hJI-XG-4ql" secondAttribute="bottom" constant="32" id="ShY-j7-TaI"/>
+                            <constraint firstItem="0HU-Y9-uB5" firstAttribute="leading" secondItem="uK2-dp-OwS" secondAttribute="leading" constant="32" id="Vpg-0k-pFy"/>
+                            <constraint firstAttribute="trailing" secondItem="Qqs-QI-Vck" secondAttribute="trailing" constant="32" id="anC-QM-DfQ"/>
+                            <constraint firstAttribute="trailing" secondItem="0HU-Y9-uB5" secondAttribute="trailing" constant="32" id="gxa-Ep-xwE"/>
+                            <constraint firstItem="0HU-Y9-uB5" firstAttribute="top" secondItem="Qqs-QI-Vck" secondAttribute="bottom" constant="32" id="ofP-yD-LYg"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="KpE-oJ-hOB">
+                        <nil key="title"/>
+                        <segmentedControl key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="jG6-iV-0U4">
+                            <rect key="frame" x="127" y="7" width="121" height="30"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <segments>
+                                <segment title=""/>
+                                <segment title=""/>
+                            </segments>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="string" keyPath="localizeKey" value="navigation.segment: one, two, tree"/>
+                            </userDefinedRuntimeAttributes>
+                        </segmentedControl>
+                        <barButtonItem key="rightBarButtonItem" title="Item" id="Zu7-yN-4eL">
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="string" keyPath="localizeKey" value="one"/>
+                            </userDefinedRuntimeAttributes>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Gkz-PL-c8H" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1700" y="-546"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="xk1-7E-ym5">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="3md-ly-arL" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="gtX-QQ-nV6">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>

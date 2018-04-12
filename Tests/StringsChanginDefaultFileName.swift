@@ -15,7 +15,7 @@ class StringsChanginDefaultFileName: XCTestCase {
         Localize.update(provider: .strings)
         Localize.update(language: "en")
         Localize.update(fileName: "Other")
-        Localize.testingMode()
+        Localize.enableTestingMode()
     }
     
     func testKeyInOtherLanguage() {
