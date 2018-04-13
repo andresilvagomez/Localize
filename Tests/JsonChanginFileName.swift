@@ -28,4 +28,13 @@ class JsonChanginFileName: XCTestCase {
         XCTAssertTrue(localized == "Hola mundo!")
     }
     
+    func testNameForLanguage() {
+        let localized = Localize.displayNameForLanguage("es")
+        XCTAssertTrue(localized == "Español")
+    }
+    
+    func testNameBadForLanguage() {
+        let localized = Localize.displayNameForLanguage("esus")
+        XCTAssertTrue(localized == "")
+    }
 }

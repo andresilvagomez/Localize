@@ -1,0 +1,10 @@
+/* 
+  Other.strings
+  Localize
+
+  Copyright © 2017 Kekiiwaa. All rights reserved.
+*/
+
+"other.key" = "This key exist in other file";
+
+"hello.baby" = "This is a welcome, new baby is here!";

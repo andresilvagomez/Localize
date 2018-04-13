@@ -17,17 +17,14 @@ fileprivate extension JSON {
         guard let path = bundle.path(forResource: name, ofType: "json") else {
             return nil
         }
-        guard let data = try? Data(contentsOf: URL(fileURLWithPath: path)) else {
-            print("Localize can't read your file")
-            return nil
-        }
+        let data = try? Data(contentsOf: URL(fileURLWithPath: path))
         do {
-            return try JSONSerialization.jsonObject(with: data, options: JSONSerialization.ReadingOptions.mutableContainers) as? NSDictionary
+            return try JSONSerialization.jsonObject(with: data!, options: JSONSerialization.ReadingOptions.mutableContainers) as? NSDictionary
         }
         catch {
-            print("Localize can't parse your file")
-            return nil
+            print("Localize can't parse your file", error)
         }
+        return nil
     }
     
     /// Try search key in your dictionary using single level

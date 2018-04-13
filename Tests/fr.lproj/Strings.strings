@@ -1,0 +1,28 @@
+/* 
+  Strings.strings
+  Localize
+
+  Copyright © 2017 Kekiiwaa. All rights reserved.
+*/
+
+"hello.world" = "Hello world!";
+
+"name" = "Hello %";
+
+"values" = "Hello everyone my name is % and I'm %, see you soon";
+
+"username" = "My username is :username";
+
+"level.one.two.three" = "This is a multilevel key";
+
+"the.same.lavel" = "This is a localized in the same level";
+
+"enlish" = "This key only exist in english file.";
+
+"segment.base.one" = "First";
+
+"segment.base.two" = "Second";
+
+"one" = "First";
+
+"two" = "Second";

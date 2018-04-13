@@ -11,4 +11,8 @@ Pod::Spec.new do |s|
   s.ios.deployment_target = '9.0'
   s.source_files = "Source/*.swift"
 
+  s.test_spec 'Localize' do |test_spec|
+    test_spec.source_files = 'Tests/*.swift'
+  end 
+
 end

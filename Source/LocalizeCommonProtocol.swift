@@ -108,7 +108,7 @@ class LocalizeCommonProtocol: NSObject {
     /// That prevent replace untagged values
     ///
     /// - returns: localized key or same text
-    public func localize(key: String, tableName:String? = nil) -> String {
+    public func localize(key: String, tableName: String? = nil) -> String {
         return ""
     }
     

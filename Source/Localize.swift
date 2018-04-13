@@ -55,7 +55,7 @@ public class Localize: NSObject {
     /// That prevent replace untagged values
     ///
     /// - returns: localized key or same text
-    public func localize(key:String, tableName:String? = nil) -> String {
+    public func localize(key: String, tableName: String? = nil) -> String {
         return provider.localize(key: key, tableName: tableName)
     }
     
@@ -65,8 +65,8 @@ public class Localize: NSObject {
     /// - parameter value: The replacement value
     ///
     /// - returns: localized key or same text
-    public func localize(key:String, replace:String, tableName:String? = nil) -> String {
-        return provider.localize(key: key, replace: replace, tableName:tableName)
+    public func localize(key: String, replace: String, tableName: String? = nil) -> String {
+        return provider.localize(key: key, replace: replace, tableName: tableName)
     }
     
     /// Localize a string using your JSON File
@@ -75,8 +75,8 @@ public class Localize: NSObject {
     /// - parameter value: The replacement values
     ///
     /// - returns: localized key or same text
-    public func localize(key:String, values:[Any], tableName:String? = nil) -> String {
-        return provider.localize(key: key, values: values, tableName:tableName)
+    public func localize(key: String, values: [Any], tableName: String? = nil) -> String {
+        return provider.localize(key: key, values: values, tableName: tableName)
     }
     
     /// Localize string with dictionary values
@@ -86,8 +86,8 @@ public class Localize: NSObject {
     /// - parameter value: The replacement dictionary
     ///
     /// - returns: localized key or same text
-    public func localize(key:String, dictionary:[String:String], tableName:String? = nil) -> String {
-        return provider.localize(key: key, dictionary: dictionary, tableName:tableName)
+    public func localize(key: String, dictionary: [String:String], tableName: String? = nil) -> String {
+        return provider.localize(key: key, dictionary: dictionary, tableName: tableName)
     }
 
     
@@ -142,5 +142,4 @@ public class Localize: NSObject {
             self.provider = LocalizeJson()
         }
     }
-    
 }

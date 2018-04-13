@@ -2,7 +2,7 @@
 
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 [![CocoaPods](https://img.shields.io/cocoapods/v/Localize.svg)](https://cocoapods.org/pods/Localize)
-[![Build Status](https://travis-ci.org/Kekiiwaa/Localize.svg?branch=master)](https://travis-ci.org/Kekiiwaa/Localize)
+[![Build Status](https://travis-ci.org/andresilvagomez/Localize.svg?branch=master)](https://travis-ci.org/andresilvagomez/Localize)
 [![Language](https://img.shields.io/badge/language-Swift%204.1-orange.svg)](https://swift.org)
 [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/Kekiiwaa/Localize/master/LICENSE)
 
