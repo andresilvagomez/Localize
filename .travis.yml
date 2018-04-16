@@ -43,4 +43,4 @@ script:
       pod lib lint;
     fi
 after_success:
-  - bash <(curl -s https://codecov.io/bash) -t cba7ac32-fe0f-4d63-977c-bc2b5588a082
+  - bash <(curl -s https://codecov.io/bash) -J 'LocalizeTests' -t cba7ac32-fe0f-4d63-977c-bc2b5588a082
