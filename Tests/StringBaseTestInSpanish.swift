@@ -13,7 +13,7 @@ class StringBaseTestInSpanish: XCTestCase {
     override func setUp() {
         super.setUp()
         Localize.update(provider: .strings)
-        Localize.enableTestingMode()
+        Localize.update(bundle: Bundle(for: type(of: self)))
         Localize.update(language: "es")
     }
     
@@ -54,7 +54,7 @@ class StringBaseTestInSpanish: XCTestCase {
     
     func testListOfAvailableLanguages() {
         let languages = Localize.availableLanguages
-        XCTAssertTrue(languages == ["en", "es"])
+        XCTAssertTrue(languages == ["en", "es", "fr"])
     }
     
     func testCurrentLanguage() {

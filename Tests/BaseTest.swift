@@ -13,8 +13,18 @@ class BaseTest: XCTestCase {
     override func setUp() {
         super.setUp()
         Localize.update(provider: .json)
-        Localize.enableTestingMode()
+        Localize.update(bundle: Bundle(for: type(of: self)))
         Localize.update(language: "en")
+    }
+    
+    func testRemoveKeyAndGetDefaultForLang() {
+        UserDefaults.standard.removeObject(forKey: LocalizeStorageKey)
+        XCTAssertTrue(Localize.currentLanguage == Locale.preferredLanguages.first)
+    }
+    
+    func testSameKeyWithTableName() {
+        let localized = "heymamiwhereareyou".localize(values: "", "", tableName: "heymamiwhereareyou")
+        XCTAssertTrue(localized == "heymamiwhereareyou")
     }
     
     func testLocalizeInAnyDictionary() {
@@ -64,7 +74,7 @@ class BaseTest: XCTestCase {
     
     func testListOfAvailableLanguages() {
         let languages = Localize.availableLanguages
-        XCTAssertTrue(languages == ["en", "es"])
+        XCTAssertTrue(languages.count == 3)
     }
     
     func testCurrentLanguage() {

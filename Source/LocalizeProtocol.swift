@@ -9,9 +9,6 @@ import UIKit
 
 protocol LocalizeProtocol {
     
-    /// Use this for testing mode, search resources in different bundles.
-    var testing: Bool {get set}
-    
     /// Default language, if this can't find a key in your current language
     /// Try read key in default language
     var defaultLanguage: String {get set}
@@ -84,9 +81,5 @@ protocol LocalizeProtocol {
     ///
     /// - return: String form language code in current user language
     func displayNameForLanguage(_ language: String) -> String
-    
-    /// Enable testing mode
-    /// Please not use in your code, is only for test schema.
-    func enableTestingMode()
     
 }

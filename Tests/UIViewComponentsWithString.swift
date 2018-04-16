@@ -13,7 +13,7 @@ import Localize
 class UIViewComponentsWithString: XCTestCase {
     override func setUp() {
         super.setUp()
-        Localize.enableTestingMode()
+        Localize.update(bundle: Bundle(for: type(of: self)))
         Localize.update(language: "en")
     }
     

@@ -7,7 +7,7 @@
 
 import UIKit
 
-class LocalizeStrings: LocalizeCommonProtocol, LocalizeProtocol {
+class LocalizeStrings: LocalizeCommonProtocol {
     
     /// Create default lang name
     override init() {
@@ -18,7 +18,7 @@ class LocalizeStrings: LocalizeCommonProtocol, LocalizeProtocol {
     /// Show all aviable languajes whit criteria name
     ///
     /// - returns: list with storaged languages code
-    public var availableLanguages: [String] {
+    override var availableLanguages: [String] {
         var availableLanguages = bundle.localizations
         if let indexOfBase = availableLanguages.index(of: "Base") {
             availableLanguages.remove(at: indexOfBase)

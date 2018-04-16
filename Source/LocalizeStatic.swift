@@ -95,12 +95,6 @@ extension Localize {
         return Localize.shared.displayNameForLanguage(language)
     }
     
-    /// Enable testing mode
-    /// Please not use in your code, is only for test schema.
-    public static func enableTestingMode() {
-        Localize.shared.enableTestingMode()
-    }
-    
     // MARK: Config providers
     
     /// Update provider to localize your app.

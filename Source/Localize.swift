@@ -125,12 +125,6 @@ public class Localize: NSObject {
         return provider.displayNameForLanguage(language)
     }
     
-    /// Enable testing mode
-    /// Please not use in your code, is only for test schema.
-    public func enableTestingMode() {
-        provider.enableTestingMode()
-    }
-    
     // MARK: Config providers
     
     /// Update provider to localize your app.

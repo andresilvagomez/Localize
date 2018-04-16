@@ -13,7 +13,7 @@ class StringBadSources: XCTestCase {
     override func setUp() {
         super.setUp()
         Localize.update(provider: .strings)
-        Localize.enableTestingMode()
+        Localize.update(bundle: Bundle(for: type(of: self)))
         Localize.update(language: "en")
         Localize.update(defaultLanguage: "rs")
     }

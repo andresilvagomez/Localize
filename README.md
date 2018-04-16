@@ -1,10 +1,12 @@
 # Localize
 
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
+[![codecov.io](https://codecov.io/github/andresilvagomez/Localize/coverage.svg?branch=master)](https://codecov.io/github/andresilvagomez/Localize?branch=master)
 [![CocoaPods](https://img.shields.io/cocoapods/v/Localize.svg)](https://cocoapods.org/pods/Localize)
 [![Build Status](https://travis-ci.org/andresilvagomez/Localize.svg?branch=master)](https://travis-ci.org/andresilvagomez/Localize)
 [![Language](https://img.shields.io/badge/language-Swift%204.1-orange.svg)](https://swift.org)
 [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/Kekiiwaa/Localize/master/LICENSE)
+[![Awesome](https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg)](https://github.com/vsouza/awesome-ios)
 
 Localize is a framework writed in swift to localize your projects easier improves i18n, including storyboards and strings.
 
@@ -47,11 +49,11 @@ To integrate Localize into your Xcode project using CocoaPods, specify it in you
 
 ```ruby
 source 'https://github.com/CocoaPods/Specs.git'
-platform :ios, '8.0'
+platform :ios, '9.0'
 use_frameworks!
 
 target '<Your Target Name>' do
-    pod 'Localize' , '~> 2.0.0'
+    pod 'Localize' , '~> 2.0.1'
 end
 ```
 
