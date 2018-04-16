@@ -7,7 +7,14 @@
 
 import UIKit
 
-class LocalizeCommonProtocol: NSObject {
+class LocalizeCommonProtocol: LocalizeProtocol {
+    
+    /// Show all aviable languajes whit criteria name
+    ///
+    /// - returns: list with storaged languages code
+    var availableLanguages: [String] {
+        return ["en"]
+    }
     
     /// Name for storaged Json Files
     /// The rule for name is fileName-LanguageKey.json
@@ -16,9 +23,6 @@ class LocalizeCommonProtocol: NSObject {
     /// Bundle used to load files from.
     /// Defaults to the main bundle.
     private var usedBundle = Bundle.main
-
-    /// Use this for testing mode, search resources in different bundles.
-    public var testing: Bool = false
     
     /// Default language, if this can't find a key in your current language
     /// Try read key in default language
@@ -31,7 +35,7 @@ class LocalizeCommonProtocol: NSObject {
             if let lang = defaults.string(forKey: LocalizeStorageKey) {
                 return lang
             }
-            return Locale.preferredLanguages[0]
+            return Locale.preferredLanguages.first ?? defaultLanguage
         }
     }
     
@@ -41,9 +45,6 @@ class LocalizeCommonProtocol: NSObject {
     ///
     /// - returns: a string url where is your file
     internal var bundle: Bundle {
-        if testing {
-            return Bundle(for: type(of: self))
-        }
         return usedBundle
     }
     
@@ -84,12 +85,6 @@ class LocalizeCommonProtocol: NSObject {
         return ""
     }
     
-    /// Enable testing mode
-    /// Please not use in your code, is only for test schema.
-    public func enableTestingMode() {
-        testing = true
-    }
-    
     /// Update base file name, searched in path.
     public func update(fileName: String) {
         self.fileName = fileName
@@ -119,7 +114,7 @@ class LocalizeCommonProtocol: NSObject {
     ///
     /// - returns: localized key or same text
     public func localize(key: String, replace: String, tableName: String? = nil) -> String {
-        let string = localize(key: key, tableName:tableName)
+        let string = localize(key: key, tableName: tableName)
 
         return string.replacingOccurrences(of: "%", with: replace)
     }
@@ -131,7 +126,7 @@ class LocalizeCommonProtocol: NSObject {
     ///
     /// - returns: localized key or same text
     public func localize(key: String, values replace: [Any], tableName: String? = nil) -> String {
-        var string = localize(key: key, tableName:tableName)
+        var string = localize(key: key, tableName: tableName)
         if string == key {
             return key
         }

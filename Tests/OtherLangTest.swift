@@ -13,7 +13,7 @@ class OtherLangTest: XCTestCase {
     override func setUp() {
         super.setUp()
         Localize.update(provider: .json)
-        Localize.enableTestingMode()
+        Localize.update(bundle: Bundle(for: type(of: self)))
         Localize.update(language: "it")
     }
     
