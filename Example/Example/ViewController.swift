@@ -2,7 +2,7 @@
 //  ViewController.swift
 //  Example
 //
-//  Copyright © 2017 Kekkiwaa Inc. All rights reserved.
+//  Copyright © @andresilvagomez.
 //
 
 import UIKit

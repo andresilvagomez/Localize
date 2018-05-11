@@ -2,8 +2,7 @@
 //  UIViewComponentsES.swift
 //  LocalizeTests
 //
-//  Created by Andres Silva Gomez on 4/12/18.
-//  Copyright © 2018 Kekiiwaa. All rights reserved.
+//  Copyright © 2018 @andresilvagomez.
 //
 
 import XCTest

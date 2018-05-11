@@ -1,8 +1,8 @@
 //
-//  LocalizableStatic.swift
+//  LocalizeStatic.swift
 //  Localize
 //
-//  Copyright © 2017 Kekkiwaa Inc. All rights reserved.
+//  Copyright © 2017 @andresilvagomez.
 //
 
 import UIKit

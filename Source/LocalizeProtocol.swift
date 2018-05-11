@@ -2,7 +2,7 @@
 //  LocalizeProtocol.swift
 //  Localize
 //
-//  Copyright © 2017 Kekkiwaa. All rights reserved.
+//  Copyright © 2017 @andresilvagomez.
 //
 
 import UIKit

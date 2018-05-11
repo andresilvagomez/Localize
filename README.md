@@ -5,7 +5,7 @@
 [![CocoaPods](https://img.shields.io/cocoapods/v/Localize.svg)](https://cocoapods.org/pods/Localize)
 [![Build Status](https://travis-ci.org/andresilvagomez/Localize.svg?branch=master)](https://travis-ci.org/andresilvagomez/Localize)
 [![Language](https://img.shields.io/badge/language-Swift%204.1-orange.svg)](https://swift.org)
-[![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/Kekiiwaa/Localize/master/LICENSE)
+[![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/andresilvagomez/Localize/master/LICENSE)
 [![Awesome](https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg)](https://github.com/vsouza/awesome-ios)
 
 Localize is a framework writed in swift to localize your projects easier improves i18n, including storyboards and strings.
@@ -77,7 +77,7 @@ $ brew install carthage
 To integrate Localize into your Xcode project using Carthage, specify it in your `Cartfile`:
 
 ```
-github "Kekiiwaa/Localize"
+github "andresilvagomez/Localize"
 ```
 
 Run `carthage update` to build the framework and drag the built `Localize.framework` into your Xcode project.
@@ -90,7 +90,7 @@ Once you have your Swift package set up, adding Localize as a dependency is as e
 
 ```swift
 dependencies: [
-    .Package(url: "https://github.com/Kekiiwaa/Localize.git")
+    .Package(url: "https://github.com/andresilvagomez/Localize.git")
 ]
 ```
 
@@ -352,7 +352,6 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 
 ## Credits
 
-[Kekiiwaa](https://github.com/Kekiiwaa),
 [Andres Silva Gomez](https://github.com/andresilvagomez)
 
 Special thanks to [Benjamin Erhart](https://github.com/tladesignz)

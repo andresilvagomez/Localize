@@ -2,8 +2,7 @@
 //  LocalizeUI.swift
 //  Localize
 //
-//  Created by Andres Silva Gomez on 4/10/18.
-//  Copyright © 2018 Kekiiwaa. All rights reserved.
+//  Copyright © 2018 @andresilvagomez.
 //
 
 import UIKit

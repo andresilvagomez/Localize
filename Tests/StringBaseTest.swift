@@ -2,7 +2,7 @@
 //  StringBaseTest.swift
 //  Localize
 //
-//  Copyright © 2017 Kekiiwaa. All rights reserved.
+//  Copyright © 2017 @andresilvagomez.
 //
 
 import XCTest
