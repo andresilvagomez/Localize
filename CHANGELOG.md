@@ -2,13 +2,21 @@
 All notable changes to this project will be documented in this file.
 `Localize` adheres to [Semantic Versioning](http://semver.org/).
 
+## [2.0.3](https://github.com/andresilvagomez/Localize/releases/tag/2.0.3)
+Released on 2018-05-15.
+
+#### Added
+- Fix localize strings when user only has a one string file.
+  - By [Andres Silva](https://github.com/andresilvagomez) in Pull Request
+  [#27](https://github.com/andresilvagomez/Localize/pull/27).
+
 ## [2.0.2](https://github.com/andresilvagomez/Localize/releases/tag/2.0.2)
 Released on 2018-05-10.
 
 #### Added
 - Improve strings with extended languajes like to es-mx for defaults localizations.
   - By [Benjamin Erhart](https://github.com/tladesignz) in Pull Request
-  [#24](https://github.com/andresilvagomez/Localize/pull/25).
+  [#25](https://github.com/andresilvagomez/Localize/pull/25).
 
 ## [2.0.1](https://github.com/andresilvagomez/Localize/releases/tag/2.0.1)
 Released on 2018-04-15.
