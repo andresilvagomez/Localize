@@ -9,7 +9,6 @@ import XCTest
 import Localize
 
 class StringBaseTest: XCTestCase {
-    
     override func setUp() {
         super.setUp()
         Localize.update(provider: .strings)
@@ -61,5 +60,4 @@ class StringBaseTest: XCTestCase {
         let language = Localize.currentLanguage
         XCTAssertTrue(language == "en")
     }
-    
 }

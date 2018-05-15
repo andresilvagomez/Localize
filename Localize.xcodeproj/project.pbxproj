@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2B41FFEB20AB19570012AF1E /* StringSingleTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B41FFEA20AB19570012AF1E /* StringSingleTest.swift */; };
+		2B41FFEC20AB1A450012AF1E /* OnlyOneLang.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2B41FFE820AB18FE0012AF1E /* OnlyOneLang.strings */; };
 		2B717465207D9AFE0070DC5F /* LocalizeUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B717464207D9AFE0070DC5F /* LocalizeUI.swift */; };
 		2B717469207DC6E00070DC5F /* UIViewComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B717468207DC6E00070DC5F /* UIViewComponents.swift */; };
 		2B931AA8208302FB00C26D6B /* lang-en.json in Resources */ = {isa = PBXBuildFile; fileRef = 9F761AEB1E3063E400904B4B /* lang-en.json */; };
@@ -56,6 +58,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2B41FFE820AB18FE0012AF1E /* OnlyOneLang.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = OnlyOneLang.strings; sourceTree = "<group>"; };
+		2B41FFEA20AB19570012AF1E /* StringSingleTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringSingleTest.swift; sourceTree = "<group>"; };
 		2B717464207D9AFE0070DC5F /* LocalizeUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizeUI.swift; sourceTree = "<group>"; };
 		2B717468207DC6E00070DC5F /* UIViewComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewComponents.swift; sourceTree = "<group>"; };
 		2B80F11B20830FBD00542924 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Storyboard.strings; sourceTree = "<group>"; };
@@ -176,6 +180,7 @@
 				9FA3BC501E318C080054CA92 /* ReadingOtherFiles.swift */,
 				2BD8531820812DD900FB0E53 /* StringBadSources.swift */,
 				9F19DFC61E4D2B1D00F953E6 /* StringBaseTest.swift */,
+				2B41FFEA20AB19570012AF1E /* StringSingleTest.swift */,
 				9F1678001E51F33E0022F3F8 /* StringBaseTestInSpanish.swift */,
 				9FCD8EA41E52AD3E00B5909C /* StringsChanginDefaultFileName.swift */,
 				2B717468207DC6E00070DC5F /* UIViewComponents.swift */,
@@ -202,6 +207,7 @@
 				9F1677FC1E51DE270022F3F8 /* Strings.strings */,
 				9FCD8EA21E52A9D800B5909C /* Other.strings */,
 				2BD85322208130A100FB0E53 /* Storyboard.storyboard */,
+				2B41FFE820AB18FE0012AF1E /* OnlyOneLang.strings */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -316,6 +322,7 @@
 				2B931AAD2083031000C26D6B /* some-it.json in Resources */,
 				2B931AB02083031700C26D6B /* Strings.strings in Resources */,
 				2B931AAE2083031000C26D6B /* file-de.json in Resources */,
+				2B41FFEC20AB1A450012AF1E /* OnlyOneLang.strings in Resources */,
 				2B931AAC2083031000C26D6B /* other-es.json in Resources */,
 				2B931AB12083031700C26D6B /* Other.strings in Resources */,
 				2B931AA8208302FB00C26D6B /* lang-en.json in Resources */,
@@ -349,6 +356,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2B41FFEB20AB19570012AF1E /* StringSingleTest.swift in Sources */,
 				2B717469207DC6E00070DC5F /* UIViewComponents.swift in Sources */,
 				9F1678011E51F33E0022F3F8 /* StringBaseTestInSpanish.swift in Sources */,
 				9F989F4C1E2B3B8200A19F67 /* BaseTest.swift in Sources */,

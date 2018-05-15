@@ -88,6 +88,14 @@ class LocalizeStrings: LocalizeCommonProtocol {
                 return localized
             }
         }
+        
+        if bundle.path(forResource: tableName, ofType: "strings") != nil {
+            let localized = bundle.localizedString(forKey: key, value: nil, table: tableName)
+            
+            if localized != key {
+                return localized
+            }
+        }
 
         return nil
     }
