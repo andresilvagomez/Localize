@@ -8,7 +8,7 @@
 [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/andresilvagomez/Localize/master/LICENSE)
 [![Awesome](https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg)](https://github.com/vsouza/awesome-ios)
 
-Localize is a framework writed in swift to localize your projects easier improves i18n, including storyboards and strings.
+Localize is a framework written in swift to help you localize your projects. It supports both storyboards and strings.
 
 ![Localize Storyboard](https://www.dropbox.com/s/t5uij0bg0tgignu/localize.gif?raw=1)
 ___
@@ -100,7 +100,7 @@ dependencies: [
 
 Add ```.localize()``` for any ```String``` if you want localize.
 
-You don't need import anything in your code, Localize use extensions to localize your Strings.
+You don't need import anything in your code, Localize uses extensions to localize your Strings.
 
 ```swift
 
@@ -110,7 +110,7 @@ textLabel.text = "hello.world".localized
 
 ```
 
-You can decide if you want use JSON or Apple Strings, we support both, if you decide use JSON please following this instructions.
+You can decide if you want use JSON or Apple Strings, we support both, if you decide to use JSON please follow these instructions.
 
 ### Create JSON file
 
@@ -232,7 +232,7 @@ print( "username".localize(dictionary: ["username": "Localize"], tableName: "You
 
 ### We are amazing with storyboards.
 
-You don't need import anything in your code, Localize use extensions to localize your UIView components
+You don't need to import anything in your code, Localize uses extensions to localize your UIView components
 
 ![Localize Storyboard](https://www.dropbox.com/s/d2ydhozqdetd1oo/Screenshot%202017-08-07%2023.12.12.png?raw=1)
 
@@ -273,7 +273,7 @@ Localize.update(language: "fr")
 
 ```
 
-But with strings not is posible, for that your need implement a notification
+To make this work with strings, you need to implement a notification
 
 ```swift
 
@@ -313,7 +313,7 @@ Implementing internal acction to change a language
 ```
 
 ### Config
-This not is necesary, only if you need diferent results.
+This not is necesary, only if you need different results.
 
 ```swift
 // AppDelegate.swift
