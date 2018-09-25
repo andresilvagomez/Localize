@@ -53,7 +53,7 @@ class StringBaseTest: XCTestCase {
     
     func testListOfAvailableLanguages() {
         let languages = Localize.availableLanguages
-        XCTAssertTrue(languages == ["en", "es", "fr"])
+        XCTAssertTrue(languages == ["en","es","es-CO","fr"])
     }
     
     func testCurrentLanguage() {

@@ -64,7 +64,15 @@ class LocalizeStrings: LocalizeCommonProtocol {
 
             return localized
         }
-
+        
+        if bundle.path(forResource: tableName, ofType: "strings") != nil {
+            let localized = bundle.localizedString(forKey: key, value: nil, table: tableName)
+            
+            if localized != key {
+                return localized
+            }
+        }
+        
         // If we can't find a translation anywhere, return the original key.
         return key
     }
@@ -84,14 +92,6 @@ class LocalizeStrings: LocalizeCommonProtocol {
 
             let localized = bundle.localizedString(forKey: key, value: nil, table: tableName)
 
-            if localized != key {
-                return localized
-            }
-        }
-        
-        if bundle.path(forResource: tableName, ofType: "strings") != nil {
-            let localized = bundle.localizedString(forKey: key, value: nil, table: tableName)
-            
             if localized != key {
                 return localized
             }
