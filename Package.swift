@@ -21,6 +21,6 @@ import PackageDescription
 
 let package = Package(
     name: "Localize",
-    dependencies : [],
+    dependencies: [],
     exclude: ["Tests"]
 )

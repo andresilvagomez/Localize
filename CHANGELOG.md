@@ -2,6 +2,11 @@
 All notable changes to this project will be documented in this file.
 `Localize` adheres to [Semantic Versioning](http://semver.org/).
 
+## [2.0.5](https://github.com/andresilvagomez/Localize/releases/tag/2.0.5)
+- Swift 4.2 Support.
+  - By [Gustavo Graña](https://github.com/ggrana) in Pull Request [#36](https://github.com/andresilvagomez/Localize/pull/36).
+Released on 2018-09-26.
+
 ## [2.0.4](https://github.com/andresilvagomez/Localize/releases/tag/2.0.4)
 - Swift 4.2 Support.
   - By [Daniel Clelland](https://github.com/dclelland) in Pull Request [#34](https://github.com/andresilvagomez/Localize/pull/34).

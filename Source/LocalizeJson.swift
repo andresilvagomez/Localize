@@ -5,9 +5,9 @@
 //  Copyright © 2017 @andresilvagomez.
 //
 
-import UIKit
+import Foundation
 
-fileprivate typealias JSON = NSDictionary
+private typealias JSON = NSDictionary
 
 fileprivate extension JSON {
     /// This method has path where file is
@@ -17,16 +17,18 @@ fileprivate extension JSON {
         guard let path = bundle.path(forResource: name, ofType: "json") else {
             return nil
         }
-        let data = try? Data(contentsOf: URL(fileURLWithPath: path))
         do {
-            return try JSONSerialization.jsonObject(with: data!, options: JSONSerialization.ReadingOptions.mutableContainers) as? NSDictionary
-        }
-        catch {
+            let data = try Data(contentsOf: URL(fileURLWithPath: path))
+            return try JSONSerialization.jsonObject(
+                with: data,
+                options: JSONSerialization.ReadingOptions.mutableContainers
+            ) as? NSDictionary
+        } catch {
             print("Localize can't parse your file", error)
         }
         return nil
     }
-    
+
     /// Try search key in your dictionary using single level
     /// If it doesn't find the key it will use the multilevel
     /// If the key not exis in your JSON return nil value
@@ -34,14 +36,14 @@ fileprivate extension JSON {
         if let string = self[key] {
             return string as? String
         }
-        
+
         if let string = valueForKeyInLevels(key: key) {
             return string
         }
-        
+
         return nil
     }
-    
+
     /// Try search key in your dictionary using multiples levels
     /// It is necessary that the result be a string
     /// Otherwise it returns nil value
@@ -55,7 +57,7 @@ fileprivate extension JSON {
                 return nil
             }
         }
-        
+
         return jsonCopy as? String
     }
 }
@@ -67,13 +69,13 @@ class LocalizeJson: LocalizeCommonProtocol {
         super.init()
         fileName = "lang"
     }
-    
+
     /// Show all aviable languages with criteria name
     ///
     /// - returns: list with storaged languages code
     override var availableLanguages: [String] {
-        var languages : [String] = []
-        
+        var languages: [String] = []
+
         for localeId in NSLocale.availableLocaleIdentifiers {
             let name = "\(fileName)-\(localeId)"
             let path = bundle.path(forResource: name, ofType: "json")
@@ -81,12 +83,12 @@ class LocalizeJson: LocalizeCommonProtocol {
                 languages.append(localeId)
             }
         }
-        
+
         return languages
     }
-    
+
     // MARK: Read JSON methods
-    
+
     /// This metod contains a logic to read return JSON data
     /// If JSON not is defined, this try use a default
     /// As long as the default language is the same as the current one.
@@ -94,21 +96,21 @@ class LocalizeJson: LocalizeCommonProtocol {
         let tableName = tableName ?? fileName
         var lang = currentLanguage
         var json = JSON.read(bundle: bundle, named: "\(tableName)-\(lang)")
-        
+
         if json != nil {
             return json
         }
-        
+
         lang = lang.components(separatedBy: "-")[0]
         json = JSON.read(bundle: bundle, named: "\(tableName)-\(lang)")
-        
+
         if json == nil && lang != defaultLanguage {
             json = readDefaultJSON()
         }
-        
+
         return json
     }
-    
+
     /// Read a JSON with default language value.
     ///
     /// - returns: json or nil value.
@@ -116,9 +118,9 @@ class LocalizeJson: LocalizeCommonProtocol {
         let tableName = tableName ?? fileName
         return JSON.read(bundle: bundle, named: "\(tableName)-\(defaultLanguage)")
     }
-    
+
     // MARK: Public methods
-    
+
     /// Localize a string using your JSON File
     /// If the key is not found return the same key
     /// That prevent replace untagged values
@@ -128,21 +130,19 @@ class LocalizeJson: LocalizeCommonProtocol {
         guard let json = readJSON(tableName: tableName) else {
             return key
         }
-        
-        let string = json.valueFor(key: key)
-        if string != nil {
-            return string!
+
+        if let string = json.valueFor(key: key) {
+            return string
         }
-        
+
         guard let defaultJSON = readDefaultJSON(tableName: tableName) else {
             return key
         }
-        
-        let defaultString = defaultJSON.valueFor(key: key)
-        if defaultString != nil {
-            return defaultString!
+
+        guard let defaultString = defaultJSON.valueFor(key: key) else {
+            return key
         }
-        
-        return key
+
+        return defaultString
     }
 }

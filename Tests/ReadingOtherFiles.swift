@@ -9,12 +9,12 @@ import XCTest
 import Localize
 
 class ReadingOtherFiles: XCTestCase {
-    
+
     override func setUp() {
         super.setUp()
         Localize.update(provider: .json)
     }
-    
+
     func testOtherEnglish() {
         Localize.update(bundle: Bundle(for: type(of: self)))
         Localize.update(language: "en")
@@ -22,7 +22,7 @@ class ReadingOtherFiles: XCTestCase {
         let result = "hello".localize()
         XCTAssert(result == "Hello world!")
     }
-    
+
     func testSomeItalian() {
         Localize.update(bundle: Bundle(for: type(of: self)))
         Localize.update(language: "it")
@@ -30,7 +30,7 @@ class ReadingOtherFiles: XCTestCase {
         let result = "hello".localize()
         XCTAssert(result == "Ciao mondo!")
     }
-    
+
     func testFileGerman() {
         Localize.update(bundle: Bundle(for: type(of: self)))
         Localize.update(language: "de")
@@ -38,5 +38,5 @@ class ReadingOtherFiles: XCTestCase {
         let result = "hello".localize()
         XCTAssert(result == "Hallo Welt!")
     }
-    
+
 }

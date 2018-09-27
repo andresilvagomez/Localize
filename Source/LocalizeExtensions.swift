@@ -16,7 +16,7 @@ extension NSCoding {
     fileprivate func localizedValue(key: UnsafeMutablePointer<UInt8>) -> String? {
         return objc_getAssociatedObject(self, key) as? String
     }
-    
+
     /// Set associated property by IBInspectable var.
     fileprivate func setLocalizedValue(_ value: String?, key: UnsafeMutablePointer<UInt8>) {
         guard let value = value else { return }
@@ -32,7 +32,7 @@ extension NotificationCenter {
         NotificationCenter.default.addObserver(
             observer,
             selector: selector,
-            name: NSNotification.Name(LocalizeChangeNotification),
+            name: NSNotification.Name(localizeChangeNotification),
             object: nil
         )
     }
@@ -45,7 +45,7 @@ extension UIBarButtonItem {
         get { return localizedValue(key: &localizeKey1) }
         set { setLocalizedValue(newValue, key: &localizeKey1) }
     }
-    
+
     /// Override awakeFromNib when is going visible, try search a key in JSON File
     /// If key match replace text, if can't match return the key (original text)
     /// Set title for UIBarButtonItem
@@ -54,7 +54,7 @@ extension UIBarButtonItem {
         localize()
         NotificationCenter.localize(observer: self, selector: #selector(localize))
     }
-    
+
     /// Here we change text with key replacement
     @objc public func localize() {
         title = LocalizeUI.localize(key: &localizeKey, value: &title)
@@ -68,7 +68,7 @@ extension UIButton {
         get { return localizedValue(key: &localizeKey1) }
         set { setLocalizedValue(newValue, key: &localizeKey1) }
     }
-    
+
     /// Override awakeFromNib when is going visible, try search a key in JSON File
     /// If key match replace text, if can't match return the key (original text)
     /// Set title for UIButton in each state
@@ -77,7 +77,7 @@ extension UIButton {
         localize()
         NotificationCenter.localize(observer: self, selector: #selector(localize))
     }
-    
+
     /// Here we change text with key replacement
     @objc public func localize() {
         var title = titleLabel?.text
@@ -102,7 +102,7 @@ extension UILabel {
         get { return localizedValue(key: &localizeKey1) }
         set { setLocalizedValue(newValue, key: &localizeKey1) }
     }
-    
+
     /// Override awakeFromNib when is going visible, try search a key in JSON File
     /// If key match replace text, if can't match return the key (original text)
     /// Set title for UILabel
@@ -111,7 +111,7 @@ extension UILabel {
         localize()
         NotificationCenter.localize(observer: self, selector: #selector(localize))
     }
-    
+
     /// Here we change text with key replacement
     @objc public func localize() {
         LocalizeUI.localize(key: &localizeKey, value: &text)
@@ -125,13 +125,13 @@ extension UINavigationItem {
         get { return localizedValue(key: &localizeKey1) }
         set { setLocalizedValue(newValue, key: &localizeKey1) }
     }
-    
+
     /// Localizable tag storeged property
     @IBInspectable public var localizePrompt: String? {
         get { return localizedValue(key: &localizeKey2) }
         set { setLocalizedValue(newValue, key: &localizeKey2) }
     }
-    
+
     /// Override awakeFromNib when is going visible, try search a key in JSON File
     /// If key match replace text, if can't match return the key (original text)
     /// Set title and prompt for UINavigationItem
@@ -140,7 +140,7 @@ extension UINavigationItem {
         localize()
         NotificationCenter.localize(observer: self, selector: #selector(localize))
     }
-    
+
     /// Here we change text with key replacement
     @objc public func localize() {
         LocalizeUI.localize(key: &localizeTitle, value: &title)
@@ -155,13 +155,13 @@ extension UISearchBar {
         get { return localizedValue(key: &localizeKey1) }
         set { setLocalizedValue(newValue, key: &localizeKey1) }
     }
-    
+
     /// Localizable tag storeged property
     @IBInspectable public var localizePrompt: String? {
         get { return localizedValue(key: &localizeKey2) }
         set { setLocalizedValue(newValue, key: &localizeKey2) }
     }
-    
+
     /// Override awakeFromNib when is going visible, try search a key in JSON File
     /// If key match replace text, if can't match return the key (original text)
     /// Set title and prompt for UISearchBar
@@ -170,7 +170,7 @@ extension UISearchBar {
         localize()
         NotificationCenter.localize(observer: self, selector: #selector(localize))
     }
-    
+
     /// Here we change text with key replacement
     @objc public func localize() {
         LocalizeUI.localize(key: &localizePlaceholder, value: &placeholder)
@@ -185,7 +185,7 @@ extension UISegmentedControl {
         get { return localizedValue(key: &localizeKey1) }
         set { setLocalizedValue(newValue, key: &localizeKey1) }
     }
-    
+
     /// Override awakeFromNib when is going visible, try search a key in JSON File
     /// If key match replace text, if can't match return the key (original text)
     /// Set title for UISegmentedControl in each state
@@ -194,7 +194,7 @@ extension UISegmentedControl {
         localize()
         NotificationCenter.localize(observer: self, selector: #selector(localize))
     }
-    
+
     /// Here we change text with key replacement
     @objc public func localize() {
         for index in 0...(numberOfSegments - 1) {
@@ -213,7 +213,7 @@ extension UITabBarItem {
         get { return localizedValue(key: &localizeKey1) }
         set { setLocalizedValue(newValue, key: &localizeKey1) }
     }
-    
+
     /// Override awakeFromNib when is going visible, try search a key in JSON File
     /// If key match replace text, if can't match return the key (original text)
     /// Set title for UITabBarItem
@@ -222,7 +222,7 @@ extension UITabBarItem {
         localize()
         NotificationCenter.localize(observer: self, selector: #selector(localize))
     }
-    
+
     /// Here we change text with key replacement
     @objc public func localize() {
         LocalizeUI.localize(key: &localizeKey, value: &title)
@@ -236,13 +236,13 @@ extension UITextField {
         get { return localizedValue(key: &localizeKey1) }
         set { setLocalizedValue(newValue, key: &localizeKey1) }
     }
-    
+
     /// Localizable tag storeged property
     @IBInspectable public var localizePlaceholder: String? {
         get { return localizedValue(key: &localizeKey2) }
         set { setLocalizedValue(newValue, key: &localizeKey2) }
     }
-    
+
     /// Override awakeFromNib when is going visible, try search a key in JSON File
     /// If key match replace text, if can't match return the key (original text)
     /// Set title and placeholder for UITextField
@@ -251,7 +251,7 @@ extension UITextField {
         localize()
         NotificationCenter.localize(observer: self, selector: #selector(localize))
     }
-    
+
     /// Here we change text with key replacement
     @objc public func localize() {
         LocalizeUI.localize(key: &localizeText, value: &text)
@@ -266,7 +266,7 @@ extension UITextView {
         get { return localizedValue(key: &localizeKey1) }
         set { setLocalizedValue(newValue, key: &localizeKey1) }
     }
-    
+
     /// Override awakeFromNib when is going visible, try search a key in JSON File
     /// If key match replace text, if can't match return the key (original text)
     /// Set title for UITextView
@@ -275,7 +275,7 @@ extension UITextView {
         localize()
         NotificationCenter.localize(observer: self, selector: #selector(localize))
     }
-    
+
     /// Here we change text with key replacement
     @objc public func localize() {
         var localize = text

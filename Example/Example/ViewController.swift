@@ -21,21 +21,31 @@ class ViewController: UIViewController {
     }
 
     @IBAction func updateLanguage(_ sender: Any) {
-        let actionSheet = UIAlertController(title: nil, message: "app.update.language".localize(), preferredStyle: UIAlertControllerStyle.actionSheet)
+        let actionSheet = UIAlertController(
+            title: nil,
+            message: "app.update.language".localize(),
+            preferredStyle: UIAlertControllerStyle.actionSheet
+        )
+
         for language in Localize.availableLanguages {
             let displayName = Localize.displayNameForLanguage(language)
-            let languageAction = UIAlertAction(title: displayName, style: .default, handler: {
-                (alert: UIAlertAction!) -> Void in
-                Localize.update(language: language)
+            let languageAction = UIAlertAction(
+                title: displayName,
+                style: .default,
+                handler: { (_: UIAlertAction!) -> Void in
+
+                    Localize.update(language: language)
             })
             actionSheet.addAction(languageAction)
         }
-        let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.cancel, handler: {
-            (alert: UIAlertAction) -> Void in
-        })
+        let cancelAction = UIAlertAction(
+            title: "Cancel",
+            style: UIAlertActionStyle.cancel,
+            handler: nil
+        )
+
         actionSheet.addAction(cancelAction)
         self.present(actionSheet, animated: true, completion: nil)
     }
 
 }
-

@@ -16,17 +16,17 @@ class StringBadSources: XCTestCase {
         Localize.update(language: "en")
         Localize.update(defaultLanguage: "rs")
     }
-    
+
     func testLocalizeInAnyDictionary() {
         let localized = "heymomhowareyoy".localized
         XCTAssertTrue(localized == "heymomhowareyoy")
     }
-    
+
     func testLocalizeProperty() {
         let localized = "hello.world".localized
         XCTAssertTrue(localized == "Hello world!")
     }
-    
+
     func testLocalizeKey() {
         let localized = "hello.world".localize()
         XCTAssertTrue(localized == "Hello world!")

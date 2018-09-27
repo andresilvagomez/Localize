@@ -5,7 +5,7 @@
 //  Copyright © 2017 @andresilvagomez.
 //
 
-import UIKit
+import Foundation
 
 class LocalizeStrings: LocalizeCommonProtocol {
 
@@ -27,7 +27,6 @@ class LocalizeStrings: LocalizeCommonProtocol {
     }
 
     // MARK: Public methods
-
 
     /// Localize a string using your JSON File
     /// If the key is not found return the same key
@@ -64,15 +63,15 @@ class LocalizeStrings: LocalizeCommonProtocol {
 
             return localized
         }
-        
+
         if bundle.path(forResource: tableName, ofType: "strings") != nil {
             let localized = bundle.localizedString(forKey: key, value: nil, table: tableName)
-            
+
             if localized != key {
                 return localized
             }
         }
-        
+
         // If we can't find a translation anywhere, return the original key.
         return key
     }

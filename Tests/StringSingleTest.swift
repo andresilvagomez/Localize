@@ -16,12 +16,12 @@ class StringSingleTest: XCTestCase {
         Localize.update(bundle: Bundle(for: type(of: self)))
         Localize.update(fileName: "OnlyOneLang")
     }
-    
+
     func testLocalizeInSingleStringFile() {
         let localized = "hello.world.for.all".localized
         XCTAssertTrue(localized == "Hello world for all")
     }
-    
+
     func testLocalizeInSingleStringFileNil() {
         let localized = "hello.world.for.allll".localized
         XCTAssertTrue(localized == "hello.world.for.allll")

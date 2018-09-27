@@ -17,12 +17,12 @@ class StringFallbackTest: XCTestCase {
         Localize.update(bundle: Bundle(for: type(of: self)))
         Localize.update(language: "es-CO")
     }
-    
+
     func testKeyMainLanguage() {
         let localized = "only.spanish".localize()
         XCTAssertTrue(localized == "Solo Español")
     }
-    
+
     func testKeyOtherLanguage() {
         Localize.update(language: "es")
         let localized = "only.spanish".localize()
