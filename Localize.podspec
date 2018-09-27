@@ -13,7 +13,7 @@ Pod::Spec.new do |s|
 
   s.test_spec 'Localize' do |test_spec|
     test_spec.source_files = 'Tests/*.swift'
-    test_spec.resources = 'Tests/*.{json,lproj}'
+    test_spec.resources = 'Tests/*.{json,lproj,strings}'
   end 
 
 end
