@@ -16,6 +16,8 @@ ___
 - [Features](#features)
 - [Requirements](#requirements)
 - [Installation](#installation)
+- [Usage](#usage)
+- [Notes for your AppStore release](#release)
 - [Credits](#credits)
 - [License](#license)
 
@@ -347,6 +349,19 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 }
 
 ```
+
+---
+
+## Notes for your AppStore release
+
+To make all languages you have localized your app for visible on the AppStore, you must add a language in the project's settings. 
+
+1. For that, click on your project name in the left side bar. 
+2. Then, choose project, instead of a target. 
+3. At the bottom, under *Localizations*, press the + button & select a language you want to add
+4. On prompt, uncheck all files Xcode wants to add localization for, but keep a single one, that you won't actually localize, such as your launch screen for instance.
+    - if you need to localize all your files, I suggest adding a placeholder storyboard file that you'll then add to localization
+5. Done! (You don't actually have to localize the placehodler file.) The AppStore will now show the new language in localizations for your app.
 
 ---
 
