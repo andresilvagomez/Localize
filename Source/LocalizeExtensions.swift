@@ -13,12 +13,12 @@ private var localizeKey2: UInt8 = 1
 /// Extension for NSCoding, easy way to storage IBInspectable properties.
 extension NSCoding {
     /// Get associated property by IBInspectable var.
-    fileprivate func localizedValue(key: UnsafeMutablePointer<UInt8>) -> String? {
+    fileprivate func localizedValueFor(key: UnsafeMutablePointer<UInt8>) -> String? {
         return objc_getAssociatedObject(self, key) as? String
     }
 
     /// Set associated property by IBInspectable var.
-    fileprivate func setLocalizedValue(_ value: String?, key: UnsafeMutablePointer<UInt8>) {
+    fileprivate func setLocalized(value: String?, key: UnsafeMutablePointer<UInt8>) {
         guard let value = value else { return }
         let policy = objc_AssociationPolicy.OBJC_ASSOCIATION_RETAIN
         objc_setAssociatedObject(self, key, value, policy)
@@ -42,8 +42,8 @@ extension NotificationCenter {
 extension UIBarButtonItem {
     /// Localizable tag storeged property
     @IBInspectable public var localizeKey: String? {
-        get { return localizedValue(key: &localizeKey1) }
-        set { setLocalizedValue(newValue, key: &localizeKey1) }
+        get { return localizedValueFor(key: &localizeKey1) }
+        set { setLocalized(value: newValue, key: &localizeKey1) }
     }
 
     /// Override awakeFromNib when is going visible, try search a key in JSON File
@@ -65,8 +65,8 @@ extension UIBarButtonItem {
 extension UIButton {
     /// Localizable tag storeged property
     @IBInspectable public var localizeKey: String? {
-        get { return localizedValue(key: &localizeKey1) }
-        set { setLocalizedValue(newValue, key: &localizeKey1) }
+        get { return localizedValueFor(key: &localizeKey1) }
+        set { setLocalized(value: newValue, key: &localizeKey1) }
     }
 
     /// Override awakeFromNib when is going visible, try search a key in JSON File
@@ -99,8 +99,8 @@ extension UIButton {
 extension UILabel {
     /// Localizable tag storeged property
     @IBInspectable public var localizeKey: String? {
-        get { return localizedValue(key: &localizeKey1) }
-        set { setLocalizedValue(newValue, key: &localizeKey1) }
+        get { return localizedValueFor(key: &localizeKey1) }
+        set { setLocalized(value: newValue, key: &localizeKey1) }
     }
 
     /// Override awakeFromNib when is going visible, try search a key in JSON File
@@ -122,14 +122,14 @@ extension UILabel {
 extension UINavigationItem {
     /// Localizable tag storeged property
     @IBInspectable public var localizeTitle: String? {
-        get { return localizedValue(key: &localizeKey1) }
-        set { setLocalizedValue(newValue, key: &localizeKey1) }
+        get { return localizedValueFor(key: &localizeKey1) }
+        set { setLocalized(value: newValue, key: &localizeKey1) }
     }
 
     /// Localizable tag storeged property
     @IBInspectable public var localizePrompt: String? {
-        get { return localizedValue(key: &localizeKey2) }
-        set { setLocalizedValue(newValue, key: &localizeKey2) }
+        get { return localizedValueFor(key: &localizeKey2) }
+        set { setLocalized(value: newValue, key: &localizeKey2) }
     }
 
     /// Override awakeFromNib when is going visible, try search a key in JSON File
@@ -152,14 +152,14 @@ extension UINavigationItem {
 extension UISearchBar {
     /// Localizable tag storeged property
     @IBInspectable public var localizePlaceholder: String? {
-        get { return localizedValue(key: &localizeKey1) }
-        set { setLocalizedValue(newValue, key: &localizeKey1) }
+        get { return localizedValueFor(key: &localizeKey1) }
+        set { setLocalized(value: newValue, key: &localizeKey1) }
     }
 
     /// Localizable tag storeged property
     @IBInspectable public var localizePrompt: String? {
-        get { return localizedValue(key: &localizeKey2) }
-        set { setLocalizedValue(newValue, key: &localizeKey2) }
+        get { return localizedValueFor(key: &localizeKey2) }
+        set { setLocalized(value: newValue, key: &localizeKey2) }
     }
 
     /// Override awakeFromNib when is going visible, try search a key in JSON File
@@ -182,8 +182,8 @@ extension UISearchBar {
 extension UISegmentedControl {
     /// Localizable tag storeged property
     @IBInspectable public var localizeKey: String? {
-        get { return localizedValue(key: &localizeKey1) }
-        set { setLocalizedValue(newValue, key: &localizeKey1) }
+        get { return localizedValueFor(key: &localizeKey1) }
+        set { setLocalized(value: newValue, key: &localizeKey1) }
     }
 
     /// Override awakeFromNib when is going visible, try search a key in JSON File
@@ -210,8 +210,8 @@ extension UISegmentedControl {
 extension UITabBarItem {
     /// Localizable tag storeged property
     @IBInspectable public var localizeKey: String? {
-        get { return localizedValue(key: &localizeKey1) }
-        set { setLocalizedValue(newValue, key: &localizeKey1) }
+        get { return localizedValueFor(key: &localizeKey1) }
+        set { setLocalized(value: newValue, key: &localizeKey1) }
     }
 
     /// Override awakeFromNib when is going visible, try search a key in JSON File
@@ -233,14 +233,14 @@ extension UITabBarItem {
 extension UITextField {
     /// Localizable tag storeged property
     @IBInspectable public var localizeText: String? {
-        get { return localizedValue(key: &localizeKey1) }
-        set { setLocalizedValue(newValue, key: &localizeKey1) }
+        get { return localizedValueFor(key: &localizeKey1) }
+        set { setLocalized(value: newValue, key: &localizeKey1) }
     }
 
     /// Localizable tag storeged property
     @IBInspectable public var localizePlaceholder: String? {
-        get { return localizedValue(key: &localizeKey2) }
-        set { setLocalizedValue(newValue, key: &localizeKey2) }
+        get { return localizedValueFor(key: &localizeKey2) }
+        set { setLocalized(value: newValue, key: &localizeKey2) }
     }
 
     /// Override awakeFromNib when is going visible, try search a key in JSON File
@@ -263,8 +263,8 @@ extension UITextField {
 extension UITextView {
     /// Localizable tag storeged property
     @IBInspectable public var localizeKey: String? {
-        get { return localizedValue(key: &localizeKey1) }
-        set { setLocalizedValue(newValue, key: &localizeKey1) }
+        get { return localizedValueFor(key: &localizeKey1) }
+        set { setLocalized(value: newValue, key: &localizeKey1) }
     }
 
     /// Override awakeFromNib when is going visible, try search a key in JSON File
