@@ -17,7 +17,7 @@ ___
 - [Requirements](#requirements)
 - [Installation](#installation)
 - [Usage](#usage)
-- [Notes for your AppStore release](#release)
+- [Notes for your AppStore release](#notes-for-your-appstore-release)
 - [Credits](#credits)
 - [License](#license)
 
