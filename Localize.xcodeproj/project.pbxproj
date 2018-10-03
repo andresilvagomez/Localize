@@ -105,6 +105,7 @@
 		9FCD8EA41E52AD3E00B5909C /* StringsChanginDefaultFileName.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringsChanginDefaultFileName.swift; sourceTree = "<group>"; };
 		9FCD8EA61E53319900B5909C /* other-es.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "other-es.json"; sourceTree = "<group>"; };
 		9FCD8EA81E53327D00B5909C /* JsonChanginFileName.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JsonChanginFileName.swift; sourceTree = "<group>"; };
+		9FEDA663215C655000FD3BA0 /* es-CO */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "es-CO"; path = "es-CO.lproj/Other.strings"; sourceTree = "<group>"; };
 		B6EECE29215AD8CE007D8A59 /* StringFallbackTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringFallbackTest.swift; sourceTree = "<group>"; };
 		B6EECE2B215ADA55007D8A59 /* es-CO */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "es-CO"; path = "es-CO.lproj/Strings.strings"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -438,6 +439,7 @@
 				9FCD8EA11E52A9D800B5909C /* en */,
 				9FCD8EA31E52A9D900B5909C /* es */,
 				2B80F11D20830FBD00542924 /* fr */,
+				9FEDA663215C655000FD3BA0 /* es-CO */,
 			);
 			name = Other.strings;
 			sourceTree = "<group>";
