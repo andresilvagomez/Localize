@@ -263,6 +263,8 @@ You can use extensions for
 - ``` UITabBarItem ```
 - ``` UITextField ```
 - ``` UITextView ```
+- ``` UITextView ``` with placeholder using [`LGTextView`](https://github.com/linusgeffarth/LGTextView), at branch `localizable`
+   - `pod 'LGTextView', :git => 'https://github.com/linusgeffarth/LGTextView.git', :branch => 'localizable'`
 
 ---
 
