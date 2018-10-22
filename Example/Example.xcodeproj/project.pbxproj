@@ -14,6 +14,7 @@
 		9F761AEA1E3063AB00904B4B /* lang-fr.json in Resources */ = {isa = PBXBuildFile; fileRef = 9F761AE71E3063AB00904B4B /* lang-fr.json */; };
 		9F8D41511E29359A00D7CE9A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F8D41501E29359A00D7CE9A /* AppDelegate.swift */; };
 		9F8D41531E29359A00D7CE9A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F8D41521E29359A00D7CE9A /* ViewController.swift */; };
+		9FA387DC217E1C9F007D1D28 /* CustomLocalize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FA387DB217E1C9F007D1D28 /* CustomLocalize.swift */; };
 		9FB68F231E2B5D1400D386CE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9FB68F1F1E2B5D1400D386CE /* LaunchScreen.storyboard */; };
 		9FB68F241E2B5D1400D386CE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9FB68F211E2B5D1400D386CE /* Main.storyboard */; };
 /* End PBXBuildFile section */
@@ -58,6 +59,7 @@
 		9F8D41501E29359A00D7CE9A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9F8D41521E29359A00D7CE9A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		9F8D415C1E29359A00D7CE9A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9FA387DB217E1C9F007D1D28 /* CustomLocalize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLocalize.swift; sourceTree = "<group>"; };
 		9FB68F201E2B5D1400D386CE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9FB68F221E2B5D1400D386CE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9FF5FC4E1F7C5618001C14D6 /* Localize.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Localize.xcodeproj; path = ../Localize.xcodeproj; sourceTree = "<group>"; };
@@ -108,6 +110,7 @@
 			children = (
 				9F8D41501E29359A00D7CE9A /* AppDelegate.swift */,
 				9F8D41521E29359A00D7CE9A /* ViewController.swift */,
+				9FA387DB217E1C9F007D1D28 /* CustomLocalize.swift */,
 				9FB68F1F1E2B5D1400D386CE /* LaunchScreen.storyboard */,
 				9FB68F211E2B5D1400D386CE /* Main.storyboard */,
 				9F36174C1E33CDA1006E81BC /* Images.xcassets */,
@@ -228,6 +231,7 @@
 			files = (
 				9F8D41531E29359A00D7CE9A /* ViewController.swift in Sources */,
 				9F8D41511E29359A00D7CE9A /* AppDelegate.swift in Sources */,
+				9FA387DC217E1C9F007D1D28 /* CustomLocalize.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

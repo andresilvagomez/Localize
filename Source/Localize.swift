@@ -19,6 +19,8 @@ public enum LocalizeType {
     case json
     /// Default Apple protocol.
     case strings
+    // Custom provider
+    case custom(provider: LocalizeProtocol)
 }
 
 /// Is a pricipal class, contents all logic to localize your keys
@@ -144,6 +146,8 @@ public class Localize: NSObject {
             self.provider = LocalizeJson()
         case .strings:
             self.provider = LocalizeStrings()
+        case .custom(let provider):
+            self.provider = provider
         }
     }
 }

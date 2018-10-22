@@ -13,7 +13,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         localize()
-        
+
         let locale = Locale.preferredLanguages.first?.components(separatedBy: "-").first?.lowercased() ?? "es"
 
         NotificationCenter.default.addObserver(
@@ -22,7 +22,7 @@ class ViewController: UIViewController {
             name: NSNotification.Name(localizeChangeNotification),
             object: nil
         )
-        
+
         Localize.shared.update(language: locale)
     }
 
@@ -67,4 +67,9 @@ class ViewController: UIViewController {
         self.present(actionSheet, animated: true, completion: nil)
     }
 
+    func customProtocol() {
+        let provider = CustomLocalize()
+        Localize.update(provider: .custom(provider: provider))
+        print("test.custom.provider".localized)
+    }
 }

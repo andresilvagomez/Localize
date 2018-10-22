@@ -7,7 +7,7 @@
 
 import Foundation
 
-protocol LocalizeProtocol {
+public protocol LocalizeProtocol {
 
     /// Default language, if this can't find a key in your current language
     /// Try read key in default language

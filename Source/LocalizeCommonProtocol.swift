@@ -7,18 +7,24 @@
 
 import Foundation
 
-class LocalizeCommonProtocol: LocalizeProtocol {
+/// Provide a default functionality.
+open class LocalizeCommonProtocol: LocalizeProtocol {
+
+    /// Empty Init
+    public init() {
+
+    }
 
     /// Show all aviable languajes whit criteria name
     ///
     /// - returns: list with storaged languages code
-    var availableLanguages: [String] {
+    open var availableLanguages: [String] {
         return ["en"]
     }
 
     /// Name for storaged Json Files
     /// The rule for name is fileName-LanguageKey.json
-    public var fileName = "lang"
+    open var fileName = "lang"
 
     /// Bundle used to load files from.
     /// Defaults to the main bundle.
@@ -26,10 +32,10 @@ class LocalizeCommonProtocol: LocalizeProtocol {
 
     /// Default language, if this can't find a key in your current language
     /// Try read key in default language
-    public var defaultLanguage: String = "en"
+    open var defaultLanguage: String = "en"
 
     /// Storaged language or default language in device
-    public var currentLanguage: String {
+    open var currentLanguage: String {
         let defaults = UserDefaults.standard
         if let lang = defaults.string(forKey: localizeStorageKey) {
             return lang
@@ -51,7 +57,7 @@ class LocalizeCommonProtocol: LocalizeProtocol {
     // MARK: Public methods
 
     /// Update default language, this stores a language key which can be retrieved the next time
-    public func update(language: String) {
+    open func update(language: String) {
         let defaults = UserDefaults.standard
         defaults.setValue(language, forKey: localizeStorageKey)
         defaults.synchronize()
@@ -62,12 +68,12 @@ class LocalizeCommonProtocol: LocalizeProtocol {
     }
 
     /// Update default language
-    public func update(defaultLanguage: String) {
+    open func update(defaultLanguage: String) {
         self.defaultLanguage = defaultLanguage
     }
 
     /// This remove the language key storaged.
-    public func resetLanguage() {
+    open func resetLanguage() {
         let defaults = UserDefaults.standard
         defaults.removeObject(forKey: localizeStorageKey)
         defaults.synchronize()
@@ -76,7 +82,7 @@ class LocalizeCommonProtocol: LocalizeProtocol {
     /// Display name for current user language.
     ///
     /// - return: String form language code in current user language
-    public func displayNameForLanguage(_ language: String) -> String {
+    open func displayNameForLanguage(_ language: String) -> String {
         let locale: NSLocale = NSLocale(localeIdentifier: currentLanguage)
 
         guard let name = locale.displayName(
@@ -89,12 +95,12 @@ class LocalizeCommonProtocol: LocalizeProtocol {
     }
 
     /// Update base file name, searched in path.
-    public func update(fileName: String) {
+    open func update(fileName: String) {
         self.fileName = fileName
     }
 
     /// Update the bundle used to load files from.
-    public func update(bundle: Bundle) {
+    open func update(bundle: Bundle) {
         self.usedBundle = bundle
     }
 
@@ -105,8 +111,8 @@ class LocalizeCommonProtocol: LocalizeProtocol {
     /// That prevent replace untagged values
     ///
     /// - returns: localized key or same text
-    public func localize(key: String, tableName: String? = nil) -> String {
-        return ""
+    open func localize(key: String, tableName: String? = nil) -> String {
+        fatalError("implement it")
     }
 
     /// Localize a string using your JSON File
@@ -115,7 +121,7 @@ class LocalizeCommonProtocol: LocalizeProtocol {
     /// - parameter value: The replacement value
     ///
     /// - returns: localized key or same text
-    public func localize(key: String, replace: String, tableName: String? = nil) -> String {
+    open func localize(key: String, replace: String, tableName: String? = nil) -> String {
         let string = localize(key: key, tableName: tableName)
 
         return string.replacingOccurrences(of: "%", with: replace)
@@ -127,7 +133,7 @@ class LocalizeCommonProtocol: LocalizeProtocol {
     /// - parameter value: The replacement values
     ///
     /// - returns: localized key or same text
-    public func localize(
+    open func localize(
         key: String,
         values replace: [Any],
         tableName: String? = nil) -> String {
@@ -154,7 +160,7 @@ class LocalizeCommonProtocol: LocalizeProtocol {
     /// - parameter value: The replacement dictionary
     ///
     /// - returns: localized key or same text
-    public func localize(
+    open func localize(
         key: String,
         dictionary replace: [String: String],
         tableName: String? = nil) -> String {
