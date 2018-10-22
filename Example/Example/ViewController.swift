@@ -12,6 +12,21 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        localize()
+
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(localize),
+            name: NSNotification.Name(localizeChangeNotification),
+            object: nil
+        )
+    }
+
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
+
+    @objc func localize() {
         print("hello.world".localize())
         print("name".localize(value: "Andres"))
         print("values".localize(values: "Andres", "Software Developer"))

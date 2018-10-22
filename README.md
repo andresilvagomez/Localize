@@ -254,15 +254,15 @@ You don't need to import anything in your code, Localize uses extensions to loca
 
 You can use extensions for
 
-- ``` UIBarButtonItem ```
-- ``` UIButton ```
-- ``` UILabel ```
-- ``` UINavigationItem ```
-- ``` UISearchBar ```
-- ``` UISegmentedControl ```
-- ``` UITabBarItem ```
-- ``` UITextField ```
-- ``` UITextView ```
+- `UIBarButtonItem`
+- `UIButton`
+- `UILabel`
+- `UINavigationItem`
+- `UISearchBar`
+- `UISegmentedControl`
+- `UITabBarItem`
+- `UITextField`
+- `UITextView`
 
 ---
 
@@ -281,7 +281,7 @@ To make this work with strings, you need to implement a notification
 
 override func viewDidLoad() {
     super.viewDidLoad()
-    NotificationCenter.default.addObserver(self, selector: #selector(localize), name: NSNotification.Name(LanguageChangeNotification), object: nil)   
+    NotificationCenter.default.addObserver(self, selector: #selector(localize), name: NSNotification.Name(localizeChangeNotification), object: nil)
 }
 
 public func localize() {
@@ -340,7 +340,7 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
     // List of aviable languajes
     print(localize.availableLanguages)
 
-    // Or you can use static methods for all          
+    // Or you can use static methods for all
     Localize.update(fileName: "lang")
     Localize.update(defaultLanguage: "fr")
     Localize.update(language: "en-DE")
