@@ -2,18 +2,18 @@
     "Continue" : "Continuar",
     "name" : "Hello %",
     "hello" : {
-        "world" : "Hello world!"
+        "world" : "Hola mundo!"
     },
-    "values" : "Hello everyone my name is % and I'm %, see you soon",
-    "username" : "My username is :username",
+    "values" : "Hola a todos mi nombre es % and yo sou %, nos vemos pronto",
+    "username" : "Mi nombre de usuario es :username",
     "level" : {
         "one" : {
             "two" : {
-                "three" : "This is a multilevel key"
+                "three" : "Esto es una llave multinivel"
             }
         }
     },
-    "the.same.lavel" : "This is a localize in the same lavel",
+    "the.same.lavel" : "Esto es una llave en el mismo nivel",
     "navigation" : {
         "title" : "Localize Español",
         "segment": {

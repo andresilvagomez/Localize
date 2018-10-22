@@ -13,6 +13,8 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         localize()
+        
+        let locale = Locale.preferredLanguages.first?.components(separatedBy: "-").first?.lowercased() ?? "es"
 
         NotificationCenter.default.addObserver(
             self,
@@ -20,6 +22,8 @@ class ViewController: UIViewController {
             name: NSNotification.Name(localizeChangeNotification),
             object: nil
         )
+        
+        Localize.shared.update(language: locale)
     }
 
     deinit {
