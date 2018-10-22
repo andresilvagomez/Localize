@@ -1,13 +1,9 @@
----
-name: Issue template
-about: Localize Issue
-
----
-
 # Issue
-ℹ Please add a quick description for this issue.
+
+ℹ Please provide a quick description for this issue.
 
 ## Localize Environment
+
 - **Localize version:**
 - **Xcode version:**
 - **Swift version:**
@@ -15,6 +11,7 @@ about: Localize Issue
 - **macOS version running Xcode:**
 
 ## Localize Config
+
 ```swift
 /// Please put here your config
 ```
