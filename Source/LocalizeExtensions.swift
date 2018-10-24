@@ -9,7 +9,7 @@ import UIKit
 
 private var localizeKey1: UInt8 = 0
 private var localizeKey2: UInt8 = 1
-private var autoLocalizeKey = "autoLocalizeKey"
+private var autoLocalizeKey: UInt8 = 2
 
 /// Extension for NSCoding, easy way to storage IBInspectable properties.
 extension NSCoding {
@@ -27,13 +27,13 @@ extension NSCoding {
 
     /// Get associated autoLocalize property by IBInspectable var.
     fileprivate func autoLocalizeValue() -> Bool {
-        return objc_getAssociatedObject(self, autoLocalizeKey) as? Bool ?? true
+        return objc_getAssociatedObject(self, &autoLocalizeKey) as? Bool ?? true
     }
 
     /// Set associated autoLocalize property by IBInspectable var.
     fileprivate func setAutoLocalizeValue(value: Bool) {
         let policy = objc_AssociationPolicy.OBJC_ASSOCIATION_RETAIN
-        objc_setAssociatedObject(self, autoLocalizeKey, value, policy)
+        objc_setAssociatedObject(self, &autoLocalizeKey, value, policy)
     }
 }
 
