@@ -11,6 +11,7 @@
 		2B41FFEC20AB1A450012AF1E /* OnlyOneLang.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2B41FFE820AB18FE0012AF1E /* OnlyOneLang.strings */; };
 		2B717465207D9AFE0070DC5F /* LocalizeUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B717464207D9AFE0070DC5F /* LocalizeUI.swift */; };
 		2B717469207DC6E00070DC5F /* UIViewComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B717468207DC6E00070DC5F /* UIViewComponents.swift */; };
+		2B8E83BC2181100A00DB21FB /* UIViewComponentsWithDisabledAutoLocalize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B8E83BA21810F6500DB21FB /* UIViewComponentsWithDisabledAutoLocalize.swift */; };
 		2B931AA8208302FB00C26D6B /* lang-en.json in Resources */ = {isa = PBXBuildFile; fileRef = 9F761AEB1E3063E400904B4B /* lang-en.json */; };
 		2B931AA92083030400C26D6B /* langTable-en.json in Resources */ = {isa = PBXBuildFile; fileRef = 2BD853262081316E00FB0E53 /* langTable-en.json */; };
 		2B931AAA2083030700C26D6B /* lang-es.json in Resources */ = {isa = PBXBuildFile; fileRef = 9F4570211E3173A4008C37D1 /* lang-es.json */; };
@@ -66,6 +67,7 @@
 		2B80F11B20830FBD00542924 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Storyboard.strings; sourceTree = "<group>"; };
 		2B80F11C20830FBD00542924 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Strings.strings; sourceTree = "<group>"; };
 		2B80F11D20830FBD00542924 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Other.strings; sourceTree = "<group>"; };
+		2B8E83BA21810F6500DB21FB /* UIViewComponentsWithDisabledAutoLocalize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewComponentsWithDisabledAutoLocalize.swift; sourceTree = "<group>"; };
 		2BAA7AA3207FC9F6008E4E3A /* UIViewComponentsES.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewComponentsES.swift; sourceTree = "<group>"; };
 		2BAA7AA5207FCA8B008E4E3A /* UIViewComponentsWithString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewComponentsWithString.swift; sourceTree = "<group>"; };
 		2BB606B82083119100DFEF11 /* lang-fr.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "lang-fr.json"; sourceTree = "<group>"; };
@@ -191,6 +193,7 @@
 				2B717468207DC6E00070DC5F /* UIViewComponents.swift */,
 				2BAA7AA3207FC9F6008E4E3A /* UIViewComponentsES.swift */,
 				2BAA7AA5207FCA8B008E4E3A /* UIViewComponentsWithString.swift */,
+				2B8E83BA21810F6500DB21FB /* UIViewComponentsWithDisabledAutoLocalize.swift */,
 				9F989F4A1E2B3B5600A19F67 /* Supporting Files */,
 			);
 			path = Tests;
@@ -392,6 +395,7 @@
 				9FCD8EA51E52AD3E00B5909C /* StringsChanginDefaultFileName.swift in Sources */,
 				9F989F4D1E2B3B8300A19F67 /* OtherLangTest.swift in Sources */,
 				9FA3BC511E318C080054CA92 /* ReadingOtherFiles.swift in Sources */,
+				2B8E83BC2181100A00DB21FB /* UIViewComponentsWithDisabledAutoLocalize.swift in Sources */,
 				2BAA7AA6207FCA8B008E4E3A /* UIViewComponentsWithString.swift in Sources */,
 				2BAA7AA4207FC9F6008E4E3A /* UIViewComponentsES.swift in Sources */,
 				9F19DFC71E4D2B1D00F953E6 /* StringBaseTest.swift in Sources */,
