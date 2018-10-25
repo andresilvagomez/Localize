@@ -9,6 +9,7 @@ import UIKit
 
 private var localizeKey1: UInt8 = 0
 private var localizeKey2: UInt8 = 1
+private var autoLocalizeKey: UInt8 = 2
 
 /// Extension for NSCoding, easy way to storage IBInspectable properties.
 extension NSCoding {
@@ -22,6 +23,17 @@ extension NSCoding {
         guard let value = value else { return }
         let policy = objc_AssociationPolicy.OBJC_ASSOCIATION_RETAIN
         objc_setAssociatedObject(self, key, value, policy)
+    }
+
+    /// Get associated autoLocalize property by IBInspectable var.
+    fileprivate func autoLocalizeValue() -> Bool {
+        return objc_getAssociatedObject(self, &autoLocalizeKey) as? Bool ?? true
+    }
+
+    /// Set associated autoLocalize property by IBInspectable var.
+    fileprivate func setAutoLocalizeValue(value: Bool) {
+        let policy = objc_AssociationPolicy.OBJC_ASSOCIATION_RETAIN
+        objc_setAssociatedObject(self, &autoLocalizeKey, value, policy)
     }
 }
 
@@ -40,6 +52,12 @@ extension NotificationCenter {
 
 /// Extension for UI element is the easier way to localize your keys.
 extension UIBarButtonItem {
+    /// Auto localize stored property
+    @IBInspectable public var autoLocalize: Bool {
+        get { return autoLocalizeValue() }
+        set { setAutoLocalizeValue(value: newValue) }
+    }
+
     /// Localizable tag storeged property
     @IBInspectable public var localizeKey: String? {
         get { return localizedValueFor(key: &localizeKey1) }
@@ -51,8 +69,10 @@ extension UIBarButtonItem {
     /// Set title for UIBarButtonItem
     open override func awakeFromNib() {
         super.awakeFromNib()
-        localize()
-        NotificationCenter.localize(observer: self, selector: #selector(localize))
+        if autoLocalize {
+            localize()
+            NotificationCenter.localize(observer: self, selector: #selector(localize))
+        }
     }
 
     /// Here we change text with key replacement
@@ -63,6 +83,12 @@ extension UIBarButtonItem {
 
 /// Extension for UI element is the easier way to localize your keys.
 extension UIButton {
+    /// Auto localize stored property
+    @IBInspectable public var autoLocalize: Bool {
+        get { return autoLocalizeValue() }
+        set { setAutoLocalizeValue(value: newValue) }
+    }
+
     /// Localizable tag storeged property
     @IBInspectable public var localizeKey: String? {
         get { return localizedValueFor(key: &localizeKey1) }
@@ -74,8 +100,10 @@ extension UIButton {
     /// Set title for UIButton in each state
     open override func awakeFromNib() {
         super.awakeFromNib()
-        localize()
-        NotificationCenter.localize(observer: self, selector: #selector(localize))
+        if autoLocalize {
+            localize()
+            NotificationCenter.localize(observer: self, selector: #selector(localize))
+        }
     }
 
     /// Here we change text with key replacement
@@ -97,6 +125,12 @@ extension UIButton {
 
 /// Extension for UI element is the easier way to localize your keys.
 extension UILabel {
+    /// Auto localize stored property
+    @IBInspectable public var autoLocalize: Bool {
+        get { return autoLocalizeValue() }
+        set { setAutoLocalizeValue(value: newValue) }
+    }
+
     /// Localizable tag storeged property
     @IBInspectable public var localizeKey: String? {
         get { return localizedValueFor(key: &localizeKey1) }
@@ -108,8 +142,10 @@ extension UILabel {
     /// Set title for UILabel
     open override func awakeFromNib() {
         super.awakeFromNib()
-        localize()
-        NotificationCenter.localize(observer: self, selector: #selector(localize))
+        if autoLocalize {
+            localize()
+            NotificationCenter.localize(observer: self, selector: #selector(localize))
+        }
     }
 
     /// Here we change text with key replacement
@@ -120,6 +156,12 @@ extension UILabel {
 
 /// Extension for UI element is the easier way to localize your keys.
 extension UINavigationItem {
+    /// Auto localize stored property
+    @IBInspectable public var autoLocalize: Bool {
+        get { return autoLocalizeValue() }
+        set { setAutoLocalizeValue(value: newValue) }
+    }
+
     /// Localizable tag storeged property
     @IBInspectable public var localizeTitle: String? {
         get { return localizedValueFor(key: &localizeKey1) }
@@ -137,8 +179,10 @@ extension UINavigationItem {
     /// Set title and prompt for UINavigationItem
     open override func awakeFromNib() {
         super.awakeFromNib()
-        localize()
-        NotificationCenter.localize(observer: self, selector: #selector(localize))
+        if autoLocalize {
+            localize()
+            NotificationCenter.localize(observer: self, selector: #selector(localize))
+        }
     }
 
     /// Here we change text with key replacement
@@ -150,6 +194,12 @@ extension UINavigationItem {
 
 /// Extension for UI element is the easier way to localize your keys.
 extension UISearchBar {
+    /// Auto localize stored property
+    @IBInspectable public var autoLocalize: Bool {
+        get { return autoLocalizeValue() }
+        set { setAutoLocalizeValue(value: newValue) }
+    }
+
     /// Localizable tag storeged property
     @IBInspectable public var localizePlaceholder: String? {
         get { return localizedValueFor(key: &localizeKey1) }
@@ -167,8 +217,10 @@ extension UISearchBar {
     /// Set title and prompt for UISearchBar
     open override  func awakeFromNib() {
         super.awakeFromNib()
-        localize()
-        NotificationCenter.localize(observer: self, selector: #selector(localize))
+        if autoLocalize {
+            localize()
+            NotificationCenter.localize(observer: self, selector: #selector(localize))
+        }
     }
 
     /// Here we change text with key replacement
@@ -180,6 +232,12 @@ extension UISearchBar {
 
 /// Extension for UI element is the easier way to localize your keys.
 extension UISegmentedControl {
+    /// Auto localize stored property
+    @IBInspectable public var autoLocalize: Bool {
+        get { return autoLocalizeValue() }
+        set { setAutoLocalizeValue(value: newValue) }
+    }
+
     /// Localizable tag storeged property
     @IBInspectable public var localizeKey: String? {
         get { return localizedValueFor(key: &localizeKey1) }
@@ -191,8 +249,10 @@ extension UISegmentedControl {
     /// Set title for UISegmentedControl in each state
     open override func awakeFromNib() {
         super.awakeFromNib()
-        localize()
-        NotificationCenter.localize(observer: self, selector: #selector(localize))
+        if autoLocalize {
+            localize()
+            NotificationCenter.localize(observer: self, selector: #selector(localize))
+        }
     }
 
     /// Here we change text with key replacement
@@ -208,6 +268,12 @@ extension UISegmentedControl {
 
 /// Extension for UI element is the easier way to localize your keys.
 extension UITabBarItem {
+    /// Auto localize stored property
+    @IBInspectable public var autoLocalize: Bool {
+        get { return autoLocalizeValue() }
+        set { setAutoLocalizeValue(value: newValue) }
+    }
+
     /// Localizable tag storeged property
     @IBInspectable public var localizeKey: String? {
         get { return localizedValueFor(key: &localizeKey1) }
@@ -219,8 +285,10 @@ extension UITabBarItem {
     /// Set title for UITabBarItem
     open override func awakeFromNib() {
         super.awakeFromNib()
-        localize()
-        NotificationCenter.localize(observer: self, selector: #selector(localize))
+        if autoLocalize {
+            localize()
+            NotificationCenter.localize(observer: self, selector: #selector(localize))
+        }
     }
 
     /// Here we change text with key replacement
@@ -231,6 +299,12 @@ extension UITabBarItem {
 
 /// Extension for UI element is the easier way to localize your keys.
 extension UITextField {
+    /// Auto localize stored property
+    @IBInspectable public var autoLocalize: Bool {
+        get { return autoLocalizeValue() }
+        set { setAutoLocalizeValue(value: newValue) }
+    }
+
     /// Localizable tag storeged property
     @IBInspectable public var localizeText: String? {
         get { return localizedValueFor(key: &localizeKey1) }
@@ -248,8 +322,10 @@ extension UITextField {
     /// Set title and placeholder for UITextField
     open override func awakeFromNib() {
         super.awakeFromNib()
-        localize()
-        NotificationCenter.localize(observer: self, selector: #selector(localize))
+        if autoLocalize {
+            localize()
+            NotificationCenter.localize(observer: self, selector: #selector(localize))
+        }
     }
 
     /// Here we change text with key replacement
@@ -261,6 +337,12 @@ extension UITextField {
 
 /// Extension for UI element is the easier way to localize your keys.
 extension UITextView {
+    /// Auto localize stored property
+    @IBInspectable public var autoLocalize: Bool {
+        get { return autoLocalizeValue() }
+        set { setAutoLocalizeValue(value: newValue) }
+    }
+
     /// Localizable tag storeged property
     @IBInspectable public var localizeKey: String? {
         get { return localizedValueFor(key: &localizeKey1) }
@@ -272,8 +354,10 @@ extension UITextView {
     /// Set title for UITextView
     open override func awakeFromNib() {
         super.awakeFromNib()
-        localize()
-        NotificationCenter.localize(observer: self, selector: #selector(localize))
+        if autoLocalize {
+            localize()
+            NotificationCenter.localize(observer: self, selector: #selector(localize))
+        }
     }
 
     /// Here we change text with key replacement
