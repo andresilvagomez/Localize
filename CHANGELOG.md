@@ -1,37 +1,67 @@
 # Change Log
+
 All notable changes to this project will be documented in this file.
 `Localize` adheres to [Semantic Versioning](http://semver.org/).
 
+## [2.1.0](https://github.com/andresilvagomez/Localize/releases/tag/2.1.0)
+
+Released on 2018-10-24.
+
+- Added auto localize flag to UI components.
+  - By [adbqpa](https://github.com/adbqpa) in Pull Request [#44](https://github.com/andresilvagomez/Localize/pull/44).
+- Added support for custom providers
+  - By [Andres Silva](https://github.com/andresilvagomez).
+
+---
+
 ## [2.0.5](https://github.com/andresilvagomez/Localize/releases/tag/2.0.5)
-- Swift 4.2 Support.
-  - By [Gustavo Graña](https://github.com/ggrana) in Pull Request [#36](https://github.com/andresilvagomez/Localize/pull/36).
+
 Released on 2018-09-26.
 
-## [2.0.4](https://github.com/andresilvagomez/Localize/releases/tag/2.0.4)
 - Swift 4.2 Support.
-  - By [Daniel Clelland](https://github.com/dclelland) in Pull Request [#34](https://github.com/andresilvagomez/Localize/pull/34).
+  - By [Gustavo Graña](https://github.com/ggrana) in Pull Request [#36](https://github.com/andresilvagomez/Localize/pull/36).
+
+---
+
+## [2.0.4](https://github.com/andresilvagomez/Localize/releases/tag/2.0.4)
+
 Released on 2018-09-20.
 
+- Swift 4.2 Support.
+  - By [Daniel Clelland](https://github.com/dclelland) in Pull Request [#34](https://github.com/andresilvagomez/Localize/pull/34).
+
+---
+
 ## [2.0.3](https://github.com/andresilvagomez/Localize/releases/tag/2.0.3)
+
 Released on 2018-05-15.
 
-#### Added
+### Added
+
 - Fix localize strings when user only has a one string file.
   - By [Andres Silva](https://github.com/andresilvagomez) in Pull Request
   [#27](https://github.com/andresilvagomez/Localize/pull/27).
 
+---
+
 ## [2.0.2](https://github.com/andresilvagomez/Localize/releases/tag/2.0.2)
+
 Released on 2018-05-10.
 
-#### Added
+### Added
+
 - Improve strings with extended languajes like to es-mx for defaults localizations.
   - By [Benjamin Erhart](https://github.com/tladesignz) in Pull Request
   [#25](https://github.com/andresilvagomez/Localize/pull/25).
 
+---
+
 ## [2.0.1](https://github.com/andresilvagomez/Localize/releases/tag/2.0.1)
+
 Released on 2018-04-15.
 
-#### Added
+### Added
+
 - Include testing with cocoapods.
 - Code coverage 99+.
 - General changes to improve test.
@@ -42,9 +72,11 @@ Released on 2018-04-15.
 ---
 
 ## [2.0.0](https://github.com/andresilvagomez/Localize/releases/tag/2.0.0)
+
 Released on 2018-04-12.
 
-#### Added
+### Added
+
 - Transfer ownership to [andresilvagomez](https://github.com/andresilvagomez/Localize)
 - Swift 4.1 Support.
 - Faster.
@@ -58,19 +90,23 @@ Released on 2018-04-12.
 ---
 
 ## [1.5.2](https://github.com/andresilvagomez/Localize/releases/tag/1.5.2)
+
 Released on 2017-09-27.
 
-#### Added
+### Added
+
 - Swift 4.
-  - By [Andres Silva](https://github.com/andresilvagomez) in Pull Request
+- By [Andres Silva](https://github.com/andresilvagomez) in Pull Request
   [#18](https://github.com/andresilvagomez/Localize/pull/18).
 
 ---
 
 ## [1.5.1](https://github.com/andresilvagomez/Localize/releases/tag/1.5.1)
+
 Released on 2017-08-10.
 
-#### Added
+### Added
+
 - Fix with country code.
   - By [Andres Silva](https://github.com/andresilvagomez) in Pull Request
   [#17](https://github.com/andresilvagomez/Localize/pull/17).
@@ -78,30 +114,36 @@ Released on 2017-08-10.
 ---
 
 ## [1.5.0](https://github.com/andresilvagomez/Localize/releases/tag/1.5.0)
+
 Released on 2017-08-08.
 
-#### Added
+### Added
+
 - Localize UI elements with @IBInspectable.
   - By [Andres Silva](https://github.com/andresilvagomez) in Pull Request
   [#14](https://github.com/andresilvagomez/Localize/pull/14).
 
-#### Deleted
-  - Delete custom classes for UI elements in favor to @IBInspectable extensions.
-    - By [Andres Silva](https://github.com/andresilvagomez) in Pull Request
+### Deleted
+
+- Delete custom classes for UI elements in favor to @IBInspectable extensions.
+  - By [Andres Silva](https://github.com/andresilvagomez) in Pull Request
     [#14](https://github.com/andresilvagomez/Localize/pull/14).
 
 ---
 
 ## [1.4.0](https://github.com/andresilvagomez/Localize/releases/tag/1.4.0)
+
 Released on 2017-07-10.
 
-#### Added
+### Added
+
 - Dynamic bundle.
 - Update bundle.
   - Added by [Benjamin Erhart](https://github.com/tladesignz) in Pull Request
   [#13](https://github.com/andresilvagomez/Localize/pull/13).
 
-#### Updated
+### Updated
+
 - Remove enums for language.
 - Fixed #localize with placeholder replacement.
   - Added by [Benjamin Erhart](https://github.com/tladesignz) in Pull Request
@@ -110,9 +152,11 @@ Released on 2017-07-10.
 ---
 
 ## [1.3.0](https://github.com/andresilvagomez/Localize/releases/tag/1.3.0)
+
 Released on 2017-02-14.
 
-#### Added
+### Added
+
 - Support to Apple Strings.
 - Get your localized string using different table names.
 - JSON Provider and Strings Provider.
@@ -121,7 +165,8 @@ Released on 2017-02-14.
   - Added by [Andres Silva](https://github.com/andresilvagomez) in Pull Request
   [#8](https://github.com/andresilvagomez/Localize/pull/4).
 
-#### Updated
+### Updated
+
 - Not use vars to config.
 - Delete cache json file.
   - Added by [Andres Silva](https://github.com/andresilvagomez) in Pull Request
@@ -130,9 +175,11 @@ Released on 2017-02-14.
 ---
 
 ## [1.2.0](https://github.com/andresilvagomez/Localize/releases/tag/1.2.0)
+
 Released on 2017-01-19.
 
-#### Added
+### Added
+
 - Renamed JsonLocalized to Localize, according with the next features.
 - Static methods.
 - Config methods.
@@ -141,13 +188,15 @@ Released on 2017-01-19.
   - Added by [Andres Silva](https://github.com/andresilvagomez) in Pull Request
   [#4](https://github.com/andresilvagomez/Localize/pull/4).
 
-#### Updated
+### Updated
+
 - Config methods.
 - Statics calleds.
   - Added by [Andres Silva](https://github.com/andresilvagomez) in Pull Request
   [#4](https://github.com/andresilvagomez/Localize/pull/4).
 
-#### Fixed
+### Fixed
+
 - Getting default language key when in current language key no was available.
   - Added by [Andres Silva](https://github.com/andresilvagomez) in Pull Request
   [#4](https://github.com/andresilvagomez/Localize/pull/4).
@@ -155,9 +204,11 @@ Released on 2017-01-19.
 ---
 
 ## [1.1](https://github.com/andresilvagomez/Localize/releases/tag/1.1)
+
 Released on 2017-01-17.
 
-#### Added
+### Added
+
 - Documentation for all methods.
 - Method to detect all available languages.
 - Method to localize languages codes.
@@ -167,7 +218,8 @@ Released on 2017-01-17.
   - Added by [Andres Silva](https://github.com/andresilvagomez) in Pull Request
   [#2](https://github.com/andresilvagomez/Localize/pull/2).
 
-#### Updated
+### Updated
+
 - Updated Example.
   - Added by [Andres Silva](https://github.com/andresilvagomez) in Pull Request
   [#2](https://github.com/andresilvagomez/Localize/pull/2).

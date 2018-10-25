@@ -42,7 +42,7 @@ ___
 [CocoaPods](http://cocoapods.org) is a dependency manager for Cocoa projects. You can install it with the following command:
 
 ```bash
-$ gem install cocoapods
+gem install cocoapods
 ```
 
 > CocoaPods 1.1.0+ is required to build Localize 1.+.
@@ -55,14 +55,14 @@ platform :ios, '9.0'
 use_frameworks!
 
 target '<Your Target Name>' do
-    pod 'Localize' , '~> 2.0.5'
+    pod 'Localize' , '~> 2.1.0'
 end
 ```
 
 Then, run the following command:
 
 ```bash
-$ pod install
+pod install
 ```
 
 ### Carthage
@@ -72,13 +72,13 @@ $ pod install
 You can install Carthage with [Homebrew](http://brew.sh/) using the following command:
 
 ```bash
-$ brew update
-$ brew install carthage
+brew update
+brew install carthage
 ```
 
 To integrate Localize into your Xcode project using Carthage, specify it in your `Cartfile`:
 
-```
+```carthage
 github "andresilvagomez/Localize"
 ```
 
@@ -96,7 +96,7 @@ dependencies: [
 ]
 ```
 
----
+___
 
 ## Usage
 
@@ -118,7 +118,7 @@ You can decide if you want use JSON or Apple Strings, we support both, if you de
 
 Please create a JSON file in your code with this rule:
 
-```
+```strings
 {your file name}-{your lang code}.json
 ```
 
@@ -148,7 +148,7 @@ If you decide use Apple strings, please follow [Apple Localization Guide](https:
 
 String file example
 
-```
+```strings
 
 "hello.world" = "Hello world!";
 
@@ -183,6 +183,7 @@ print( "hello.world".localized )
 ```
 
 ### Localize strings, replacing text
+
 Localize use `%` identifier to replace the text
 
 ```swift
@@ -194,6 +195,7 @@ print( "hello.name".localize(value: "everyone") )
 ```
 
 ### Localize strings, replacing many texts
+
 Localize use `%` identifier to replace the text
 
 ```swift
@@ -205,6 +207,7 @@ print( "values".localize(values: "everyone", "Software Developer") )
 ```
 
 ### Localize strings, replacing dictionary values
+
 Localize use `:yourid` to search your id in JSON File
 
 ```swift
@@ -215,9 +218,9 @@ print( "username".localize(dictionary: ["username": "Localize"]) )
 
 ```
 
-### Localize strings, using other files.
-If you decide use different files use methods with ```tableName``` in the end of each method, for example.
+### Localize strings, using other files
 
+If you decide use different files use methods with ```tableName``` in the end of each method, for example.
 
 ```swift
 
@@ -230,9 +233,10 @@ print( "values".localize(values: "everyone", "Software Developer", tableName: "Y
 print( "username".localize(dictionary: ["username": "Localize"], tableName: "YourFileName") )
 
 ```
----
 
-### We are amazing with storyboards.
+___
+
+### We are amazing with storyboards
 
 You don't need to import anything in your code, Localize uses extensions to localize your UIView components
 
@@ -266,9 +270,10 @@ You can use extensions for
 - `UITextField`
 - `UITextView`
 
----
+___
 
 ## Updating language
+
 When you change a language, automatically all views update your content to new language
 
 ```swift
@@ -317,6 +322,7 @@ Implementing internal acction to change a language
 ```
 
 ### Config
+
 This not is necesary, only if you need different results.
 
 ```swift
@@ -352,20 +358,20 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 
 ```
 
----
+___
 
 ## Notes for your AppStore release
 
-To make all languages you have localized your app for visible on the AppStore, you must add a language in the project's settings. 
+To make all languages you have localized your app for visible on the AppStore, you must add a language in the project's settings.
 
-1. For that, click on your project name in the left side bar. 
+1. For that, click on your project name in the left side bar.
 2. Then, choose project, instead of a target. 
 3. At the bottom, under *Localizations*, press the + button & select a language you want to add
 4. On prompt, uncheck all files Xcode wants to add localization for, but keep a single one, that you won't actually localize, such as your launch screen for instance.
     - if you need to localize all your files, I suggest adding a placeholder storyboard file that you'll then add to localization
 5. Done! (You don't actually have to localize the placehodler file.) The AppStore will now show the new language in localizations for your app.
 
----
+___
 
 ## Credits
 
