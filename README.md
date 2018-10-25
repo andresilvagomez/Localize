@@ -236,7 +236,9 @@ print( "username".localize(dictionary: ["username": "Localize"], tableName: "You
 
 You don't need to import anything in your code, Localize uses extensions to localize your UIView components
 
-![Localize Storyboard](https://www.dropbox.com/s/d2ydhozqdetd1oo/Screenshot%202017-08-07%2023.12.12.png?raw=1)
+To prevent auto localization for some controls you created in storyboard can set **Auto Localize** to **Off**
+
+![Localize Storyboard](https://image.ibb.co/m5yz6V/screenshot.png)
 
 - lang-en.json
 
