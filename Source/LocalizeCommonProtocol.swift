@@ -139,7 +139,6 @@ open class LocalizeCommonProtocol: LocalizeProtocol {
         tableName: String? = nil) -> String {
 
         var string = localize(key: key, tableName: tableName)
-        if string == key { return key }
         var array = string.components(separatedBy: "%")
         string = ""
 
