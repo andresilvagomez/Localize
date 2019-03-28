@@ -19,12 +19,12 @@ class OtherLangTest: XCTestCase {
 
     func testLocalizeKey() {
         let localized = "hello".localize()
-        XCTAssertTrue(localized == "hello")
+        XCTAssertEqual(localized, "hello")
     }
 
     func testLocalizeKeyUsingDefaultLang() {
         let localized = "hello.world".localize()
-        XCTAssertTrue(localized == "Hello world!")
+        XCTAssertEqual(localized, "Hello world!")
     }
 
 }

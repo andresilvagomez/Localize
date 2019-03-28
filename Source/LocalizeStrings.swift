@@ -20,7 +20,7 @@ class LocalizeStrings: LocalizeCommonProtocol {
     /// - returns: list with storaged languages code
     override var availableLanguages: [String] {
         var availableLanguages = bundle.localizations
-        if let indexOfBase = availableLanguages.index(of: "Base") {
+        if let indexOfBase = availableLanguages.firstIndex(of: "Base") {
             availableLanguages.remove(at: indexOfBase)
         }
         return availableLanguages

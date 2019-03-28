@@ -20,12 +20,12 @@ class StringsChanginDefaultFileName: XCTestCase {
 
     func testKeyInOtherLanguage() {
         let localized = "hello.baby".localize()
-        XCTAssertTrue(localized == "This is a welcome, new baby is here!")
+        XCTAssertEqual(localized, "This is a welcome, new baby is here!")
     }
 
     func testSearchInOtherFile() {
         let localized = "hello.world".localize(tableName: "Strings")
-        XCTAssertTrue(localized == "Hello world!")
+        XCTAssertEqual(localized, "Hello world!")
     }
 
 }

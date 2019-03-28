@@ -19,11 +19,11 @@ class StringSingleTest: XCTestCase {
 
     func testLocalizeInSingleStringFile() {
         let localized = "hello.world.for.all".localized
-        XCTAssertTrue(localized == "Hello world for all")
+        XCTAssertEqual(localized, "Hello world for all")
     }
 
     func testLocalizeInSingleStringFileNil() {
         let localized = "hello.world.for.allll".localized
-        XCTAssertTrue(localized == "hello.world.for.allll")
+        XCTAssertEqual(localized, "hello.world.for.allll")
     }
 }

@@ -16,7 +16,7 @@ public extension String {
     /// that prevent replace untagged values
     ///
     /// - returns: localized key or same text
-    public var localized: String {
+    var localized: String {
         return Localize.localize(key: self)
     }
 
@@ -25,7 +25,7 @@ public extension String {
     /// that prevent replace untagged values
     ///
     /// - returns: localized key or same text
-    public func localize() -> String {
+    func localize() -> String {
         return Localize.localize(key: self)
     }
 
@@ -34,7 +34,7 @@ public extension String {
     /// that prevent replace untagged values
     ///
     /// - returns: localized key or same text
-    public func localize(tableName: String) -> String {
+    func localize(tableName: String) -> String {
         return Localize.localize(key: self, tableName: tableName)
     }
 
@@ -44,7 +44,7 @@ public extension String {
     /// - parameter String: The replacement value
     ///
     /// - returns: localized key or same text
-    public func localize(value: String, tableName: String? = nil) -> String {
+    func localize(value: String, tableName: String? = nil) -> String {
         return Localize.localize(key: self, replace: value, tableName: tableName)
     }
 
@@ -54,7 +54,7 @@ public extension String {
     /// - parameter Strings: The replacement values
     ///
     /// - returns: localized key or same text
-    public func localize(values: String..., tableName: String? = nil) -> String {
+    func localize(values: String..., tableName: String? = nil) -> String {
         return Localize.localize(key: self, values: values, tableName: tableName)
     }
 
@@ -65,7 +65,7 @@ public extension String {
     /// - parameter [String:String]: The replacement dictionary
     ///
     /// - returns: localized key or same text
-    public func localize(
+    func localize(
         dictionary values: [String: String],
         tableName: String? = nil) -> String {
 

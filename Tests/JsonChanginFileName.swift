@@ -20,21 +20,21 @@ class JsonChanginFileName: XCTestCase {
 
     func testKeyInOtherLanguage() {
         let localized = "hello.baby".localize(tableName: "other")
-        XCTAssertTrue(localized == "Esto es un saludo, el nuevo bebé está aquí!")
+        XCTAssertEqual(localized, "Esto es un saludo, el nuevo bebé está aquí!")
     }
 
     func testSearchInOtherFile() {
         let localized = "hello".localize(tableName: "other")
-        XCTAssertTrue(localized == "Hola mundo!")
+        XCTAssertEqual(localized, "Hola mundo!")
     }
 
     func testNameForLanguage() {
         let localized = Localize.displayNameForLanguage("es")
-        XCTAssertTrue(localized == "Español")
+        XCTAssertEqual(localized, "Español")
     }
 
     func testNameBadForLanguage() {
         let localized = Localize.displayNameForLanguage("esus")
-        XCTAssertTrue(localized == "")
+        XCTAssertEqual(localized, "")
     }
 }

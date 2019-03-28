@@ -10,7 +10,6 @@ import Foundation
 import Localize
 
 class CustomLocalize: LocalizeCommonProtocol {
-    
     /// Custom init
     override init() {
         super.init()

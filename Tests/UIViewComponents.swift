@@ -18,32 +18,27 @@ class UIViewComponents: XCTestCase {
         Localize.update(language: "en")
     }
 
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-        super.tearDown()
-    }
-
     // MARK: - UIBarButtonItem
     func testButtonItemWithLocalizeKey() {
         let button = UIBarButtonItem(title: "", style: .plain, target: self, action: nil)
         button.localizeKey = "the.same.lavel"
         button.awakeFromNib()
 
-        XCTAssertTrue(button.title == "This is a localized in the same level")
+        XCTAssertEqual(button.title, "This is a localized in the same level")
     }
 
     func testButtonItemWithTextKey() {
         let button = UIBarButtonItem(title: "the.same.lavel", style: .plain, target: self, action: nil)
         button.awakeFromNib()
 
-        XCTAssertTrue(button.title == "This is a localized in the same level")
+        XCTAssertEqual(button.title, "This is a localized in the same level")
     }
 
     func testButtonItemWithoutKeys() {
         let button = UIBarButtonItem(barButtonSystemItem: .add, target: nil, action: nil)
         button.awakeFromNib()
 
-        XCTAssertTrue(button.title == nil)
+        XCTAssertEqual(button.title, nil)
     }
 
     // MARK: - UIButton
@@ -52,7 +47,7 @@ class UIViewComponents: XCTestCase {
         button.localizeKey = "the.same.lavel"
         button.awakeFromNib()
 
-        XCTAssertTrue(button.titleLabel?.text == "This is a localized in the same level")
+        XCTAssertEqual(button.titleLabel?.text, "This is a localized in the same level")
     }
 
     func testButtonWithTextKey() {
@@ -60,14 +55,14 @@ class UIViewComponents: XCTestCase {
         button.titleLabel?.text = "the.same.lavel"
         button.awakeFromNib()
 
-        XCTAssertTrue(button.titleLabel?.text == "This is a localized in the same level")
+        XCTAssertEqual(button.titleLabel?.text, "This is a localized in the same level")
     }
 
     func testButtonWithoutKeys() {
         let button = UIButton(frame: CGRect(x: 0, y: 0, width: 0, height: 0))
         button.awakeFromNib()
 
-        XCTAssertTrue(button.titleLabel?.text == "")
+        XCTAssertEqual(button.titleLabel?.text, "")
     }
 
     // MARK: - UILabel
@@ -76,7 +71,7 @@ class UIViewComponents: XCTestCase {
         label.localizeKey = "the.same.lavel"
         label.awakeFromNib()
 
-        XCTAssertTrue(label.text == "This is a localized in the same level")
+        XCTAssertEqual(label.text, "This is a localized in the same level")
     }
 
     func testLabelWithTextKey() {
@@ -84,14 +79,14 @@ class UIViewComponents: XCTestCase {
         label.text = "the.same.lavel"
         label.awakeFromNib()
 
-        XCTAssertTrue(label.text == "This is a localized in the same level")
+        XCTAssertEqual(label.text, "This is a localized in the same level")
     }
 
     func testLabelWithoutKeys() {
         let label = UILabel(frame: CGRect(x: 0, y: 0, width: 0, height: 0))
         label.awakeFromNib()
 
-        XCTAssertTrue(label.text == nil)
+        XCTAssertEqual(label.text, nil)
     }
 
     // MARK: - UINavigationItem
@@ -101,8 +96,8 @@ class UIViewComponents: XCTestCase {
         item.localizePrompt = "the.same.lavel"
         item.awakeFromNib()
 
-        XCTAssertTrue(item.title == "This is a localized in the same level")
-        XCTAssertTrue(item.prompt == "This is a localized in the same level")
+        XCTAssertEqual(item.title, "This is a localized in the same level")
+        XCTAssertEqual(item.prompt, "This is a localized in the same level")
     }
 
     func testNavigationItemWithTextKey() {
@@ -110,16 +105,16 @@ class UIViewComponents: XCTestCase {
         item.prompt = "the.same.lavel"
         item.awakeFromNib()
 
-        XCTAssertTrue(item.title == "This is a localized in the same level")
-        XCTAssertTrue(item.prompt == "This is a localized in the same level")
+        XCTAssertEqual(item.title, "This is a localized in the same level")
+        XCTAssertEqual(item.prompt, "This is a localized in the same level")
     }
 
     func testNavigationItemWithoutKeys() {
         let item = UINavigationItem(title: "")
         item.awakeFromNib()
 
-        XCTAssertTrue(item.title == "")
-        XCTAssertTrue(item.prompt == nil)
+        XCTAssertEqual(item.title, "")
+        XCTAssertEqual(item.prompt, nil)
     }
 
     // MARK: - UISearchBar
@@ -129,8 +124,8 @@ class UIViewComponents: XCTestCase {
         bar.localizePrompt = "the.same.lavel"
         bar.awakeFromNib()
 
-        XCTAssertTrue(bar.placeholder == "This is a localized in the same level")
-        XCTAssertTrue(bar.prompt == "This is a localized in the same level")
+        XCTAssertEqual(bar.placeholder, "This is a localized in the same level")
+        XCTAssertEqual(bar.prompt, "This is a localized in the same level")
     }
 
     func testSearchBarWithTextKey() {
@@ -139,16 +134,16 @@ class UIViewComponents: XCTestCase {
         bar.prompt = "the.same.lavel"
         bar.awakeFromNib()
 
-        XCTAssertTrue(bar.placeholder == "This is a localized in the same level")
-        XCTAssertTrue(bar.prompt == "This is a localized in the same level")
+        XCTAssertEqual(bar.placeholder, "This is a localized in the same level")
+        XCTAssertEqual(bar.prompt, "This is a localized in the same level")
     }
 
     func testSearchBarWithoutKeys() {
         let bar = UISearchBar(frame: CGRect(x: 0, y: 0, width: 0, height: 0))
         bar.awakeFromNib()
 
-        XCTAssertTrue(bar.placeholder == nil)
-        XCTAssertTrue(bar.prompt == nil)
+        XCTAssertEqual(bar.placeholder, nil)
+        XCTAssertEqual(bar.prompt, nil)
     }
 
     // MARK: - UITabBarItem
@@ -157,21 +152,21 @@ class UIViewComponents: XCTestCase {
         bar.localizeKey = "the.same.lavel"
         bar.awakeFromNib()
 
-        XCTAssertTrue(bar.title == "This is a localized in the same level")
+        XCTAssertEqual(bar.title, "This is a localized in the same level")
     }
 
     func testTabBarItemWithTextKey() {
         let bar = UITabBarItem(title: "the.same.lavel", image: nil, tag: 0)
         bar.awakeFromNib()
 
-        XCTAssertTrue(bar.title == "This is a localized in the same level")
+        XCTAssertEqual(bar.title, "This is a localized in the same level")
     }
 
     func testTabBarItemWithoutKeys() {
         let bar = UITabBarItem(title: "", image: nil, tag: 0)
         bar.awakeFromNib()
 
-        XCTAssertTrue(bar.title == "")
+        XCTAssertEqual(bar.title, "")
     }
 
     // MARK: - UITextField
@@ -181,8 +176,8 @@ class UIViewComponents: XCTestCase {
         textField.localizePlaceholder = "the.same.lavel"
         textField.awakeFromNib()
 
-        XCTAssertTrue(textField.text == "This is a localized in the same level")
-        XCTAssertTrue(textField.placeholder == "This is a localized in the same level")
+        XCTAssertEqual(textField.text, "This is a localized in the same level")
+        XCTAssertEqual(textField.placeholder, "This is a localized in the same level")
     }
 
     func testTextFieldWithTextKey() {
@@ -191,16 +186,16 @@ class UIViewComponents: XCTestCase {
         textField.placeholder = "the.same.lavel"
         textField.awakeFromNib()
 
-        XCTAssertTrue(textField.text == "This is a localized in the same level")
-        XCTAssertTrue(textField.placeholder == "This is a localized in the same level")
+        XCTAssertEqual(textField.text, "This is a localized in the same level")
+        XCTAssertEqual(textField.placeholder, "This is a localized in the same level")
     }
 
     func testTextFieldWithoutKeys() {
         let textField = UITextField(frame: CGRect(x: 0, y: 0, width: 0, height: 0))
         textField.awakeFromNib()
 
-        XCTAssertTrue(textField.text == "")
-        XCTAssertTrue(textField.placeholder == nil)
+        XCTAssertEqual(textField.text, "")
+        XCTAssertEqual(textField.placeholder, nil)
     }
 
     // MARK: - UITextView
@@ -209,7 +204,7 @@ class UIViewComponents: XCTestCase {
         textView.localizeKey = "the.same.lavel"
         textView.awakeFromNib()
 
-        XCTAssertTrue(textView.text == "This is a localized in the same level")
+        XCTAssertEqual(textView.text, "This is a localized in the same level")
     }
 
     func testTextViewWithTextKey() {
@@ -217,14 +212,14 @@ class UIViewComponents: XCTestCase {
         textView.text = "the.same.lavel"
         textView.awakeFromNib()
 
-        XCTAssertTrue(textView.text == "This is a localized in the same level")
+        XCTAssertEqual(textView.text, "This is a localized in the same level")
     }
 
     func testTextViewWithoutKeys() {
         let textView = UITextView(frame: CGRect(x: 0, y: 0, width: 0, height: 0))
         textView.awakeFromNib()
 
-        XCTAssertTrue(textView.text == "")
+        XCTAssertEqual(textView.text, "")
     }
 
     // MARK: - UISegmentedControl
@@ -235,8 +230,8 @@ class UIViewComponents: XCTestCase {
         segment.localizeKey = "one, two"
         segment.awakeFromNib()
 
-        XCTAssertTrue(segment.titleForSegment(at: 0) == "First")
-        XCTAssertTrue(segment.titleForSegment(at: 1) == "Second")
+        XCTAssertEqual(segment.titleForSegment(at: 0), "First")
+        XCTAssertEqual(segment.titleForSegment(at: 1), "Second")
     }
 
     func testSegmentedControlWithLocalizeKeyBased() {
@@ -246,8 +241,8 @@ class UIViewComponents: XCTestCase {
         segment.localizeKey = "segment.base: one, two"
         segment.awakeFromNib()
 
-        XCTAssertTrue(segment.titleForSegment(at: 0) == "First")
-        XCTAssertTrue(segment.titleForSegment(at: 1) == "Second")
+        XCTAssertEqual(segment.titleForSegment(at: 0), "First")
+        XCTAssertEqual(segment.titleForSegment(at: 1), "Second")
     }
 
     func testSegmentedControlWithTextKey() {
@@ -256,8 +251,8 @@ class UIViewComponents: XCTestCase {
         segment.insertSegment(withTitle: "segment.base.two", at: 1, animated: false)
         segment.awakeFromNib()
 
-        XCTAssertTrue(segment.titleForSegment(at: 0) == "First")
-        XCTAssertTrue(segment.titleForSegment(at: 1) == "Second")
+        XCTAssertEqual(segment.titleForSegment(at: 0), "First")
+        XCTAssertEqual(segment.titleForSegment(at: 1), "Second")
     }
 
     func testSegmentedControlWithoutKeys() {
@@ -266,7 +261,7 @@ class UIViewComponents: XCTestCase {
         segment.insertSegment(withTitle: "", at: 1, animated: false)
         segment.awakeFromNib()
 
-        XCTAssertTrue(segment.titleForSegment(at: 0) == "")
-        XCTAssertTrue(segment.titleForSegment(at: 1) == "")
+        XCTAssertEqual(segment.titleForSegment(at: 0), "")
+        XCTAssertEqual(segment.titleForSegment(at: 1), "")
     }
 }

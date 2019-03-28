@@ -20,13 +20,13 @@ class StringFallbackTest: XCTestCase {
 
     func testKeyMainLanguage() {
         let localized = "only.spanish".localize()
-        XCTAssertTrue(localized == "Solo Español")
+        XCTAssertEqual(localized, "Solo Español")
     }
 
     func testKeyOtherLanguage() {
         Localize.update(language: "es")
         let localized = "only.spanish".localize()
-        XCTAssertTrue(localized == "Solo Español")
+        XCTAssertEqual(localized, "Solo Español")
     }
 
 }

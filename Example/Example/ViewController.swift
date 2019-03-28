@@ -9,7 +9,6 @@ import UIKit
 import Localize
 
 class ViewController: UIViewController {
-
     override func viewDidLoad() {
         super.viewDidLoad()
         localize()

@@ -18,11 +18,6 @@ class UIViewComponentsES: XCTestCase {
         Localize.update(language: "es")
     }
 
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-        super.tearDown()
-    }
-
     // MARK: - UIBarButtonItem
     func testButtonItemWithLocalizeKey() {
         let button = UIBarButtonItem(title: "", style: .plain, target: self, action: nil)

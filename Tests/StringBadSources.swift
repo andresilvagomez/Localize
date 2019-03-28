@@ -19,16 +19,16 @@ class StringBadSources: XCTestCase {
 
     func testLocalizeInAnyDictionary() {
         let localized = "heymomhowareyoy".localized
-        XCTAssertTrue(localized == "heymomhowareyoy")
+        XCTAssertEqual(localized, "heymomhowareyoy")
     }
 
     func testLocalizeProperty() {
         let localized = "hello.world".localized
-        XCTAssertTrue(localized == "Hello world!")
+        XCTAssertEqual(localized, "Hello world!")
     }
 
     func testLocalizeKey() {
         let localized = "hello.world".localize()
-        XCTAssertTrue(localized == "Hello world!")
+        XCTAssertEqual(localized, "Hello world!")
     }
 }

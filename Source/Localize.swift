@@ -137,6 +137,17 @@ public class Localize: NSObject {
         return provider.displayNameForLanguage(language)
     }
 
+    /// Determines whether a localized string exists for given key
+    ///
+    /// - parameter key: localization key
+    /// - returns: boolean value determining whether a localized string exists for give key
+    public func localizeExists(forKey key: String, table: String? = nil) -> Bool {
+        guard let table = table else {
+            return key.localized != key
+        }
+        return key.localize(tableName: table) != key
+    }
+
     // MARK: Config providers
 
     /// Update provider to localize your app.

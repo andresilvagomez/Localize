@@ -107,6 +107,14 @@ extension Localize {
         return Localize.shared.displayNameForLanguage(language)
     }
 
+    /// Determines whether a localized string exists for given key
+    ///
+    /// - parameter key: localization key
+    /// - returns: boolean value determining whether a localized string exists for give key
+    public static func localizeExists(forKey key: String, table: String? = nil) -> Bool {
+        return Localize.shared.localizeExists(forKey: key, table: table)
+    }
+
     // MARK: Config providers
 
     /// Update provider to localize your app.
