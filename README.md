@@ -55,8 +55,13 @@ platform :ios, '9.0'
 use_frameworks!
 
 target '<Your Target Name>' do
-    pod 'Localize' , '~> 2.1.0'
+    pod 'Localize' , '~> 2.2.0'
 end
+
+# If you are using Swift 4.x
+# target '<Your Target Name>' do
+#    pod 'Localize' , '~> 2.1.0'
+# end
 ```
 
 Then, run the following command:
