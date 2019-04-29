@@ -2,7 +2,7 @@
 //  LocalizeProtocol.swift
 //  Localize
 //
-//  Copyright © 2017 @andresilvagomez.
+//  Copyright © 2019 @andresilvagomez.
 //
 
 import Foundation

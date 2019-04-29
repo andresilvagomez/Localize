@@ -2,7 +2,7 @@
 //  UIViewComponentsWithDisabledAutoLocalize.swift
 //  LocalizeTests
 //
-//  Copyright © 2018 @adbqpa.
+//  Copyright © 2019 @andresilvagomez.
 //
 
 import XCTest

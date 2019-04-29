@@ -2,7 +2,7 @@
 //  UIViewComponentsWithString.swift
 //  LocalizeTests
 //
-//  Copyright © 2018 @andresilvagomez.
+//  Copyright © 2019 @andresilvagomez.
 //
 
 import XCTest

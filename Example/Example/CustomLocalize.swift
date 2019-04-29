@@ -2,8 +2,7 @@
 //  CustomLocalizeProtocol.swift
 //  Example
 //
-//  Created by Andres Silva on 10/22/18.
-//  Copyright © 2018 Kekiiwaa . All rights reserved.
+//  Copyright © 2019 @andresilvagomez.
 //
 
 import Foundation

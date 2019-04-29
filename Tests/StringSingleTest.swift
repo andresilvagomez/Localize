@@ -2,8 +2,7 @@
 //  StringSingleTest.swift
 //  LocalizeTests
 //
-//  Created by Andres Silva Gomez on 5/15/18.
-//  Copyright © 2018 Kekiiwaa. All rights reserved.
+//  Copyright © 2019 @andresilvagomez.
 //
 
 import XCTest

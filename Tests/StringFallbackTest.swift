@@ -2,8 +2,7 @@
 //  StringFallbackTest.swift
 //  LocalizeTests
 //
-//  Created by gustavo.grana on 25/09/18.
-//  Copyright © 2018 Kekiiwaa. All rights reserved.
+//  Copyright © 2019 @andresilvagomez.
 //
 
 import XCTest

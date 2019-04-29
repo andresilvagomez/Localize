@@ -2,7 +2,7 @@
 //  LocalizeString.swift
 //  Localize
 //
-//  Copyright © 2017 @andresilvagomez.
+//  Copyright © 2019 @andresilvagomez.
 //
 
 import Foundation
@@ -71,5 +71,4 @@ public extension String {
 
         return Localize.localize(key: self, dictionary: values, tableName: tableName)
     }
-
 }
