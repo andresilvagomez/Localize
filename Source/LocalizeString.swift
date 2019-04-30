@@ -71,4 +71,15 @@ public extension String {
 
         return Localize.localize(key: self, dictionary: values, tableName: tableName)
     }
+
+    /// Pluralize strings with numeric value
+    /// get localized and pluralized key acording with the rules
+    /// and value.
+    ///
+    /// - parameter String: The value could you pluralize
+    ///
+    /// - returns: Localized and Pluralized key according with the value.
+    func pluralize(value: Int, tableName: String? = nil) -> String {
+        return Pluralize.pluralize(key: self, value: value, tableName: tableName)
+    }
 }

@@ -375,13 +375,13 @@ extension UIViewController {
         get { return autoLocalizeValue() }
         set { setAutoLocalizeValue(value: newValue) }
     }
-    
+
     /// Localizable tag storeged property
     @IBInspectable public var localizeTitle: String? {
         get { return localizedValueFor(key: &localizeKey1) }
         set { setLocalized(value: newValue, key: &localizeKey1) }
     }
-    
+
     /// Override awakeFromNib when is going visible, try search a key in JSON File
     /// If key match replace text, if can't match return the key (original text)
     /// Set title and placeholder for UITextField
@@ -392,7 +392,7 @@ extension UIViewController {
             NotificationCenter.localize(observer: self, selector: #selector(localize))
         }
     }
-    
+
     /// Here we change text with key replacement
     @objc public func localize() {
         LocalizeUI.localize(key: &localizeTitle, value: &title)

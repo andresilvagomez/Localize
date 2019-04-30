@@ -29,3 +29,19 @@
 
 "only.spanish" = "Only Spanish";
 
+"people.zero" = "there are no people";
+
+"people.one" = "only one person";
+
+"people.two" = "two people";
+
+"people.many" = "many people";
+
+"people.hundreds" = "hundreds of people";
+
+"people.thousand" = "thousand of people";
+
+"people.millions" = "millions of people";
+
+"people.other" = "not defined people";
+

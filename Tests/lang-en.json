@@ -21,5 +21,15 @@
         }
     },
     "one": "First",
-    "two": "Second"
+    "two": "Second",
+    "people": {
+        "zero": "there are no people",
+        "one": "only one person",
+        "two": "two people",
+        "many": "many people",
+        "hundreds": "hundreds of people",
+        "thousand": "thousand of people",
+        "millions": "millions of people",
+        "other": "not defined people"
+    }
 }

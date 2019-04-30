@@ -8,3 +8,19 @@
 "other.key" = "This key exist in other file";
 
 "hello.baby" = "This is a welcome, new baby is here!";
+
+"other.people.zero" = "there are no people";
+
+"other.people.one" = "only one person";
+
+"other.people.two" = "two people";
+
+"other.people.many" = "many people";
+
+"other.people.hundreds" = "hundreds of people";
+
+"other.people.thousand" = "thousand of people";
+
+"other.people.millions" = "millions of people";
+
+"other.people.other" = "not defined people";

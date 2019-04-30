@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 `Localize` adheres to [Semantic Versioning](http://semver.org/).
 
+## [2.3.0](https://github.com/andresilvagomez/Localize/releases/tag/2.3.0)
+
+Released on 2019-04-30.
+
+- Pluralizations
+  - By [Andres Silva](https://github.com/andresilvagomez).
+
+---
+
 ## [2.2.0](https://github.com/andresilvagomez/Localize/releases/tag/2.2.0)
 
 Released on 2019-03-28.

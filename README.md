@@ -8,7 +8,7 @@
 [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/andresilvagomez/Localize/master/LICENSE)
 [![Awesome](https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg)](https://github.com/vsouza/awesome-ios)
 
-Localize is a framework written in swift to help you localize your projects. It supports both storyboards and strings.
+Localize is a framework written in swift to help you localize and pluralize your projects. It supports both storyboards and strings.
 
 ![Localize Storyboard](https://www.dropbox.com/s/t5uij0bg0tgignu/localize.gif?raw=1)
 ___
@@ -24,6 +24,7 @@ ___
 ## Features
 
 - [x] Storyboard with IBInspectable
+- [x] Pluralize and localize your keys
 - [x] Keep the File.strings files your app already uses
 - [x] Support Apple strings and JSON Files
 - [x] Change your app language without changing device language
@@ -55,7 +56,7 @@ platform :ios, '9.0'
 use_frameworks!
 
 target '<Your Target Name>' do
-    pod 'Localize' , '~> 2.2.0'
+    pod 'Localize' , '~> 2.3.0'
 end
 
 # If you are using Swift 4.x
@@ -363,6 +364,85 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 
 ```
 
+## Pluralize
+
+```swift
+print( "people".pluralize(value: 0) )
+// there are no people
+
+print( "people".pluralize(value: 1) )
+// only one person
+
+print( "people".pluralize(value: 2) )
+// two people
+
+print( "people".pluralize(value: 27) )
+// many people
+
+print( "people".pluralize(value: 103) )
+// hundreds of people
+
+print( "people".pluralize(value: 1010) )
+// thousand of people
+
+print( "people".pluralize(value: 1000000) )
+// millions of people
+```
+
+how you need compose your file.
+
+```json
+// Json file
+
+{
+    "people": {
+        "zero": "there are no people",
+        "one": "only one person",
+        "two": "two people",
+        "many": "many people",
+        "hundreds": "hundreds of people",
+        "thousand": "thousand of people",
+        "millions": "millions of people",
+        "other": "not defined people"
+    }
+}
+```
+
+```strings
+# string file
+
+"people.zero" = "there are no people";
+"people.one" = "only one person";
+"people.two" = "two people";
+"people.many" = "many people";
+"people.hundreds" = "hundreds of people";
+"people.thousand" = "thousand of people";
+"people.millions" = "millions of people";
+"people.other" = "not defined people";
+```
+
+but also you can show your value
+
+```swift
+print( "people".pluralize(value: 1) )
+/// 1 Person
+```
+
+in your file
+
+```json
+// JSON
+{
+    "people": {
+        "one": "% Person",
+        ...
+    }
+}
+
+// Strings
+"people.one" = "% Person";
+```
+
 ___
 
 ## Notes for your AppStore release
@@ -370,7 +450,7 @@ ___
 To make all languages you have localized your app for visible on the AppStore, you must add a language in the project's settings.
 
 1. For that, click on your project name in the left side bar.
-2. Then, choose project, instead of a target. 
+2. Then, choose project, instead of a target.
 3. At the bottom, under *Localizations*, press the + button & select a language you want to add
 4. On prompt, uncheck all files Xcode wants to add localization for, but keep a single one, that you won't actually localize, such as your launch screen for instance.
     - if you need to localize all your files, I suggest adding a placeholder storyboard file that you'll then add to localization
