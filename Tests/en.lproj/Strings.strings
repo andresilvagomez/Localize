@@ -11,6 +11,10 @@
 
 "values" = "Hello everyone my name is % and I'm %, see you soon";
 
+"three_values" = "% everyone my name is % and I'm %, see you soon";
+
+"four_values" = "% everyone my name is % and I'm %, see you %";
+
 "username" = "My username is :username";
 
 "level.one.two.three" = "This is a multilevel key";
