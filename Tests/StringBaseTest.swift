@@ -38,7 +38,17 @@ class StringBaseTest: XCTestCase {
 
     func testLocalizeKeyWithValues() {
         let localized = "values".localize(values: "Andres", "Software Developer")
-        XCTAssertEqual(localized, "Hello everyone my name is Andres and I'm Software Developer , see you soon")
+        XCTAssertEqual(localized, "Hello everyone my name is Andres and I'm Software Developer, see you soon")
+    }
+  
+    func testLocalizeKeyWithThreeValues() {
+      let localized = "three_values".localize(values: "Hello" ,"Andres", "Software Developer")
+      XCTAssertEqual(localized, "Hello everyone my name is Andres and I'm Software Developer, see you soon")
+    }
+  
+    func testLocalizeKeyWithFourValues() {
+      let localized = "four_values".localize(values: "Hello" ,"Andres", "Software Developer", "soon")
+      XCTAssertEqual(localized, "Hello everyone my name is Andres and I'm Software Developer, see you soon")
     }
 
     func testLocalizeKeyWithDictionary() {

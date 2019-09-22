@@ -33,7 +33,7 @@ class BaseTestInSpanish: XCTestCase {
 
     func testLocalizeKeyWithValues() {
         let localized = "values".localize(values: "Andres", "Software Developer")
-        XCTAssertEqual(localized, "Hola a todos mi nombre es Andres y soy Software Developer , nos vemos pronto")
+        XCTAssertEqual(localized, "Hola a todos mi nombre es Andres y soy Software Developer, nos vemos pronto")
     }
 
     func testLocalizeKeyWithDictionary() {
