@@ -134,23 +134,15 @@ open class LocalizeCommonProtocol: LocalizeProtocol {
     ///
     /// - returns: localized key or same text
     open func localize(
-        key: String,
-        values replace: [Any],
-        tableName: String? = nil) -> String {
-
-        var string = localize(key: key, tableName: tableName)
-        var array = string.components(separatedBy: "%")
-        string = ""
-
-        for (index, element) in replace.enumerated() where index < array.count {
-            let new = array.remove(at: 0)
-            string = index == 0 ? "\(new)\(element)" : "\(string)\(new)\(element) "
-        }
-
-        string += array.joined(separator: "")
-        string = string.replacingOccurrences(of: "  ", with: " ")
-        return string
+      key: String,
+      values replace: [Any],
+      tableName: String? = nil) -> String {
+      
+      let string = localize(key: key, tableName: tableName)
+      let stringFormat = string.replacingOccurrences(of: "%", with: "%@")
+      return String(format: stringFormat, arguments: replace.map { "\($0)" })
     }
+
 
     /// Localize string with dictionary values
     /// Get properties in your key with rule :property
