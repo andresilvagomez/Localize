@@ -17,7 +17,7 @@ ___
 - [Requirements](#requirements)
 - [Installation](#installation)
 - [Usage](#usage)
-- [Notes for your AppStore release](#notes-for-your-appstore-release)
+- [Notes for your App Store release](#notes-for-your-appstore-release)
 - [Credits](#credits)
 - [License](#license)
 
@@ -90,9 +90,9 @@ github "andresilvagomez/Localize"
 
 Run `carthage update` to build the framework and drag the built `Localize.framework` into your Xcode project.
 
-### Swift Pacakge Manager
+### Swift Package Manager
 
-The [Swift Pacakage Manager](https://swift.org/package-manager/) is a tool for automating the distribution of Swift code and is integrated into the swift compiler.
+The [Swift Package Manager](https://swift.org/package-manager/) is a tool for automating the distribution of Swift code and is integrated into the swift compiler.
 
 Once you have your Swift package set up, adding Localize as a dependency is as easy as adding it to the dependencies value of your Package.swift.
 
@@ -343,15 +343,15 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
     localize.update(provider: .json)
     // Set your file name
     localize.update(fileName: "lang")
-    // Set your default languaje.
+    // Set your default language.
     localize.update(defaultLanguage: "fr")
     // If you want change a user language, different to default in phone use thimethod.
     localize.update(language: "en")
-    // If you want remove storaged languaje use
+    // If you want remove storaged language use
     localize.resetLanguage()
     // The used language
     print(localize.currentLanguage)
-    // List of aviable languajes
+    // List of aviable language
     print(localize.availableLanguages)
 
     // Or you can use static methods for all
