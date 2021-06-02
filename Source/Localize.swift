@@ -29,7 +29,7 @@ public class Localize: NSObject {
 
     // MARK: Properties
 
-    /// Shated instance
+    /// Shared instance
     public static let shared: Localize = Localize()
 
     /// Provider to localize your app.
