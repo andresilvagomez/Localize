@@ -15,6 +15,7 @@ let package = Package(
             name: "Localize",
             path: "Source",
             exclude: [
+                "LocalizeExtensions.swift",
                 "Tests",
                 "Example"
             ]
